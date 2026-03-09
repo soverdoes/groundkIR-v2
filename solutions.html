@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions - GroundK</title>
+<meta name="description" content="메가 이벤트 셔틀, 비즈니스 모빌리티 플랫폼(T-RiseUp), PMS 솔루션 등 그라운드케이의 서비스를 소개합니다.">
+<style>
+/* ========== SHARED DESIGN SYSTEM ========== */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0a0f1e;--navy-light:#111827;--navy-mid:#1a2332;--blue:#3b82f6;--blue-dark:#2563eb;--blue-glow:rgba(59,130,246,.15);--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--gray-700:#334155;--gray-800:#1e293b;--white:#fff;--text-primary:#f8fafc;--text-secondary:#94a3b8;--gradient-blue:linear-gradient(135deg,#3b82f6,#2563eb,#1d4ed8);--gradient-dark:linear-gradient(180deg,#0a0f1e,#111827);--shadow-sm:0 1px 3px rgba(0,0,0,.3);--shadow-md:0 4px 20px rgba(0,0,0,.4);--shadow-lg:0 10px 40px rgba(0,0,0,.5);--shadow-blue:0 4px 20px rgba(59,130,246,.3);--radius:12px;--radius-lg:20px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--navy);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit;transition:var(--transition)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.section-label{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--blue);margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.3;margin-bottom:16px}
+.section-desc{font-size:1.05rem;color:var(--text-secondary);max-width:640px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--transition);border:none;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--gradient-blue);color:#fff;box-shadow:var(--shadow-blue)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.2);color:#fff;background:transparent}
+.btn-outline:hover{border-color:var(--blue);background:var(--blue-glow)}
+.bg-dark{background:var(--navy)}
+.bg-darker{background:var(--navy-light)}
+.bg-light{background:var(--gray-50);color:var(--gray-800)}
+.bg-light .section-desc{color:var(--gray-600)}
+.bg-light .section-title{color:var(--gray-800)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{background:var(--navy-mid);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-lg);padding:36px;transition:var(--transition)}
+.card:hover{transform:translateY(-4px);border-color:rgba(59,130,246,.2);box-shadow:var(--shadow-md)}
+.bg-light .card{background:#fff;border-color:var(--gray-200);color:var(--gray-800)}
+.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,130,246,.1)}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,15,30,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:-0.5px;color:#fff}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--gray-400);transition:var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{display:flex;gap:10px}
+.nav-cta .btn{padding:10px 22px;font-size:.85rem}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;transition:var(--transition)}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,15,30,.98);backdrop-filter:blur(20px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.2rem;font-weight:600;color:var(--gray-300)}
+.mobile-menu a:hover{color:#fff}
+.footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:60px}
+.footer-brand{font-size:1.3rem;font-weight:900;margin-bottom:12px}
+.footer-brand span{color:var(--blue)}
+.footer-desc{font-size:.9rem;color:var(--gray-500);line-height:1.7}
+.footer h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray-400);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:.9rem;color:var(--gray-500);transition:var(--transition)}
+.footer-links a:hover{color:var(--blue)}
+.footer-contact-item{font-size:.9rem;color:var(--gray-500);margin-bottom:8px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.footer-bottom p{font-size:.8rem;color:var(--gray-600)}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{font-size:.8rem;color:var(--gray-600)}
+.footer-bottom-links a:hover{color:var(--gray-400)}
+.footer-brands{margin-top:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.06);text-align:center}
+.footer-brands span{font-size:.8rem;color:var(--gray-600);margin:0 12px}
+@media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+.nav-links,.nav-cta{display:none}
+.hamburger{display:flex}
+.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+.section{padding:60px 0}
+.footer-grid{grid-template-columns:1fr}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+/* ========== END SHARED ========== */
+
+/* PAGE: SOLUTIONS */
+.page-hero{padding:160px 0 80px;text-align:center;background:var(--gradient-dark);position:relative}
+.page-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%,rgba(59,130,246,.08) 0%,transparent 70%);pointer-events:none}
+.page-hero .container{position:relative;z-index:1}
+.page-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;margin-bottom:16px;letter-spacing:-1px}
+.page-hero h1 em{font-style:normal;color:var(--blue)}
+.page-hero p{font-size:1.1rem;color:var(--text-secondary);max-width:600px;margin:0 auto;line-height:1.8}
+
+.arch-diagram{display:flex;align-items:stretch;gap:0;margin-top:48px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.arch-item{flex:1;padding:40px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.06);transition:var(--transition)}
+.arch-item:last-child{border-right:none}
+.arch-item:hover{background:rgba(59,130,246,.05)}
+.arch-item.core{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15)}
+.arch-item .arch-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:8px}
+.arch-item h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+.arch-item .arch-type{font-size:.85rem;color:var(--gray-400);margin-bottom:12px}
+.arch-item .arch-desc{font-size:.8rem;color:var(--gray-500);line-height:1.6}
+.arch-arrow{display:flex;align-items:center;font-size:1.5rem;color:var(--blue);padding:0 4px}
+
+.svc-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.svc-section.reverse{direction:rtl}
+.svc-section.reverse > *{direction:ltr}
+.svc-info .svc-tag{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);background:rgba(59,130,246,.1);padding:6px 16px;border-radius:50px;margin-bottom:16px}
+.svc-info h2{font-size:1.8rem;font-weight:800;margin-bottom:8px}
+.svc-info .svc-sub{font-size:1rem;color:var(--text-secondary);margin-bottom:20px;line-height:1.8}
+.svc-features{list-style:none;display:flex;flex-direction:column;gap:12px}
+.svc-features li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;color:var(--gray-300)}
+.svc-features li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);margin-top:10px;flex-shrink:0}
+.svc-visual{background:var(--navy-mid);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-lg);height:320px;display:flex;align-items:center;justify-content:center;font-size:3rem}
+
+.rev-card{position:relative;overflow:hidden}
+.rev-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.rev-card:nth-child(1)::before{background:#3b82f6}
+.rev-card:nth-child(2)::before{background:#8b5cf6}
+.rev-card:nth-child(3)::before{background:#06b6d4}
+.rev-tag{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.rev-tag.blue{color:#3b82f6}
+.rev-tag.purple{color:#8b5cf6}
+.rev-tag.cyan{color:#06b6d4}
+.rev-card h3{font-size:1.2rem;font-weight:800;margin-bottom:10px}
+.rev-card p{font-size:.9rem;color:var(--gray-400);line-height:1.7;margin-bottom:16px}
+.rev-model{font-size:.8rem;font-weight:600;background:rgba(255,255,255,.05);padding:10px 16px;border-radius:8px;color:var(--gray-300)}
+
+.ops-card{text-align:center}
+.ops-card .ops-icon{font-size:2.5rem;margin-bottom:16px}
+.ops-card h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.ops-card p{font-size:.9rem;color:var(--gray-500);line-height:1.7}
+
+.cta-section{padding:100px 0;background:var(--gradient-blue);text-align:center}
+.cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:36px}
+.cta-section .btn-white{background:#fff;color:var(--blue-dark);font-weight:700;padding:16px 36px;border-radius:50px}
+.cta-section .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.cta-section .btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff;background:transparent;padding:16px 36px;border-radius:50px}
+.cta-section .btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+@media(max-width:768px){
+.arch-diagram{flex-direction:column}
+.arch-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+.arch-arrow{justify-content:center;transform:rotate(90deg);padding:8px 0}
+.svc-section,.svc-section.reverse{grid-template-columns:1fr;direction:ltr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-inner">
+<a href="index.html" class="nav-logo">GROUND.<span>K</span></a>
+<ul class="nav-links">
+<li><a href="index.html">홈</a></li>
+<li><a href="solutions.html" class="active">솔루션</a></li>
+<li><a href="performance.html">실적</a></li>
+<li><a href="company.html">회사소개</a></li>
+<li><a href="ir.html">IR</a></li>
+</ul>
+<div class="nav-cta">
+<a href="ir.html#contact" class="btn btn-outline">제안요청</a>
+<a href="ir.html#contact" class="btn btn-primary">For Investors</a>
+</div>
+<button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div class="mobile-menu">
+<a href="index.html" onclick="this.parentElement.classList.remove('open')">홈</a>
+<a href="solutions.html">솔루션</a>
+<a href="performance.html">실적</a>
+<a href="company.html">회사소개</a>
+<a href="ir.html">IR</a>
+<a href="ir.html#contact" class="btn btn-primary" style="margin-top:16px">제안요청</a>
+<a href="ir.html#contact" class="btn btn-outline">For Investors</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<div class="section-label fade-up">Solutions &amp; Services</div>
+<h1 class="fade-up">Integrated Mobility Solutions<br><em>for Every Scale</em></h1>
+<p class="fade-up">오프라인 운송부터 온라인 예약/관제, 그리고 플랫폼 중개까지. 그라운드케이는 운수산업의 벨류체인 전체를 연결합니다.</p>
+</div>
+</section>
+
+<!-- BUSINESS ARCHITECTURE -->
+<section class="section bg-darker">
+<div class="container">
+<div style="text-align:center;margin-bottom:16px">
+<div class="section-label fade-up">Business Architecture</div>
+<h2 class="section-title fade-up">3개 브랜드가 만드는 통합 밸류체인</h2>
+</div>
+<div class="arch-diagram fade-up">
+<div class="arch-item">
+<div class="arch-label">Offline Service</div>
+<h3>GroundK Global</h3>
+<div class="arch-type">Premium Mobility Service</div>
+<div class="arch-desc">VIP 의전 / MICE 수송 직접 수행</div>
+</div>
+<div class="arch-arrow">&#8594;</div>
+<div class="arch-item core">
+<div class="arch-label">&#9733; Core Platform</div>
+<h3>T-RiseUp</h3>
+<div class="arch-type">All-in-One Mobility SaaS</div>
+<div class="arch-desc">PMS / ERP 클라우드 관제</div>
+</div>
+<div class="arch-arrow">&#8594;</div>
+<div class="arch-item">
+<div class="arch-label">Platform</div>
+<h3>RIDEUS</h3>
+<div class="arch-type">On-Demand Shuttle Platform</div>
+<div class="arch-desc">네트워크 중개 / Shared Mobility</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICE 01 -->
+<section class="section bg-dark">
+<div class="container">
+<div class="svc-section fade-up">
+<div class="svc-info">
+<div class="svc-tag">Service 01</div>
+<h2>GroundK Global</h2>
+<div class="svc-sub">국내외 VIP 의전 및 대규모 MICE 행사를 위한 최상위 이동 서비스입니다. 자체 보유 고급 차량과 전문 의전 기사를 통해 빈틈없는 서비스를 제공합니다.</div>
+<ul class="svc-features">
+<li>국제회의/정상회의 공식 수송 (G20, APEC 등)</li>
+<li>기업 VIP 의전 및 공항 영접</li>
+<li>실시간 관제 시스템 기반의 운행 모니터링</li>
+<li>다국어 가능 전담 매니저 배정</li>
+</ul>
+</div>
+<div class="svc-visual">&#128663;</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICE 02 -->
+<section class="section bg-darker">
+<div class="container">
+<div class="svc-section reverse fade-up">
+<div class="svc-info">
+<div class="svc-tag">Service 02 &#183; SaaS</div>
+<h2>T-RiseUp</h2>
+<div class="svc-sub">운수 회사의 복잡한 업무(예약, 배차, 정산, 고객관리)를 엑셀 없이 해결하는 클라우드 솔루션입니다. 디지털 전환을 통해 운영 효율을 극대화합니다.</div>
+<ul class="svc-features">
+<li>실시간 예약 및 자동 배차 시스템</li>
+<li>기사용 앱 &amp; 고객용 알림톡 연동</li>
+<li>거래명세서 자동 발행 및 미수금 관리</li>
+<li>다양한 운수사(전세버스, 렌터카, 택시) 맞춤형 설정</li>
+</ul>
+</div>
+<div class="svc-visual">&#128187;</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICE 03 -->
+<section class="section bg-dark">
+<div class="container">
+<div class="svc-section fade-up">
+<div class="svc-info">
+<div class="svc-tag">Service 03 &#183; Platform</div>
+<h2>RIDEUS</h2>
+<div class="svc-sub">기업 통근, 행사 셔틀, 테마파크 이동 등 정기적이고 반복적인 이동 수요를 최적의 운수사와 연결하는 중개 플랫폼입니다.</div>
+<ul class="svc-features">
+<li>AI 기반 최적 경로 라우팅 설계</li>
+<li>탑승객용 셔틀 위치 확인 앱 제공</li>
+<li>QR 코드 탑승권 및 이용 현황 데이터 분석</li>
+<li>전국 160개 파트너 운수사 네트워크 활용</li>
+</ul>
+</div>
+<div class="svc-visual">&#128656;</div>
+</div>
+</div>
+</section>
+
+<!-- REVENUE MODEL -->
+<section class="section bg-darker">
+<div class="container">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">Revenue Model</div>
+<h2 class="section-title fade-up">3중 수익 구조</h2>
+<p class="section-desc fade-up" style="margin:0 auto">서비스 운영으로 현금흐름을 확보하고, SaaS와 플랫폼으로 반복 매출(Recurring Revenue)을 구축합니다.</p>
+</div>
+<div class="grid-3">
+<div class="card rev-card fade-up">
+<div class="rev-tag blue">Revenue Driver #1</div>
+<h3>맞춤형 이동서비스</h3>
+<p>정상회의부터 럭셔리 브랜드까지 연 130+건 프로젝트 수행. 높은 단가와 반복 계약 확보.</p>
+<div class="rev-model">프로젝트 기반 서비스 계약 &#8594; 현금흐름 확보</div>
+</div>
+<div class="card rev-card fade-up">
+<div class="rev-tag purple">Revenue Driver #2 &#183; HIGH MARGIN</div>
+<h3>T-RiseUp (SaaS)</h3>
+<p>운수사의 예약&#183;배차&#183;관제를 하나의 클라우드에서 해결. 운수산업 디지털 전환의 핵심 인프라.</p>
+<div class="rev-model">SaaS 구독 + 커스터마이징 &#8594; 반복매출</div>
+</div>
+<div class="card rev-card fade-up">
+<div class="rev-tag cyan">Revenue Driver #3 &#183; SCALABLE</div>
+<h3>RIDEUS (플랫폼)</h3>
+<p>기업 통근, 행사 셔틀 등 맞춤형 셔틀 운영 대행. B2B 수요를 플랫폼으로 연결.</p>
+<div class="rev-model">운영 대행 수수료 + 플랫폼 이용료 &#8594; 반복매출</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- OPERATIONS SYSTEM -->
+<section class="section bg-light">
+<div class="container">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">Operations System</div>
+<h2 class="section-title fade-up">서비스를 뒷받침하는 운영 체계</h2>
+<p class="section-desc fade-up" style="margin:0 auto">SOP 표준화, 실시간 관제, 데이터 리포팅 &#8212; 서비스의 품질을 유지하는 시스템입니다.</p>
+</div>
+<div class="grid-3">
+<div class="card ops-card fade-up">
+<div class="ops-icon">&#128203;</div>
+<h3>SOP 표준화</h3>
+<p>행사 유형별 SOP 템플릿, 기사&#183;현장 매니저 브리핑 체크리스트, 비상 대응 매뉴얼로 누가 운영해도 동일한 품질을 보장합니다.</p>
+</div>
+<div class="card ops-card fade-up">
+<div class="ops-icon">&#128225;</div>
+<h3>실시간 관제</h3>
+<p>GPS 기반 차량 추적, 실시간 탑승 현황 집계, 돌발 상황 자동 알림으로 관제 센터에서 즉각 대응합니다.</p>
+</div>
+<div class="card ops-card fade-up">
+<div class="ops-icon">&#128200;</div>
+<h3>데이터 리포팅</h3>
+<p>운행 데이터 자동 수집, KPI 달성률 대시보드, 개선 제안 리포트를 PCO가 발주처에 제출할 수 있는 형태로 제공합니다.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<h2 class="fade-up">솔루션이 궁금하신가요?</h2>
+<p class="fade-up">행사 규모와 요구사항을 알려주시면, 맞춤 운영 제안서를 보내드립니다.</p>
+<div class="fade-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<a href="ir.html#contact" class="btn btn-white">제안요청(RFP) &#8594;</a>
+<a href="ir.html#contact" class="btn btn-ghost">For Investors</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">GROUND.<span>K</span></div>
+<p class="footer-desc">대한민국 대표 모빌리티 플랫폼 기업. 국제회의부터 기업행사까지, 이동의 모든 것을 통합합니다.</p>
+</div>
+<div>
+<h4>Services</h4>
+<ul class="footer-links">
+<li><a href="solutions.html">대형행사 수송</a></li>
+<li><a href="solutions.html">VIP 의전</a></li>
+<li><a href="solutions.html">셔틀 운영</a></li>
+<li><a href="solutions.html">T-RiseUp</a></li>
+</ul>
+</div>
+<div>
+<h4>Company</h4>
+<ul class="footer-links">
+<li><a href="performance.html">도입사례</a></li>
+<li><a href="ir.html">IR</a></li>
+<li><a href="#">뉴스룸</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<div class="footer-contact-item">&#128222; 02-863-3540</div>
+<div class="footer-contact-item">&#9993; ir@groundk.co.kr</div>
+<a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">제안요청</a>
+</div>
+</div>
+<div class="footer-brands">
+<span>groundk.com</span><span>triseup.com</span><span>rideus.co.kr</span>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 (주)그라운드케이. All rights reserved. 서울시 강서구 마곡중앙로서 161-17, 7층</p>
+<div class="footer-bottom-links">
+<a href="#">개인정보처리방침</a>
+<a href="#">이용약관</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

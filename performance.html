@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Performance - GroundK | 실적 및 도입사례</title>
+<meta name="description" content="그라운드케이의 130건 이상 프로젝트 실적. APEC, ADB, Louis Vuitton 등 글로벌 레퍼런스.">
+<style>
+/* ========== SHARED DESIGN SYSTEM ========== */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0a0f1e;--navy-light:#111827;--navy-mid:#1a2332;--blue:#3b82f6;--blue-dark:#2563eb;--blue-glow:rgba(59,130,246,.15);--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--gray-700:#334155;--gray-800:#1e293b;--white:#fff;--text-primary:#f8fafc;--text-secondary:#94a3b8;--gradient-blue:linear-gradient(135deg,#3b82f6,#2563eb,#1d4ed8);--gradient-dark:linear-gradient(180deg,#0a0f1e,#111827);--shadow-sm:0 1px 3px rgba(0,0,0,.3);--shadow-md:0 4px 20px rgba(0,0,0,.4);--shadow-lg:0 10px 40px rgba(0,0,0,.5);--shadow-blue:0 4px 20px rgba(59,130,246,.3);--radius:12px;--radius-lg:20px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--navy);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit;transition:var(--transition)}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.section-label{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--blue);margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.3;margin-bottom:16px}
+.section-desc{font-size:1.05rem;color:var(--text-secondary);max-width:640px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--transition);border:none;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--gradient-blue);color:#fff;box-shadow:var(--shadow-blue)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.2);color:#fff;background:transparent}
+.btn-outline:hover{border-color:var(--blue);background:var(--blue-glow)}
+.bg-dark{background:var(--navy)}
+.bg-darker{background:var(--navy-light)}
+.bg-light{background:var(--gray-50);color:var(--gray-800)}
+.bg-light .section-desc{color:var(--gray-600)}
+.bg-light .section-title{color:var(--gray-800)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{background:var(--navy-mid);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-lg);padding:36px;transition:var(--transition)}
+.card:hover{transform:translateY(-4px);border-color:rgba(59,130,246,.2);box-shadow:var(--shadow-md)}
+.bg-light .card{background:#fff;border-color:var(--gray-200);color:var(--gray-800)}
+.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,130,246,.1)}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,15,30,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:-0.5px;color:#fff}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--gray-400);transition:var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{display:flex;gap:10px}
+.nav-cta .btn{padding:10px 22px;font-size:.85rem}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;transition:var(--transition)}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,15,30,.98);backdrop-filter:blur(20px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.2rem;font-weight:600;color:var(--gray-300)}
+.mobile-menu a:hover{color:#fff}
+.footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:60px}
+.footer-brand{font-size:1.3rem;font-weight:900;margin-bottom:12px}
+.footer-brand span{color:var(--blue)}
+.footer-desc{font-size:.9rem;color:var(--gray-500);line-height:1.7}
+.footer h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray-400);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:.9rem;color:var(--gray-500);transition:var(--transition)}
+.footer-links a:hover{color:var(--blue)}
+.footer-contact-item{font-size:.9rem;color:var(--gray-500);margin-bottom:8px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.footer-bottom p{font-size:.8rem;color:var(--gray-600)}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{font-size:.8rem;color:var(--gray-600)}
+.footer-bottom-links a:hover{color:var(--gray-400)}
+.footer-brands{margin-top:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.06);text-align:center}
+.footer-brands span{font-size:.8rem;color:var(--gray-600);margin:0 12px}
+@media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+.nav-links,.nav-cta{display:none}
+.hamburger{display:flex}
+.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+.section{padding:60px 0}
+.footer-grid{grid-template-columns:1fr}
+.footer-bottom{flex-direction:column;text-align:center}
+.kpi-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+/* ========== END SHARED ========== */
+
+/* PAGE: PERFORMANCE */
+.page-hero{padding:160px 0 80px;background:var(--gradient-dark);position:relative;text-align:center}
+.page-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%,rgba(59,130,246,.08) 0%,transparent 70%);pointer-events:none}
+.page-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;margin-bottom:16px;letter-spacing:-1px}
+.page-hero .hero-eng{font-size:1.2rem;font-weight:600;color:var(--blue);margin-bottom:12px}
+.page-hero p{font-size:1.1rem;color:var(--text-secondary);max-width:600px;margin:0 auto;line-height:1.8}
+
+.project-card{position:relative;overflow:hidden;padding:0;display:flex;flex-direction:column}
+.project-card .project-bar{height:4px;width:100%;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.project-card .project-bar.bar-blue{background:var(--gradient-blue)}
+.project-card .project-bar.bar-gold{background:linear-gradient(135deg,#f59e0b,#d97706)}
+.project-card .project-bar.bar-purple{background:linear-gradient(135deg,#8b5cf6,#7c3aed)}
+.project-card .project-bar.bar-pink{background:linear-gradient(135deg,#ec4899,#db2777)}
+.project-card .project-bar.bar-green{background:linear-gradient(135deg,#10b981,#059669)}
+.project-card .project-bar.bar-red{background:linear-gradient(135deg,#ef4444,#dc2626)}
+.project-card .project-top{padding:32px 32px 20px;flex:1}
+.project-card .project-year{display:inline-block;font-size:.75rem;font-weight:800;color:#fff;background:var(--gradient-blue);padding:4px 12px;border-radius:50px;margin-bottom:12px}
+.project-card .project-name{font-size:1.2rem;font-weight:800;margin-bottom:8px}
+.project-card .project-desc{font-size:.9rem;color:var(--gray-400);line-height:1.6;margin-bottom:16px}
+.project-card .project-tags{display:flex;gap:8px;flex-wrap:wrap}
+.project-card .project-tag{display:inline-block;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:50px;background:rgba(59,130,246,.1);color:var(--blue)}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.kpi-card{text-align:center;padding:40px 24px;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:3px;background:var(--gradient-blue);border-radius:2px}
+.kpi-card .kpi-num{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--blue);margin-bottom:8px}
+.kpi-card .kpi-label{font-size:.9rem;color:var(--gray-400)}
+
+.partner-section .partner-cat{margin-bottom:32px}
+.partner-section .partner-cat h3{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray-500);margin-bottom:16px}
+.partner-logos{display:flex;flex-wrap:wrap;gap:12px}
+.partner-logos span{display:inline-flex;align-items:center;padding:10px 20px;background:#fff;border:1px solid var(--gray-200);border-radius:8px;font-size:.85rem;font-weight:600;color:var(--gray-700);transition:var(--transition)}
+.partner-logos span:hover{border-color:var(--blue);box-shadow:0 2px 10px rgba(59,130,246,.1)}
+.partner-note{font-size:.85rem;color:var(--gray-500);margin-top:24px;font-style:italic}
+
+.timeline{max-width:800px;margin:0 auto}
+.timeline-year{margin-bottom:32px}
+.timeline-year h3{font-size:1.1rem;font-weight:800;color:var(--blue);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+.timeline-items{display:flex;flex-direction:column;gap:8px;padding-left:20px;border-left:2px solid rgba(59,130,246,.2)}
+.timeline-item{font-size:.9rem;color:var(--gray-400);padding:4px 0 4px 16px;position:relative}
+.timeline-item::before{content:'';position:absolute;left:-7px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.timeline-note{font-size:.85rem;color:var(--gray-500);margin-top:32px;text-align:center;font-style:italic}
+
+.cta-section{padding:100px 0;background:var(--gradient-blue);text-align:center}
+.cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:36px}
+.cta-section .btn-white{background:#fff;color:var(--blue-dark);font-weight:700;padding:16px 36px}
+.cta-section .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.cta-section .btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff;background:transparent;padding:16px 36px}
+.cta-section .btn-ghost:hover{background:rgba(255,255,255,.1)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-inner">
+<a href="index.html" class="nav-logo">GROUND.<span>K</span></a>
+<ul class="nav-links">
+<li><a href="index.html">홈</a></li>
+<li><a href="solutions.html">솔루션</a></li>
+<li><a href="performance.html" class="active">실적</a></li>
+<li><a href="company.html">회사소개</a></li>
+<li><a href="ir.html">IR</a></li>
+</ul>
+<div class="nav-cta">
+<a href="ir.html#contact" class="btn btn-outline">제안요청</a>
+<a href="ir.html#contact" class="btn btn-primary">For Investors</a>
+</div>
+<button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div class="mobile-menu">
+<a href="index.html" onclick="this.parentElement.classList.remove('open')">홈</a>
+<a href="solutions.html">솔루션</a>
+<a href="performance.html">실적</a>
+<a href="company.html">회사소개</a>
+<a href="ir.html">IR</a>
+<a href="ir.html#contact" class="btn btn-primary" style="margin-top:16px">제안요청</a>
+<a href="ir.html#contact" class="btn btn-outline">For Investors</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+<div class="container">
+<div class="section-label fade-up">Performance & Case Studies</div>
+<div class="hero-eng fade-up">Proven Excellence in Global Mobility</div>
+<h1 class="fade-up">실적 및 도입사례</h1>
+<p class="fade-up">국가적 행사부터 기업의 일상적 이동까지, 그라운드케이는 가장 신뢰받는 모빌리티 파트너입니다.</p>
+</div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="section bg-darker">
+<div class="container">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">FEATURED PROJECTS</div>
+<h2 class="section-title fade-up">대표 프로젝트</h2>
+</div>
+<div class="grid-3">
+<div class="card project-card fade-up">
+<div class="project-bar bar-blue"></div>
+<div class="project-top">
+<div class="project-year">2025</div>
+<div class="project-name">APEC 2025 KOREA 정상회의</div>
+<div class="project-desc">금호고속 공동수주, VMS(Vehicle Management System) 시스템 도입으로 차량 관제 혁신. 정상회의 공식 수송 파트너</div>
+<div class="project-tags">
+<span class="project-tag">Summit</span>
+<span class="project-tag">Global</span>
+</div>
+</div>
+</div>
+<div class="card project-card fade-up">
+<div class="project-bar bar-gold"></div>
+<div class="project-top">
+<div class="project-year">2023</div>
+<div class="project-name">ADB 연차총회</div>
+<div class="project-desc">68개국 재무장관 및 중앙은행 총재 의전. 대규모 국제행사 운영 성공 사례</div>
+<div class="project-tags">
+<span class="project-tag">Intl Event</span>
+</div>
+</div>
+</div>
+<div class="card project-card fade-up">
+<div class="project-bar bar-green"></div>
+<div class="project-top">
+<div class="project-year">2019</div>
+<div class="project-name">한-아세안 특별 정상회의</div>
+<div class="project-desc">차량 150대 의전/수송/물류 총괄. 아세안 10개국 정상 및 수행단 수송</div>
+<div class="project-tags">
+<span class="project-tag">Summit</span>
+</div>
+</div>
+</div>
+<div class="card project-card fade-up">
+<div class="project-bar bar-purple"></div>
+<div class="project-top">
+<div class="project-year">2023</div>
+<div class="project-name">Louis Vuitton Pre-Fall</div>
+<div class="project-desc">글로벌 럭셔리 VIP 게스트 수송. 럭셔리 브랜드 행사에 맞는 프리미엄 의전 서비스</div>
+<div class="project-tags">
+<span class="project-tag">Luxury</span>
+</div>
+</div>
+</div>
+<div class="card project-card fade-up">
+<div class="project-bar bar-pink"></div>
+<div class="project-top">
+<div class="project-year">2022</div>
+<div class="project-name">Dior Fall 2022</div>
+<div class="project-desc">글로벌 게스트 의전 및 수송. Dior 패션쇼 참석자 대상 프리미엄 수송</div>
+<div class="project-tags">
+<span class="project-tag">Luxury</span>
+</div>
+</div>
+</div>
+<div class="card project-card fade-up">
+<div class="project-bar bar-red"></div>
+<div class="project-top">
+<div class="project-year">2025</div>
+<div class="project-name">SBS 가요대전 Summer</div>
+<div class="project-desc">대규모 외국인 관람객 셔틀 운영. K-POP 행사 참석 외국인 팬 대상 셔틀 서비스</div>
+<div class="project-tags">
+<span class="project-tag">Entertainment</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PERFORMANCE METRICS -->
+<section class="section bg-dark">
+<div class="container">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">PERFORMANCE METRICS</div>
+<h2 class="section-title fade-up">핵심 성과 지표</h2>
+</div>
+<div class="kpi-grid fade-up" style="grid-template-columns:repeat(4,1fr);margin-bottom:24px">
+<div class="card kpi-card">
+<div class="kpi-num">4회</div>
+<div class="kpi-label">정상회의 수송</div>
+</div>
+<div class="card kpi-card">
+<div class="kpi-num">50+개국</div>
+<div class="kpi-label">수행 국가</div>
+</div>
+<div class="card kpi-card">
+<div class="kpi-num">160+개</div>
+<div class="kpi-label">글로벌 클라이언트</div>
+</div>
+<div class="card kpi-card">
+<div class="kpi-num">130+건</div>
+<div class="kpi-label">누적 프로젝트</div>
+</div>
+</div>
+<div class="kpi-grid fade-up" style="grid-template-columns:repeat(3,1fr)">
+<div class="card kpi-card">
+<div class="kpi-num">10+건</div>
+<div class="kpi-label">럭셔리 브랜드 행사</div>
+</div>
+<div class="card kpi-card">
+<div class="kpi-num">51억원</div>
+<div class="kpi-label">2023 매출</div>
+</div>
+<div class="card kpi-card">
+<div class="kpi-num">9년</div>
+<div class="kpi-label">무사고 운영</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRUSTED PARTNERS -->
+<section class="section bg-light partner-section">
+<div class="container">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">TRUSTED PARTNERS</div>
+<h2 class="section-title fade-up">신뢰하는 파트너사</h2>
+</div>
+<div class="partner-cat fade-up">
+<h3>Government & Public</h3>
+<div class="partner-logos">
+<span>APEC</span><span>ADB</span><span>외교부</span><span>문화체육관광부</span><span>부산시</span><span>한국은행</span><span>서울관광재단</span>
+</div>
+</div>
+<div class="partner-cat fade-up">
+<h3>Luxury & Fashion</h3>
+<div class="partner-logos">
+<span>Louis Vuitton</span><span>Dior</span><span>CHANEL</span><span>BURBERRY</span><span>Moncler</span>
+</div>
+</div>
+<div class="partner-cat fade-up">
+<h3>Entertainment</h3>
+<div class="partner-logos">
+<span>SM C&C</span><span>NCT</span><span>GQ</span><span>AFC</span>
+</div>
+</div>
+<div class="partner-cat fade-up">
+<h3>Corporate</h3>
+<div class="partner-logos">
+<span>현대자동차</span><span>에버랜드</span><span>롯데카드</span><span>Visa</span>
+</div>
+</div>
+<p class="partner-note fade-up">* 정부기관, 대기업, 호텔 등 300여 개 고객사와 함께합니다.</p>
+</div>
+</section>
+
+<!-- PROJECT ARCHIVE -->
+<section class="section bg-darker">
+<div class="container">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">PROJECT ARCHIVE</div>
+<h2 class="section-title fade-up">프로젝트 타임라인</h2>
+<p class="section-desc fade-up" style="margin:0 auto">2016년 창업 이래 130건 이상의 프로젝트를 성공적으로 수행했습니다</p>
+</div>
+<div class="timeline fade-up">
+<div class="timeline-year">
+<h3>2025</h3>
+<div class="timeline-items">
+<div class="timeline-item">APEC 2025 KOREA 공식 수송</div>
+<div class="timeline-item">SBS 가요대전 Summer 셔틀 운영</div>
+<div class="timeline-item">산단타요 통근버스 TMS 도입</div>
+</div>
+</div>
+<div class="timeline-year">
+<h3>2023</h3>
+<div class="timeline-items">
+<div class="timeline-item">ADB 연차총회 (68개국)</div>
+<div class="timeline-item">Louis Vuitton Pre-Fall Show</div>
+</div>
+</div>
+<div class="timeline-year">
+<h3>2022</h3>
+<div class="timeline-items">
+<div class="timeline-item">Dior Fall 2022 Show</div>
+</div>
+</div>
+<div class="timeline-year">
+<h3>2019</h3>
+<div class="timeline-items">
+<div class="timeline-item">한-아세안 특별 정상회의 (차량 150대)</div>
+<div class="timeline-item">CHANEL Metiers d'Art Show</div>
+</div>
+</div>
+<div class="timeline-year">
+<h3>2018</h3>
+<div class="timeline-items">
+<div class="timeline-item">정보통신부 장관회의 11개국 의전</div>
+</div>
+</div>
+</div>
+<p class="timeline-note fade-up">* 더 많은 프로젝트 레퍼런스는 제휴 문의를 통해 확인하실 수 있습니다.</p>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<h2 class="fade-up">다음 행사의 이동, GroundK에 맡기세요</h2>
+<p class="fade-up">3분이면 충분합니다 &middot; 48시간 내 맞춤 제안서 회신</p>
+<div class="fade-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<a href="ir.html#contact" class="btn btn-white">제안요청(RFP) &rarr;</a>
+<a href="ir.html#contact" class="btn btn-ghost">For Investors</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">GROUND.<span>K</span></div>
+<p class="footer-desc">대한민국 대표 모빌리티 플랫폼 기업. 국제회의부터 기업행사까지, 이동의 모든 것을 통합합니다.</p>
+</div>
+<div>
+<h4>Services</h4>
+<ul class="footer-links">
+<li><a href="solutions.html">대형행사 수송</a></li>
+<li><a href="solutions.html">VIP 의전</a></li>
+<li><a href="solutions.html">셔틀 운영</a></li>
+<li><a href="solutions.html">T-RiseUp</a></li>
+</ul>
+</div>
+<div>
+<h4>Company</h4>
+<ul class="footer-links">
+<li><a href="performance.html">도입사례</a></li>
+<li><a href="ir.html">IR</a></li>
+<li><a href="#">뉴스룸</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<div class="footer-contact-item">&#128222; 02-863-3540</div>
+<div class="footer-contact-item">&#9993; ir@groundk.co.kr</div>
+<a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">제안요청</a>
+</div>
+</div>
+<div class="footer-brands">
+<span>groundk.com</span><span>triseup.com</span><span>rideus.co.kr</span>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 (주)그라운드케이. All rights reserved. 서울시 강서구 마곡중앙로서 161-17, 7층</p>
+<div class="footer-bottom-links">
+<a href="#">개인정보처리방침</a>
+<a href="#">이용약관</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
