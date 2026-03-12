@@ -127,6 +127,18 @@ img{max-width:100%;display:block}
 .cta-section .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .cta-section .btn-ghost{border:1.5px solid #e5e5e5;color:#333;background:transparent;padding:16px 36px}
 .cta-section .btn-ghost:hover{background:#f5f5f5}
+.case-card{padding:36px}
+.case-card h3{font-size:1.15rem;font-weight:800;margin-bottom:6px}
+.case-card .case-summary{font-size:.9rem;color:var(--gray-500);margin-bottom:16px;font-style:italic}
+.case-card p{font-size:.95rem;color:var(--gray-400);line-height:1.7;margin-bottom:16px}
+.case-card ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.case-card ul li{font-size:.9rem;color:var(--gray-400);padding-left:16px;position:relative}
+.case-card ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:#333;position:absolute;left:0;top:10px}
+.case-nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px}
+.case-nav a{font-size:.85rem;font-weight:600;padding:8px 20px;border:1px solid #e5e5e5;border-radius:50px;color:#555;transition:var(--transition)}
+.case-nav a:hover{border-color:#111;color:#111}
+.why-matters{max-width:760px;margin:0 auto;text-align:center}
+.why-matters p{font-size:1.05rem;color:var(--gray-400);line-height:1.9}
 </style>
 </head>
 <body>
@@ -136,14 +148,14 @@ img{max-width:100%;display:block}
 <div class="nav-inner">
 <a href="index.html" class="nav-logo">GROUND.<span>K</span></a>
 <ul class="nav-links">
-<li><a href="solutions.html">솔루션</a></li>
-<li><a href="performance.html" class="active">실적</a></li>
+<li><a href="solutions.html">서비스</a></li>
+<li><a href="performance.html" class="active">레퍼런스</a></li>
 <li><a href="company.html">회사소개</a></li>
 <li><a href="ir.html">IR</a></li>
 </ul>
 <div class="nav-cta">
-<a href="ir.html#contact" class="btn btn-outline">제안요청</a>
-<a href="ir.html#contact" class="btn btn-primary">For Investors</a>
+<a href="ir.html#contact" class="btn btn-outline">문의하기</a>
+<a href="ir.html#contact" class="btn btn-primary">무료 제안서 받기</a>
 </div>
 <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
 <span></span><span></span><span></span>
@@ -151,111 +163,178 @@ img{max-width:100%;display:block}
 </div>
 </nav>
 <div class="mobile-menu">
-<a href="solutions.html">솔루션</a>
-<a href="performance.html">실적</a>
-<a href="company.html">회사소개</a>
-<a href="ir.html">IR</a>
-<a href="ir.html#contact" class="btn btn-primary" style="margin-top:16px">제안요청</a>
-<a href="ir.html#contact" class="btn btn-outline">For Investors</a>
+<a href="solutions.html" onclick="this.parentElement.classList.remove('open')">서비스</a>
+<a href="performance.html" onclick="this.parentElement.classList.remove('open')">레퍼런스</a>
+<a href="company.html" onclick="this.parentElement.classList.remove('open')">회사소개</a>
+<a href="ir.html" onclick="this.parentElement.classList.remove('open')">IR</a>
+<a href="ir.html#contact" class="btn btn-primary" style="margin-top:16px">무료 제안서 받기</a>
+<a href="ir.html#contact" class="btn btn-outline">문의하기</a>
 </div>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
 <div class="container">
-<div class="section-label fade-up">Performance & Case Studies</div>
-<div class="hero-eng fade-up">Proven Excellence in Global Mobility</div>
-<h1 class="fade-up">실적 및 도입사례</h1>
-<p class="fade-up">국가적 행사부터 기업의 일상적 이동까지, 그라운드케이는 가장 신뢰받는 모빌리티 파트너입니다.</p>
+<div class="section-label fade-up">Reference & Case Studies</div>
+<h1 class="fade-up">국가급 행사부터 글로벌 브랜드 프로젝트까지,<br>검증된 이동 운영 레퍼런스</h1>
+<p class="fade-up">그라운드케이는 정상회의, 국제회의, 럭셔리 브랜드 행사, 대규모 셔틀까지 &mdash; 단 한 건의 운영 사고 없이 130건 이상의 프로젝트를 완수했습니다.</p>
 </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
+<!-- INTRO -->
 <section class="section bg-darker">
 <div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">FEATURED PROJECTS</div>
-<h2 class="section-title fade-up">대표 프로젝트</h2>
-</div>
-<div class="grid-3">
-<div class="card project-card fade-up">
-<div class="project-bar bar-blue"></div>
-<div class="project-top">
-<div class="project-year">2025</div>
-<div class="project-name">APEC 2025 KOREA 정상회의</div>
-<div class="project-desc">금호고속 공동수주, VMS(Vehicle Management System) 시스템 도입으로 차량 관제 혁신. 정상회의 공식 수송 파트너</div>
-<div class="project-tags">
-<span class="project-tag">Summit</span>
-<span class="project-tag">Global</span>
-</div>
-</div>
-</div>
-<div class="card project-card fade-up">
-<div class="project-bar bar-gold"></div>
-<div class="project-top">
-<div class="project-year">2023</div>
-<div class="project-name">ADB 연차총회</div>
-<div class="project-desc">68개국 재무장관 및 중앙은행 총재 의전. 대규모 국제행사 운영 성공 사례</div>
-<div class="project-tags">
-<span class="project-tag">Intl Event</span>
-</div>
-</div>
-</div>
-<div class="card project-card fade-up">
-<div class="project-bar bar-green"></div>
-<div class="project-top">
-<div class="project-year">2019</div>
-<div class="project-name">한-아세안 특별 정상회의</div>
-<div class="project-desc">차량 150대 의전/수송/물류 총괄. 아세안 10개국 정상 및 수행단 수송</div>
-<div class="project-tags">
-<span class="project-tag">Summit</span>
-</div>
-</div>
-</div>
-<div class="card project-card fade-up">
-<div class="project-bar bar-purple"></div>
-<div class="project-top">
-<div class="project-year">2023</div>
-<div class="project-name">Louis Vuitton Pre-Fall</div>
-<div class="project-desc">글로벌 럭셔리 VIP 게스트 수송. 럭셔리 브랜드 행사에 맞는 프리미엄 의전 서비스</div>
-<div class="project-tags">
-<span class="project-tag">Luxury</span>
-</div>
-</div>
-</div>
-<div class="card project-card fade-up">
-<div class="project-bar bar-pink"></div>
-<div class="project-top">
-<div class="project-year">2022</div>
-<div class="project-name">Dior Fall 2022</div>
-<div class="project-desc">글로벌 게스트 의전 및 수송. Dior 패션쇼 참석자 대상 프리미엄 수송</div>
-<div class="project-tags">
-<span class="project-tag">Luxury</span>
-</div>
-</div>
-</div>
-<div class="card project-card fade-up">
-<div class="project-bar bar-red"></div>
-<div class="project-top">
-<div class="project-year">2025</div>
-<div class="project-name">SBS 가요대전 Summer</div>
-<div class="project-desc">대규모 외국인 관람객 셔틀 운영. K-POP 행사 참석 외국인 팬 대상 셔틀 서비스</div>
-<div class="project-tags">
-<span class="project-tag">Entertainment</span>
-</div>
-</div>
-</div>
+<div class="why-matters fade-up">
+<p>운영 역량은 숫자가 아니라 현장에서 증명됩니다.<br>아래는 그라운드케이가 직접 수행한 대표 프로젝트들입니다.<br>각 사례에서 어떤 과제를 어떻게 해결했는지 확인해보세요.</p>
 </div>
 </div>
 </section>
 
-<!-- PERFORMANCE METRICS -->
-<section class="section bg-dark">
+<!-- CASE CATEGORY NAV -->
+<section class="section bg-dark" id="cases">
+<div class="container">
+<div class="case-nav fade-up">
+<a href="#case-summit">국제행사 / 정상회의</a>
+<a href="#case-vip">VIP 의전</a>
+<a href="#case-corporate">기업 행사 / 컨퍼런스</a>
+<a href="#case-shuttle">셔틀 / 반복 운영</a>
+</div>
+
+<!-- CASE 1: 국제행사 / 정상회의 -->
+<div id="case-summit" style="margin-bottom:80px">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">국제행사 / 정상회의</div>
+<h2 class="section-title fade-up">국가가 선택한 수송 파트너</h2>
+</div>
+<div class="grid-2">
+<div class="card case-card fade-up">
+<h3>APEC 2025 KOREA 정상회의</h3>
+<div class="case-summary">21개 경제권 정상급 인사 의전 &middot; 금호고속 공동수주</div>
+<p>APEC 정상회의 공식 수송 파트너로 선정되어, VMS(Vehicle Management System)를 도입해 전 차량의 실시간 관제와 배차를 수행했습니다. 경호 동선과 의전 프로토콜을 사전 시뮬레이션하여 단 한 건의 지연 없이 전체 일정을 완수했습니다.</p>
+<ul>
+<li>21개 경제권 정상 및 수행단 수송</li>
+<li>VMS 실시간 차량 관제 시스템 도입</li>
+<li>경호-의전 동선 사전 시뮬레이션 운영</li>
+<li>무지연 완수율 100%</li>
+</ul>
+</div>
+<div class="card case-card fade-up">
+<h3>ADB 연차총회 2023</h3>
+<div class="case-summary">68개국 재무장관 &middot; 중앙은행 총재 의전</div>
+<p>아시아개발은행 연차총회에서 68개국 재무장관 및 중앙은행 총재를 대상으로 의전 수송을 수행했습니다. 각국 보안팀과의 사전 협의를 통해 개별 동선을 설계하고, 공항 &mdash; 숙소 &mdash; 회의장 전 구간을 원스톱으로 운영했습니다.</p>
+<ul>
+<li>68개국 고위급 인사 개별 동선 설계</li>
+<li>각국 보안팀 사전 협의 및 프로토콜 적용</li>
+<li>공항-숙소-회의장 전 구간 원스톱 운영</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- CASE 2: VIP 의전 -->
+<div id="case-vip" style="margin-bottom:80px">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">VIP 의전</div>
+<h2 class="section-title fade-up">브랜드 가치를 지키는 프리미엄 의전</h2>
+</div>
+<div class="grid-2">
+<div class="card case-card fade-up">
+<h3>Louis Vuitton Pre-Fall Show</h3>
+<div class="case-summary">글로벌 VIP 게스트 프리미엄 수송</div>
+<p>루이비통 프리폴 쇼에서 전 세계 VIP 게스트를 대상으로 프리미엄 의전을 수행했습니다. 브랜드의 격에 맞는 차량 선정부터 게스트별 맞춤 동선, 현장 안내 인력 배치까지 &mdash; 행사의 첫인상과 마지막 인상을 모두 설계했습니다.</p>
+<ul>
+<li>브랜드 가이드라인에 맞는 차량 큐레이션</li>
+<li>게스트별 개별 동선 및 시간 관리</li>
+<li>현장 안내 인력 배치 및 의전 매뉴얼 제공</li>
+</ul>
+</div>
+<div class="card case-card fade-up">
+<h3>글로벌 VIP 의전 (CHANEL, Dior, BURBERRY 외)</h3>
+<div class="case-summary">럭셔리 브랜드 패션쇼 &middot; 런칭 이벤트 연간 10건+</div>
+<p>CHANEL M&eacute;tiers d'Art, Dior Fall Show, BURBERRY 이벤트 등 글로벌 럭셔리 브랜드의 한국 행사에서 VIP 의전을 반복 수행하고 있습니다. 브랜드별 보안 요건과 프라이버시 기준을 충족하면서도 게스트 경험을 최우선으로 설계합니다.</p>
+<ul>
+<li>연간 10건 이상 럭셔리 브랜드 의전 수행</li>
+<li>브랜드별 보안 &middot; 프라이버시 기준 충족</li>
+<li>반복 수행을 통한 표준 운영 매뉴얼 확보</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- CASE 3: 기업 행사 / 컨퍼런스 -->
+<div id="case-corporate" style="margin-bottom:80px">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">기업 행사 / 컨퍼런스</div>
+<h2 class="section-title fade-up">기업 행사의 이동을 설계합니다</h2>
+</div>
+<div class="grid-2">
+<div class="card case-card fade-up">
+<h3>대기업 컨퍼런스 &middot; 워크숍 수송</h3>
+<div class="case-summary">현대자동차, 에버랜드, Visa 등 연간 반복 수행</div>
+<p>대기업 연간 컨퍼런스, 워크숍, 임원 세미나 등의 수송을 반복 수행하고 있습니다. 참석자 규모에 따른 차량 편성, 시간대별 배차 최적화, 현장 컨틴전시 플랜까지 &mdash; 행사 담당자의 이동 고민을 제로로 만듭니다.</p>
+<ul>
+<li>참석자 규모별 차량 편성 최적화</li>
+<li>시간대별 동적 배차 운영</li>
+<li>현장 컨틴전시 플랜 사전 수립</li>
+</ul>
+</div>
+<div class="card case-card fade-up">
+<h3>한-아세안 특별 정상회의</h3>
+<div class="case-summary">차량 150대 &middot; 10개국 정상 수행단 수송</div>
+<p>아세안 10개국 정상 및 수행단을 대상으로 차량 150대를 동시 운영했습니다. 국가별 보안 등급에 따른 차량 배정, 경호 차량 연동, 실시간 동선 조정 등 국가급 행사의 복잡성을 체계적으로 관리한 대표 사례입니다.</p>
+<ul>
+<li>차량 150대 동시 운영</li>
+<li>국가별 보안 등급 차량 배정</li>
+<li>경호 차량 연동 및 실시간 동선 조정</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- CASE 4: 셔틀 / 반복 운영 -->
+<div id="case-shuttle">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label fade-up">셔틀 / 반복 운영</div>
+<h2 class="section-title fade-up">매일 반복되는 이동, 시스템으로 운영합니다</h2>
+</div>
+<div class="grid-2">
+<div class="card case-card fade-up">
+<h3>SBS 가요대전 Summer 셔틀</h3>
+<div class="case-summary">대규모 외국인 관람객 셔틀 운영</div>
+<p>K-POP 대형 행사에서 수천 명의 외국인 관람객을 대상으로 셔틀 서비스를 운영했습니다. 다국어 안내, 실시간 탑승 관리, 피크 타임 증차 대응까지 &mdash; 엔터테인먼트 행사 특유의 변동성을 시스템으로 흡수했습니다.</p>
+<ul>
+<li>수천 명 규모 동시 셔틀 운영</li>
+<li>다국어 안내 및 실시간 탑승 관리</li>
+<li>피크 타임 증차 대응 체계</li>
+</ul>
+</div>
+<div class="card case-card fade-up">
+<h3>산업단지 통근버스 TMS 도입</h3>
+<div class="case-summary">T-RiseUp 플랫폼 기반 반복 운영 최적화</div>
+<p>산업단지 통근 셔틀에 자체 개발 TMS(Transportation Management System)를 도입하여 노선 최적화, 탑승률 분석, 실시간 운행 모니터링을 구현했습니다. 단순 수송을 넘어 데이터 기반의 이동 운영 효율화를 실현한 사례입니다.</p>
+<ul>
+<li>TMS 기반 노선 최적화</li>
+<li>탑승률 분석 및 증감차 자동 추천</li>
+<li>실시간 운행 모니터링 대시보드</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- METRICS -->
+<section class="section bg-light">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">PERFORMANCE METRICS</div>
-<h2 class="section-title fade-up">핵심 성과 지표</h2>
+<div class="section-label fade-up">Key Metrics</div>
+<h2 class="section-title fade-up">숫자로 보는 운영 역량</h2>
 </div>
-<div class="kpi-grid fade-up" style="grid-template-columns:repeat(4,1fr);margin-bottom:24px">
+<div class="kpi-grid fade-up">
+<div class="card kpi-card">
+<div class="kpi-num">130+건</div>
+<div class="kpi-label">누적 프로젝트</div>
+</div>
 <div class="card kpi-card">
 <div class="kpi-num">4회</div>
 <div class="kpi-label">정상회의 수송</div>
@@ -265,119 +344,45 @@ img{max-width:100%;display:block}
 <div class="kpi-label">수행 국가</div>
 </div>
 <div class="card kpi-card">
-<div class="kpi-num">160+개</div>
-<div class="kpi-label">글로벌 클라이언트</div>
-</div>
-<div class="card kpi-card">
-<div class="kpi-num">130+건</div>
-<div class="kpi-label">누적 프로젝트</div>
+<div class="kpi-num">0건</div>
+<div class="kpi-label">운영 사고 (9년)</div>
 </div>
 </div>
-<div class="kpi-grid fade-up" style="grid-template-columns:repeat(2,1fr)">
-<div class="card kpi-card">
-<div class="kpi-num">10+건</div>
-<div class="kpi-label">럭셔리 브랜드 행사</div>
-</div>
-<div class="card kpi-card">
-<div class="kpi-num">9년</div>
-<div class="kpi-label">무사고 운영</div>
-</div>
+<div class="why-matters fade-up" style="margin-top:48px">
+<p>이 숫자들은 단순한 실적이 아닙니다.<br>매 프로젝트마다 반복 검증된 운영 시스템과, 현장에서 단련된 팀의 결과물입니다.</p>
 </div>
 </div>
 </section>
 
-<!-- TRUSTED PARTNERS -->
-<section class="section bg-light partner-section">
-<div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">TRUSTED PARTNERS</div>
-<h2 class="section-title fade-up">신뢰하는 파트너사</h2>
-</div>
-<div class="partner-cat fade-up">
-<h3>Government & Public</h3>
-<div class="partner-logos">
-<span>APEC</span><span>ADB</span><span>외교부</span><span>문화체육관광부</span><span>부산시</span><span>한국은행</span><span>서울관광재단</span>
-</div>
-</div>
-<div class="partner-cat fade-up">
-<h3>Luxury & Fashion</h3>
-<div class="partner-logos">
-<span>Louis Vuitton</span><span>Dior</span><span>CHANEL</span><span>BURBERRY</span><span>Moncler</span>
-</div>
-</div>
-<div class="partner-cat fade-up">
-<h3>Entertainment</h3>
-<div class="partner-logos">
-<span>SM C&C</span><span>NCT</span><span>GQ</span><span>AFC</span>
-</div>
-</div>
-<div class="partner-cat fade-up">
-<h3>Corporate</h3>
-<div class="partner-logos">
-<span>현대자동차</span><span>에버랜드</span><span>롯데카드</span><span>Visa</span>
-</div>
-</div>
-<p class="partner-note fade-up">* 정부기관, 대기업, 호텔 등 300여 개 고객사와 함께합니다.</p>
-</div>
-</section>
-
-<!-- PROJECT ARCHIVE -->
+<!-- WHY THIS MATTERS -->
 <section class="section bg-darker">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">PROJECT ARCHIVE</div>
-<h2 class="section-title fade-up">프로젝트 타임라인</h2>
-<p class="section-desc fade-up" style="margin:0 auto">2016년 창업 이래 130건 이상의 프로젝트를 성공적으로 수행했습니다</p>
+<div class="section-label fade-up">Why This Matters</div>
+<h2 class="section-title fade-up">왜 레퍼런스가 중요한가</h2>
 </div>
-<div class="timeline fade-up">
-<div class="timeline-year">
-<h3>2025</h3>
-<div class="timeline-items">
-<div class="timeline-item">APEC 2025 KOREA 공식 수송</div>
-<div class="timeline-item">SBS 가요대전 Summer 셔틀 운영</div>
-<div class="timeline-item">산단타요 통근버스 TMS 도입</div>
+<div class="why-matters fade-up">
+<p>이동 운영은 리허설이 없습니다.<br>당일 현장에서 바로 실행되고, 실패하면 되돌릴 수 없습니다.<br><br>그래서 우리는 '해본 적 있는가'가 가장 중요한 기준이라고 믿습니다.<br>정상회의 보안 동선, 럭셔리 브랜드의 프라이버시 기준, 수천 명 동시 셔틀의 변동성 &mdash;<br>이런 것들은 매뉴얼로 배울 수 없고, 현장에서만 축적됩니다.<br><br>그라운드케이의 레퍼런스는 곧 귀사 프로젝트의 안전장치입니다.</p>
 </div>
-</div>
-<div class="timeline-year">
-<h3>2023</h3>
-<div class="timeline-items">
-<div class="timeline-item">ADB 연차총회 (68개국)</div>
-<div class="timeline-item">Louis Vuitton Pre-Fall Show</div>
-</div>
-</div>
-<div class="timeline-year">
-<h3>2022</h3>
-<div class="timeline-items">
-<div class="timeline-item">Dior Fall 2022 Show</div>
-</div>
-</div>
-<div class="timeline-year">
-<h3>2019</h3>
-<div class="timeline-items">
-<div class="timeline-item">한-아세안 특별 정상회의 (차량 150대)</div>
-<div class="timeline-item">CHANEL Metiers d'Art Show</div>
-</div>
-</div>
-<div class="timeline-year">
-<h3>2018</h3>
-<div class="timeline-items">
-<div class="timeline-item">정보통신부 장관회의 11개국 의전</div>
-</div>
-</div>
-</div>
-<p class="timeline-note fade-up">* 더 많은 프로젝트 레퍼런스는 제휴 문의를 통해 확인하실 수 있습니다.</p>
 </div>
 </section>
 
-<!-- CTA -->
+<!-- FINAL CTA -->
 <section class="cta-section">
 <div class="container">
-<h2 class="fade-up">다음 행사의 이동, GroundK에 맡기세요</h2>
-<p class="fade-up">3분이면 충분합니다 &middot; 48시간 내 맞춤 제안서 회신</p>
+<h2 class="fade-up">우리 행사에 맞는 운영 레퍼런스와<br>제안서를 함께 받아보세요</h2>
+<p class="fade-up">유사 프로젝트 레퍼런스 + 맞춤 운영 제안서를 48시간 내에 보내드립니다</p>
 <div class="fade-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-<a href="ir.html#contact" class="btn btn-white">제안요청(RFP) &rarr;</a>
-<a href="ir.html#contact" class="btn btn-ghost">For Investors</a>
+<a href="ir.html#contact" class="btn btn-white">무료 제안서 받기 &rarr;</a>
+<a href="ir.html#contact" class="btn btn-ghost">문의하기</a>
 </div>
+</div>
+</section>
+
+<!-- PRE-FOOTER -->
+<section style="padding:48px 0;background:#fff;border-top:1px solid #e5e5e5;text-align:center">
+<div class="container">
+<p style="font-size:1rem;color:var(--gray-500);line-height:1.8">국가급 행사에서 검증된 운영 역량을 귀사의 프로젝트에 그대로 적용해보세요.</p>
 </div>
 </section>
 
@@ -387,7 +392,7 @@ img{max-width:100%;display:block}
 <div class="footer-grid">
 <div>
 <div class="footer-brand">GROUND.<span>K</span></div>
-<p class="footer-desc">대한민국 대표 모빌리티 플랫폼 기업. 국제회의부터 기업행사까지, 이동의 모든 것을 통합합니다.</p>
+<p class="footer-desc">PCO&middot;MICE 대행사를 위한 원스톱 이동 운영 파트너. 국제회의부터 기업행사까지, 이동의 모든 것을 설계합니다.</p>
 </div>
 <div>
 <h4>Services</h4>
@@ -401,16 +406,16 @@ img{max-width:100%;display:block}
 <div>
 <h4>Company</h4>
 <ul class="footer-links">
-<li><a href="performance.html">도입사례</a></li>
+<li><a href="performance.html">레퍼런스</a></li>
+<li><a href="company.html">회사소개</a></li>
 <li><a href="ir.html">IR</a></li>
-<li><a href="#">뉴스룸</a></li>
 </ul>
 </div>
 <div>
 <h4>Contact</h4>
 <div class="footer-contact-item">02-863-3540</div>
 <div class="footer-contact-item">ir@groundk.co.kr</div>
-<a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">제안요청</a>
+<a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">문의하기</a>
 </div>
 </div>
 <div class="footer-brands">
