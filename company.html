@@ -9,7 +9,7 @@
 /* ========== SHARED DESIGN SYSTEM ========== */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#3b82f6;--blue-dark:#2563eb;--blue-glow:rgba(59,130,246,.08);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#3b82f6,#2563eb,#1d4ed8);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(59,130,246,.15);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+:root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#000;--blue-dark:#000;--blue-glow:rgba(0,0,0,.06);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#000,#111,#222);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(0,0,0,.1);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
 html{scroll-behavior:smooth}
 body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--navy);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
 a{text-decoration:none;color:inherit;transition:var(--transition)}
@@ -21,7 +21,7 @@ img{max-width:100%;display:block}
 .section-desc{font-size:1.05rem;color:var(--text-secondary);max-width:640px;line-height:1.8}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--transition);border:none;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--gradient-blue);color:#fff;box-shadow:var(--shadow-blue)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
 .btn-outline{border:1.5px solid #e5e5e5;color:#333;background:transparent}
 .btn-outline:hover{border-color:var(--blue);background:var(--blue-glow)}
 .bg-dark{background:var(--navy)}
@@ -35,7 +35,7 @@ img{max-width:100%;display:block}
 .card{background:var(--navy-mid);border:1px solid #e5e5e5;border-radius:var(--radius-lg);padding:36px;transition:var(--transition)}
 .card:hover{transform:translateY(-2px);border-color:#ccc;box-shadow:var(--shadow-md)}
 .bg-light .card{background:#fff;border-color:var(--gray-200);color:var(--gray-800)}
-.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,130,246,.1)}
+.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:1px solid #e5e5e5}
@@ -118,7 +118,7 @@ img{max-width:100%;display:block}
 
 .awards-year{margin-bottom:36px}
 .awards-year h3{font-size:1.15rem;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.awards-year h3 span{font-size:.75rem;font-weight:600;background:rgba(59,130,246,.1);color:var(--blue);padding:3px 10px;border-radius:50px}
+.awards-year h3 span{font-size:.75rem;font-weight:600;background:rgba(0,0,0,.1);color:var(--blue);padding:3px 10px;border-radius:50px}
 .awards-year .awards-list{display:flex;flex-wrap:wrap;gap:10px}
 .awards-year .award-tag{font-size:.85rem;color:var(--gray-300);background:var(--navy-mid);border:1px solid #e5e5e5;padding:8px 18px;border-radius:50px;transition:var(--transition)}
 .awards-year .award-tag:hover{border-color:#ccc}
@@ -425,8 +425,8 @@ img{max-width:100%;display:block}
 </div>
 <div>
 <h4>Contact</h4>
-<div class="footer-contact-item">&#128222; 02-863-3540</div>
-<div class="footer-contact-item">&#9993; ir@groundk.co.kr</div>
+<div class="footer-contact-item">02-863-3540</div>
+<div class="footer-contact-item">ir@groundk.co.kr</div>
 <a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">제안요청</a>
 </div>
 </div>

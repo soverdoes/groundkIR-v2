@@ -9,7 +9,7 @@
 /* ========== SHARED DESIGN SYSTEM ========== */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#3b82f6;--blue-dark:#2563eb;--blue-glow:rgba(59,130,246,.08);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#3b82f6,#2563eb,#1d4ed8);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(59,130,246,.15);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+:root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#000;--blue-dark:#000;--blue-glow:rgba(0,0,0,.08);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#000,#000,#000);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(0,0,0,.15);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
 html{scroll-behavior:smooth}
 body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--navy);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
 a{text-decoration:none;color:inherit;transition:var(--transition)}
@@ -21,7 +21,7 @@ img{max-width:100%;display:block}
 .section-desc{font-size:1.05rem;color:var(--text-secondary);max-width:640px;line-height:1.8}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--transition);border:none;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--gradient-blue);color:#fff;box-shadow:var(--shadow-blue)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
 .btn-outline{border:1.5px solid #e5e5e5;color:#333;background:transparent}
 .btn-outline:hover{border-color:var(--blue);background:var(--blue-glow)}
 .bg-dark{background:var(--navy)}
@@ -35,7 +35,7 @@ img{max-width:100%;display:block}
 .card{background:var(--navy-mid);border:1px solid #e5e5e5;border-radius:var(--radius-lg);padding:36px;transition:var(--transition)}
 .card:hover{transform:translateY(-2px);border-color:#ccc;box-shadow:var(--shadow-md)}
 .bg-light .card{background:#fff;border-color:var(--gray-200);color:var(--gray-800)}
-.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,130,246,.1)}
+.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,0,0,.1)}
 
 /* Fade animation */
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
@@ -279,17 +279,17 @@ img{max-width:100%;display:block}
 </div>
 <div class="grid-3">
 <div class="card pain-card fade-up">
-<div class="icon">&#128176;</div>
+<div class="icon"></div>
 <h3>다중 계약의 피로도</h3>
 <p>버스 대절, 리무진 예약, 기사 관리까지&#8230; 흩어진 계약과 정산 스트레스, 언제까지 엑셀로 버티시겠습니까?</p>
 </div>
 <div class="card pain-card fade-up">
-<div class="icon">&#9888;&#65039;</div>
+<div class="icon"></div>
 <h3>통제 불능의 현장 변수</h3>
 <p>VIP 동선 변경, 기사 노쇼, 차량 고장&#8230; 아찔한 돌발 상황에 무전기와 감에만 의존하는 현장은 불안합니다.</p>
 </div>
 <div class="card pain-card fade-up">
-<div class="icon">&#128202;</div>
+<div class="icon"></div>
 <h3>보여줄 결과가 없다</h3>
 <p>행사는 끝났는데 발주처에 제출할 성과 데이터가 없습니다. 숫자 없는 보고서로는 다음 계약을 따올 수 없습니다.</p>
 </div>
@@ -306,17 +306,17 @@ img{max-width:100%;display:block}
 </div>
 <div class="grid-3">
 <div class="card solution-card fade-up">
-<div class="icon">&#127919;</div>
+<div class="icon"></div>
 <h3>전화 한 통이면 끝</h3>
 <p>차량 수배, 기사 배정, 현장 운영까지 단일 창구로 해결. 당신은 행사 본연의 기획에만 집중하세요.</p>
 </div>
 <div class="card solution-card fade-up">
-<div class="icon">&#128225;</div>
+<div class="icon"></div>
 <h3>모든 차량이 내 화면 안에</h3>
 <p>자체 관제 시스템으로 모든 차량 위치와 상태를 실시간 확인. 돌발 상황 발생 시 30초 내 대응 체계가 가동됩니다.</p>
 </div>
 <div class="card solution-card fade-up">
-<div class="icon">&#128200;</div>
+<div class="icon"></div>
 <h3>행사 끝, 보고서 도착</h3>
 <p>운행 기록, 비용 효율성, 만족도 지표가 담긴 데이터 리포트가 자동 생성됩니다. 발주처 보고가 쉬워집니다.</p>
 </div>
@@ -363,22 +363,22 @@ img{max-width:100%;display:block}
 </div>
 <div class="grid-4 fade-up">
 <div class="card strength-card">
-<div class="icon">&#127942;</div>
+<div class="icon"></div>
 <h3>&#44397;&#44032;&#44553; &#47112;&#54140;&#47088;&#49828;</h3>
 <p>APEC, 한-아세안 등 정상회의 4회 공식 수송. 37명 기업이 국가급 신뢰를 획득한 유일한 사례</p>
 </div>
 <div class="card strength-card">
-<div class="icon">&#128187;</div>
+<div class="icon"></div>
 <h3>자체 개발 관제 시스템</h3>
 <p>T-RiseUp 실시간 대시보드로 차량 위치, 탑승 현황, 이상 징후를 한 화면에서 즉시 파악</p>
 </div>
 <div class="card strength-card">
-<div class="icon">&#128274;</div>
+<div class="icon"></div>
 <h3>9년 무사고 보안 체계</h3>
 <p>VIP 동선 NDA 체결, 예비 차량 상시 대기, 100% 책임 보험으로 완벽한 리스크 관리</p>
 </div>
 <div class="card strength-card">
-<div class="icon">&#127758;</div>
+<div class="icon"></div>
 <h3>&#44544;&#47196;&#48268; &#45348;&#53944;&#50892;&#53356;</h3>
 <p>서울·부산·싱가포르 3거점, 50+개국 파트너 네트워크로 어디서든 동일한 품질 보장</p>
 </div>
@@ -434,8 +434,8 @@ img{max-width:100%;display:block}
 </div>
 <div>
 <h4>Contact</h4>
-<div class="footer-contact-item">&#128222; 02-863-3540</div>
-<div class="footer-contact-item">&#9993; ir@groundk.co.kr</div>
+<div class="footer-contact-item">02-863-3540</div>
+<div class="footer-contact-item">ir@groundk.co.kr</div>
 <a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">&#51228;&#50504;&#50836;&#52397;</a>
 </div>
 </div>

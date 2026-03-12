@@ -9,7 +9,7 @@
 /* ========== SHARED DESIGN SYSTEM ========== */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#3b82f6;--blue-dark:#2563eb;--blue-glow:rgba(59,130,246,.08);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#3b82f6,#2563eb,#1d4ed8);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(59,130,246,.15);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+:root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#000;--blue-dark:#000;--blue-glow:rgba(0,0,0,.06);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#000,#111,#222);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(0,0,0,.1);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
 html{scroll-behavior:smooth}
 body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--navy);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
 a{text-decoration:none;color:inherit;transition:var(--transition)}
@@ -21,7 +21,7 @@ img{max-width:100%;display:block}
 .section-desc{font-size:1.05rem;color:var(--text-secondary);max-width:640px;line-height:1.8}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--transition);border:none;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--gradient-blue);color:#fff;box-shadow:var(--shadow-blue)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
 .btn-outline{border:1.5px solid #e5e5e5;color:#333;background:transparent}
 .btn-outline:hover{border-color:var(--blue);background:var(--blue-glow)}
 .bg-dark{background:var(--navy)}
@@ -35,7 +35,7 @@ img{max-width:100%;display:block}
 .card{background:var(--navy-mid);border:1px solid #e5e5e5;border-radius:var(--radius-lg);padding:36px;transition:var(--transition)}
 .card:hover{transform:translateY(-2px);border-color:#ccc;box-shadow:var(--shadow-md)}
 .bg-light .card{background:#fff;border-color:var(--gray-200);color:var(--gray-800)}
-.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,130,246,.1)}
+.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:1px solid #e5e5e5}
@@ -103,7 +103,7 @@ img{max-width:100%;display:block}
 .svc-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .svc-section.reverse{direction:rtl}
 .svc-section.reverse > *{direction:ltr}
-.svc-info .svc-tag{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);background:rgba(59,130,246,.1);padding:6px 16px;border-radius:50px;margin-bottom:16px}
+.svc-info .svc-tag{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);background:rgba(0,0,0,.1);padding:6px 16px;border-radius:50px;margin-bottom:16px}
 .svc-info h2{font-size:1.8rem;font-weight:800;margin-bottom:8px}
 .svc-info .svc-sub{font-size:1rem;color:var(--text-secondary);margin-bottom:20px;line-height:1.8}
 .svc-features{list-style:none;display:flex;flex-direction:column;gap:12px}
@@ -113,11 +113,11 @@ img{max-width:100%;display:block}
 
 .rev-card{position:relative;overflow:hidden}
 .rev-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.rev-card:nth-child(1)::before{background:#3b82f6}
+.rev-card:nth-child(1)::before{background:#000}
 .rev-card:nth-child(2)::before{background:#8b5cf6}
 .rev-card:nth-child(3)::before{background:#06b6d4}
 .rev-tag{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
-.rev-tag.blue{color:#3b82f6}
+.rev-tag.blue{color:#000}
 .rev-tag.purple{color:#8b5cf6}
 .rev-tag.cyan{color:#06b6d4}
 .rev-card h3{font-size:1.2rem;font-weight:800;margin-bottom:10px}
@@ -200,7 +200,7 @@ img{max-width:100%;display:block}
 </div>
 <div class="arch-arrow">&#8594;</div>
 <div class="arch-item core">
-<div class="arch-label">&#9733; Core Platform</div>
+<div class="arch-label">Core Platform</div>
 <h3>T-RiseUp</h3>
 <div class="arch-type">All-in-One Mobility SaaS</div>
 <div class="arch-desc">PMS / ERP 클라우드 관제</div>
@@ -231,7 +231,7 @@ img{max-width:100%;display:block}
 <li>다국어 가능 전담 매니저 배정</li>
 </ul>
 </div>
-<div class="svc-visual">&#128663;</div>
+<div class="svc-visual"></div>
 </div>
 </div>
 </section>
@@ -251,7 +251,7 @@ img{max-width:100%;display:block}
 <li>다양한 운수사(전세버스, 렌터카, 택시) 맞춤형 설정</li>
 </ul>
 </div>
-<div class="svc-visual">&#128187;</div>
+<div class="svc-visual"></div>
 </div>
 </div>
 </section>
@@ -271,7 +271,7 @@ img{max-width:100%;display:block}
 <li>전국 160개 파트너 운수사 네트워크 활용</li>
 </ul>
 </div>
-<div class="svc-visual">&#128656;</div>
+<div class="svc-visual"></div>
 </div>
 </div>
 </section>
@@ -317,17 +317,17 @@ img{max-width:100%;display:block}
 </div>
 <div class="grid-3">
 <div class="card ops-card fade-up">
-<div class="ops-icon">&#128203;</div>
+<div class="ops-icon"></div>
 <h3>SOP 표준화</h3>
 <p>행사 유형별 SOP 템플릿, 기사&#183;현장 매니저 브리핑 체크리스트, 비상 대응 매뉴얼로 누가 운영해도 동일한 품질을 보장합니다.</p>
 </div>
 <div class="card ops-card fade-up">
-<div class="ops-icon">&#128225;</div>
+<div class="ops-icon"></div>
 <h3>실시간 관제</h3>
 <p>GPS 기반 차량 추적, 실시간 탑승 현황 집계, 돌발 상황 자동 알림으로 관제 센터에서 즉각 대응합니다.</p>
 </div>
 <div class="card ops-card fade-up">
-<div class="ops-icon">&#128200;</div>
+<div class="ops-icon"></div>
 <h3>데이터 리포팅</h3>
 <p>운행 데이터 자동 수집, KPI 달성률 대시보드, 개선 제안 리포트를 PCO가 발주처에 제출할 수 있는 형태로 제공합니다.</p>
 </div>
@@ -374,8 +374,8 @@ img{max-width:100%;display:block}
 </div>
 <div>
 <h4>Contact</h4>
-<div class="footer-contact-item">&#128222; 02-863-3540</div>
-<div class="footer-contact-item">&#9993; ir@groundk.co.kr</div>
+<div class="footer-contact-item">02-863-3540</div>
+<div class="footer-contact-item">ir@groundk.co.kr</div>
 <a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">제안요청</a>
 </div>
 </div>

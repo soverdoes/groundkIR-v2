@@ -9,7 +9,7 @@
 /* ========== SHARED DESIGN SYSTEM ========== */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#3b82f6;--blue-dark:#2563eb;--blue-glow:rgba(59,130,246,.08);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#3b82f6,#2563eb,#1d4ed8);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(59,130,246,.15);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+:root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#000;--blue-dark:#000;--blue-glow:rgba(0,0,0,.06);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#000,#111,#222);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(0,0,0,.1);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
 html{scroll-behavior:smooth}
 body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--navy);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
 a{text-decoration:none;color:inherit;transition:var(--transition)}
@@ -21,7 +21,7 @@ img{max-width:100%;display:block}
 .section-desc{font-size:1.05rem;color:var(--text-secondary);max-width:640px;line-height:1.8}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--transition);border:none;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--gradient-blue);color:#fff;box-shadow:var(--shadow-blue)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
 .btn-outline{border:1.5px solid #e5e5e5;color:#333;background:transparent}
 .btn-outline:hover{border-color:var(--blue);background:var(--blue-glow)}
 .bg-dark{background:var(--navy)}
@@ -35,7 +35,7 @@ img{max-width:100%;display:block}
 .card{background:var(--navy-mid);border:1px solid #e5e5e5;border-radius:var(--radius-lg);padding:36px;transition:var(--transition)}
 .card:hover{transform:translateY(-2px);border-color:#ccc;box-shadow:var(--shadow-md)}
 .bg-light .card{background:#fff;border-color:var(--gray-200);color:var(--gray-800)}
-.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,130,246,.1)}
+.bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:1px solid #e5e5e5}
@@ -96,8 +96,8 @@ img{max-width:100%;display:block}
 .highlight-card p{font-size:.9rem;color:var(--gray-400);line-height:1.7}
 
 .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.kpi-grid .kpi-item{text-align:center;padding:48px 24px;background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.12);border-radius:var(--radius-lg);transition:var(--transition)}
-.kpi-grid .kpi-item:hover{border-color:rgba(59,130,246,.3);background:rgba(59,130,246,.08)}
+.kpi-grid .kpi-item{text-align:center;padding:48px 24px;background:rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.12);border-radius:var(--radius-lg);transition:var(--transition)}
+.kpi-grid .kpi-item:hover{border-color:rgba(0,0,0,.3);background:rgba(0,0,0,.08)}
 .kpi-grid .kpi-num{font-size:clamp(2.5rem,5vw,3.5rem);font-weight:900;color:var(--blue);margin-bottom:8px}
 .kpi-grid .kpi-label{font-size:.95rem;color:var(--gray-400)}
 .kpi-grid .kpi-sub{font-size:.8rem;color:var(--gray-500);margin-top:4px}
@@ -107,7 +107,7 @@ img{max-width:100%;display:block}
 .finance-table td{padding:14px 20px;font-size:.95rem;color:var(--gray-800);border-bottom:1px solid var(--gray-200)}
 .finance-table .growth{color:#22c55e;font-weight:700;font-size:.85rem}
 .finance-metrics{display:flex;gap:32px;justify-content:center;margin-top:40px;flex-wrap:wrap}
-.finance-metrics .fm-item{text-align:center;padding:16px 24px;background:rgba(59,130,246,.05);border-radius:var(--radius);border:1px solid rgba(59,130,246,.1)}
+.finance-metrics .fm-item{text-align:center;padding:16px 24px;background:rgba(0,0,0,.05);border-radius:var(--radius);border:1px solid rgba(0,0,0,.1)}
 .finance-metrics .fm-item .fm-value{font-size:1rem;font-weight:700;color:var(--blue-dark);margin-bottom:4px}
 .finance-metrics .fm-item .fm-label{font-size:.8rem;color:var(--gray-500)}
 
@@ -128,16 +128,16 @@ img{max-width:100%;display:block}
 .tam-card p{font-size:.9rem;color:var(--gray-400);line-height:1.6}
 
 .material-item{display:flex;align-items:center;gap:16px;padding:24px 28px;background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);transition:var(--transition);cursor:pointer}
-.material-item:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,130,246,.1)}
+.material-item:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .material-item .mat-icon{font-size:1.5rem;flex-shrink:0}
 .material-item h4{font-size:.95rem;font-weight:700;color:var(--gray-800);margin-bottom:2px}
 .material-item p{font-size:.8rem;color:var(--gray-500)}
-.material-item .mat-badge{margin-left:auto;font-size:.7rem;font-weight:700;color:var(--blue);background:rgba(59,130,246,.08);padding:4px 10px;border-radius:50px;flex-shrink:0}
+.material-item .mat-badge{margin-left:auto;font-size:.7rem;font-weight:700;color:var(--blue);background:rgba(0,0,0,.08);padding:4px 10px;border-radius:50px;flex-shrink:0}
 
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .contact-form{display:flex;flex-direction:column;gap:16px}
 .contact-form input,.contact-form textarea{width:100%;padding:14px 18px;border-radius:var(--radius);border:1px solid #e5e5e5;background:#fff;color:#111;font-family:inherit;font-size:.95rem;transition:var(--transition)}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--blue);background:rgba(59,130,246,.05)}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--blue);background:rgba(0,0,0,.05)}
 .contact-form textarea{min-height:120px;resize:vertical}
 .contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--gray-500)}
 .contact-info{padding:40px;background:var(--navy-mid);border:1px solid #e5e5e5;border-radius:var(--radius-lg)}
@@ -357,7 +357,7 @@ img{max-width:100%;display:block}
 </div>
 <div class="grid-2 fade-up">
 <div class="material-item">
-<div class="mat-icon">&#128196;</div>
+<div class="mat-icon"></div>
 <div>
 <h4>Company One-pager</h4>
 <p>1페이지 핵심 요약 자료</p>
@@ -365,7 +365,7 @@ img{max-width:100%;display:block}
 <span class="mat-badge">PDF</span>
 </div>
 <div class="material-item">
-<div class="mat-icon">&#128202;</div>
+<div class="mat-icon"></div>
 <div>
 <h4>Company Fact Sheet</h4>
 <p>기업 기본 정보 요약표</p>
@@ -373,7 +373,7 @@ img{max-width:100%;display:block}
 <span class="mat-badge">PDF</span>
 </div>
 <div class="material-item">
-<div class="mat-icon">&#128187;</div>
+<div class="mat-icon"></div>
 <div>
 <h4>T-RiseUp 솔루션 소개서</h4>
 <p>PMS/TMS 제품 개요</p>
@@ -381,7 +381,7 @@ img{max-width:100%;display:block}
 <span class="mat-badge">PDF</span>
 </div>
 <div class="material-item">
-<div class="mat-icon">&#128652;</div>
+<div class="mat-icon"></div>
 <div>
 <h4>RIDEUS 셔틀 서비스 소개서</h4>
 <p>셔틀 운영 대행 안내</p>
@@ -411,21 +411,21 @@ img{max-width:100%;display:block}
 <div class="contact-info">
 <h3>연락처</h3>
 <div class="contact-info-item">
-<div class="ci-icon">&#128205;</div>
+<div class="ci-icon"></div>
 <div>
 <div class="ci-label">본사</div>
 <div class="ci-value">서울시 강서구 마곡중앙로서 161-17, 7층</div>
 </div>
 </div>
 <div class="contact-info-item">
-<div class="ci-icon">&#9993;</div>
+<div class="ci-icon"></div>
 <div>
 <div class="ci-label">Email</div>
 <div class="ci-value">ir@groundk.co.kr</div>
 </div>
 </div>
 <div class="contact-info-item">
-<div class="ci-icon">&#128222;</div>
+<div class="ci-icon"></div>
 <div>
 <div class="ci-label">Phone</div>
 <div class="ci-value">02-863-3540</div>
@@ -475,8 +475,8 @@ img{max-width:100%;display:block}
 </div>
 <div>
 <h4>Contact</h4>
-<div class="footer-contact-item">&#128222; 02-863-3540</div>
-<div class="footer-contact-item">&#9993; ir@groundk.co.kr</div>
+<div class="footer-contact-item">02-863-3540</div>
+<div class="footer-contact-item">ir@groundk.co.kr</div>
 <a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">제안요청</a>
 </div>
 </div>
