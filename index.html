@@ -82,7 +82,7 @@ img{max-width:100%;display:block}
 @media(max-width:768px){
 .nav-links,.nav-cta{display:none}
 .hamburger{display:flex}
-.grid-2,.grid-3,.grid-4,.svc-asym,.why-grid{grid-template-columns:1fr}
+.grid-2,.grid-3,.grid-4,.svc-asym,.why-grid,.proof-banner{grid-template-columns:1fr}
 .why-left{position:static}
 .section{padding:60px 0}
 .footer-grid{grid-template-columns:1fr}
@@ -137,6 +137,9 @@ img{max-width:100%;display:block}
 .svc-side .service-card{flex:1;display:flex;flex-direction:column}
 .why-grid{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
 .why-left{position:sticky;top:100px}
+.proof-banner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.proof-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.proof-stat-card{background:rgba(255,255,255,.06);border-radius:var(--radius);padding:24px 20px;text-align:center}
 
 .process-step{text-align:center;position:relative}
 .process-step .step-num{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:var(--gradient-blue);font-weight:800;font-size:1.1rem;margin-bottom:16px;color:#fff}
@@ -461,28 +464,33 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
-<!-- 7. KPI -->
-<section class="section bg-light">
-<div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<h2 class="section-title fade-up">숫자로 증명한 신뢰</h2>
-</div>
-<div class="kpi-bar fade-up" style="grid-template-columns:repeat(4,1fr)">
-<div class="kpi-item"><div class="kpi-num">4회</div><div class="kpi-label">정상회의 공식 수송 수행</div></div>
-<div class="kpi-item"><div class="kpi-num">160+</div><div class="kpi-label">글로벌 클라이언트</div></div>
-<div class="kpi-item"><div class="kpi-num">130+</div><div class="kpi-label">프로젝트 수행</div></div>
-<div class="kpi-item"><div class="kpi-num">9년</div><div class="kpi-label">무사고 운영</div></div>
-</div>
-<p class="fade-up" style="text-align:center;font-size:.95rem;color:var(--gray-500);margin-top:32px;line-height:1.7">운영 실적은 단순 누적이 아닙니다. 반복 수행 가능한 체계의 결과입니다.</p>
-</div>
-</section>
-
-<!-- 8. TESTIMONIAL -->
+<!-- 7+8. KPI + TESTIMONIAL BANNER -->
 <section class="section bg-darker">
 <div class="container">
-<div class="testimonial fade-up">
-<blockquote>"100대가 넘는 차량 운영에 투입되던 현장 리소스가 크게 줄었습니다. 특히 실시간 관제 대시보드는 운영 가시성과 대응 속도를 동시에 높여줬습니다."</blockquote>
-<div class="testimonial-author">&mdash; 국제행사 프로젝트 담당자</div>
+<div class="proof-banner fade-up">
+<div class="proof-quote">
+<div style="font-size:4rem;line-height:1;color:var(--gray-600);opacity:.4;font-family:Georgia,serif">&ldquo;</div>
+<blockquote style="font-size:1.05rem;color:var(--gray-200);line-height:1.8;font-style:italic;margin:0 0 16px">100대가 넘는 차량 운영에 투입되던 현장 리소스가 크게 줄었습니다. 실시간 관제 대시보드는 운영 가시성과 대응 속도를 동시에 높여줬습니다.</blockquote>
+<div style="font-size:.85rem;color:var(--gray-500)">&mdash; 국제행사 프로젝트 담당자</div>
+</div>
+<div class="proof-stats">
+<div class="proof-stat-card">
+<div style="font-size:1.6rem;font-weight:800">4회</div>
+<div style="font-size:.8rem;color:var(--gray-400);margin-top:4px">정상회의 공식 수송</div>
+</div>
+<div class="proof-stat-card">
+<div style="font-size:1.6rem;font-weight:800">160+</div>
+<div style="font-size:.8rem;color:var(--gray-400);margin-top:4px">글로벌 클라이언트</div>
+</div>
+<div class="proof-stat-card">
+<div style="font-size:1.6rem;font-weight:800">130+</div>
+<div style="font-size:.8rem;color:var(--gray-400);margin-top:4px">프로젝트 수행</div>
+</div>
+<div class="proof-stat-card">
+<div style="font-size:1.6rem;font-weight:800">9년</div>
+<div style="font-size:.8rem;color:var(--gray-400);margin-top:4px">무사고 운영</div>
+</div>
+</div>
 </div>
 </div>
 </section>
