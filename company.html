@@ -78,6 +78,13 @@ img{max-width:100%;display:block}
 .section{padding:60px 0}
 .footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;text-align:center}
+.timeline-track{flex-direction:column;align-items:flex-start;gap:0;padding-bottom:0;margin-bottom:0}
+.timeline-track::before{top:0;bottom:0;left:4px;right:auto;width:1px;height:100%}
+.timeline-track>div{display:flex;align-items:center;gap:12px;padding:8px 0;flex:none}
+.timeline-dot{margin:0!important}
+.timeline-items{flex-direction:column;gap:0}
+.timeline-item{text-align:left;padding:12px 0;border-bottom:1px solid #e5e5e5}
+.timeline-item:last-child{border-bottom:none}
 }
 /* ========== END SHARED ========== */
 
@@ -103,12 +110,15 @@ img{max-width:100%;display:block}
 .whyus-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
 .whyus-card p{font-size:.9rem;color:var(--gray-500);line-height:1.7}
 
-.milestone-list{max-width:800px;margin:48px auto 0;display:flex;flex-direction:column;gap:0}
-.milestone-item{display:flex;align-items:flex-start;gap:24px;padding:28px 0;border-bottom:1px solid #e5e5e5;position:relative}
-.milestone-item:last-child{border-bottom:none}
-.milestone-num{width:32px;height:32px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;flex-shrink:0;margin-top:2px}
-.milestone-content h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
-.milestone-content p{font-size:.9rem;color:var(--gray-500);line-height:1.6}
+.timeline{max-width:900px;margin:48px auto 0}
+.timeline-track{display:flex;align-items:flex-end;position:relative;margin-bottom:24px;padding-bottom:12px}
+.timeline-track::before{content:'';position:absolute;bottom:4px;left:10%;right:10%;height:1px;background:#ccc;z-index:0}
+.timeline-dot{width:10px;height:10px;border-radius:50%;background:#111;position:relative;z-index:1}
+.timeline-year{font-size:11px;font-weight:600;color:var(--gray-500);margin-bottom:8px}
+.timeline-items{display:flex;gap:0}
+.timeline-item{flex:1;padding:0 8px;text-align:center}
+.timeline-item h3{font-size:12px;font-weight:600;margin-bottom:4px;line-height:1.5}
+.timeline-item p{font-size:11px;color:var(--gray-500);line-height:1.5}
 
 .network-block{max-width:800px;margin:0 auto;text-align:center}
 .network-block p{font-size:1.05rem;color:var(--gray-300);line-height:1.9;margin-bottom:16px}
@@ -260,53 +270,32 @@ img{max-width:100%;display:block}
 <div class="section-label fade-up">Milestones</div>
 <h2 class="section-title fade-up">주요 이정표</h2>
 </div>
-<div class="milestone-list">
-<div class="milestone-item fade-up">
-<div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-<div style="font-size:.75rem;font-weight:700;color:var(--gray-500);letter-spacing:1px">2016</div>
-<div class="milestone-num">1</div>
+<div class="timeline fade-up">
+<div class="timeline-track">
+<div style="flex:1;text-align:center"><div class="timeline-year">2016</div><div class="timeline-dot" style="margin:0 auto"></div></div>
+<div style="flex:1;text-align:center"><div class="timeline-year">2019</div><div class="timeline-dot" style="margin:0 auto"></div></div>
+<div style="flex:1;text-align:center"><div class="timeline-year">2021</div><div class="timeline-dot" style="margin:0 auto"></div></div>
+<div style="flex:1;text-align:center"><div class="timeline-year">2023</div><div class="timeline-dot" style="margin:0 auto"></div></div>
+<div style="flex:1;text-align:center"><div class="timeline-year">2025</div><div class="timeline-dot" style="margin:0 auto"></div></div>
 </div>
-<div class="milestone-content">
+<div class="timeline-items">
+<div class="timeline-item">
 <h3>프리미엄 이동 서비스 역량 구축</h3>
 <p>VIP 의전과 기업 수송 프로젝트 수행으로 현장 운영 체계를 고도화</p>
 </div>
-</div>
-<div class="milestone-item fade-up">
-<div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-<div style="font-size:.75rem;font-weight:700;color:var(--gray-500);letter-spacing:1px">2019</div>
-<div class="milestone-num">2</div>
-</div>
-<div class="milestone-content">
+<div class="timeline-item">
 <h3>국제행사 및 국가급 프로젝트 확대</h3>
 <p>복잡도 높은 행사 경험을 축적하며 신뢰 자산 확보</p>
 </div>
-</div>
-<div class="milestone-item fade-up">
-<div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-<div style="font-size:.75rem;font-weight:700;color:var(--gray-500);letter-spacing:1px">2021</div>
-<div class="milestone-num">3</div>
-</div>
-<div class="milestone-content">
+<div class="timeline-item">
 <h3>자체 관제·운영 시스템 고도화</h3>
 <p>실시간 관제, 배차, 리포팅 체계 강화</p>
 </div>
-</div>
-<div class="milestone-item fade-up">
-<div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-<div style="font-size:.75rem;font-weight:700;color:var(--gray-500);letter-spacing:1px">2023</div>
-<div class="milestone-num">4</div>
-</div>
-<div class="milestone-content">
+<div class="timeline-item">
 <h3>셔틀 및 반복 운영 확장</h3>
 <p>반복 이동 수요 대응을 위한 플랫폼 구조 발전</p>
 </div>
-</div>
-<div class="milestone-item fade-up">
-<div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-<div style="font-size:.75rem;font-weight:700;color:var(--gray-500);letter-spacing:1px">2025</div>
-<div class="milestone-num">5</div>
-</div>
-<div class="milestone-content">
+<div class="timeline-item">
 <h3>글로벌 파트너 네트워크 확대</h3>
 <p>국내외 프로젝트 대응 범위 확장</p>
 </div>
