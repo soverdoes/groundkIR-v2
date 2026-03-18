@@ -106,6 +106,7 @@ img{max-width:100%;display:block}
 .nav-links,.nav-cta-btn{display:none}
 .hamburger{display:flex}
 .grid-2,.grid-3,.grid-4,.svc-asym,.why-grid,.proof-banner{grid-template-columns:1fr}
+.oxt-card{min-height:auto;padding:36px 28px}
 .why-left{position:static}
 .section{padding:60px 0}
 .footer-grid{grid-template-columns:1fr}
@@ -181,6 +182,49 @@ img{max-width:100%;display:block}
 .testimonial{margin-top:48px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto}
 .testimonial blockquote{font-size:1.1rem;font-weight:500;color:#333;line-height:1.9;font-style:italic;position:relative;padding:0 20px}
 .testimonial-author{margin-top:16px;font-size:.9rem;font-weight:600;color:var(--blue)}
+
+/* OXT CARDS */
+.oxt-card{position:relative;border-radius:20px;padding:48px 40px;overflow:hidden;display:flex;flex-direction:column;min-height:480px}
+.oxt-blue{background:linear-gradient(135deg,#1a56db,#2563eb,#3b82f6)}
+.oxt-green{background:linear-gradient(135deg,#059669,#10b981,#34d399)}
+.oxt-badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.2);border-radius:50px;padding:6px 16px;margin-bottom:20px;width:fit-content}
+.oxt-icon-bg{position:absolute;top:20px;right:20px;pointer-events:none}
+.oxt-title{font-size:clamp(1.6rem,3vw,2rem);font-weight:900;color:#fff;line-height:1.3;margin-bottom:12px}
+.oxt-desc{font-size:.95rem;color:rgba(255,255,255,.85);margin-bottom:24px;line-height:1.7}
+.oxt-list{list-style:none;margin-bottom:24px}
+.oxt-list li{font-size:.95rem;color:#fff;font-weight:600;padding:6px 0;display:flex;align-items:center;gap:10px}
+.oxt-check{font-size:.85rem;opacity:.7}
+.oxt-new{display:inline-block;font-size:.6rem;font-weight:800;background:#ef4444;color:#fff;padding:2px 8px;border-radius:50px;margin-left:6px;vertical-align:middle}
+.oxt-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;margin-top:auto}
+.oxt-tags span{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.15);border-radius:50px;padding:6px 14px}
+.oxt-link{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-radius:12px;font-size:.95rem;font-weight:700;transition:var(--transition)}
+.oxt-link-white{background:#fff;color:#1a56db}
+.oxt-link-white:hover{background:#f0f4ff}
+.oxt-link-green{background:#fff;color:#059669;border:2px solid #059669}
+.oxt-link-green:hover{background:#ecfdf5}
+
+/* RISE UP STORIES */
+.rise-card{background:#fff;border:1px solid #e5e5e5;border-radius:16px;padding:32px;transition:var(--transition)}
+.rise-card:hover{border-color:#ccc;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.rise-name{font-size:1.3rem;font-weight:900;color:#111;margin-bottom:20px}
+.rise-before-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#111;margin-bottom:6px}
+.rise-before{font-size:.9rem;color:var(--gray-500);margin-bottom:20px;line-height:1.6}
+.rise-arrow{font-size:.9rem;font-weight:600;color:#1a56db;margin-bottom:16px}
+.rise-solution{font-size:.9rem;font-weight:600;color:#333;padding:12px 16px;border:1px solid #e5e5e5;border-radius:8px;margin-bottom:16px}
+.rise-result{font-size:.9rem;font-weight:600;color:#333;display:flex;align-items:center;gap:8px}
+.rise-check{color:#059669;font-size:.85rem}
+
+/* INSIGHT CARDS */
+.insight-card{display:block;text-decoration:none;transition:var(--transition)}
+.insight-card:hover{transform:translateY(-4px)}
+.insight-thumb{aspect-ratio:16/10;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.insight-meta{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.insight-cat{font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:4px}
+.cat-project{background:#e0edff;color:#1a56db}
+.cat-insight{background:#e0edff;color:#1a56db}
+.cat-news{background:#f3f4f6;color:#555}
+.insight-date{font-size:.8rem;color:var(--gray-600)}
+.insight-title{font-size:1.05rem;font-weight:700;color:#111;line-height:1.5}
 
 .cta-section{padding:100px 0;background:#f0f7ff;text-align:center;color:#111}
 .cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
@@ -313,228 +357,134 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
-<!-- 2. TRUST / REFERENCE -->
+<!-- 2. OPERATION × TECHNOLOGY -->
 <section class="section bg-light">
 <div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<h2 class="section-title fade-up">21개국 정상을 움직인 팀이, 지금 여기 있습니다</h2>
+<div style="text-align:center;margin-bottom:56px">
+<div class="section-label fade-up">OPERATION &times; TECHNOLOGY</div>
+<h2 class="section-title fade-up">현장을 아는 기술,<br>기술을 아는 현장</h2>
+<p class="section-desc fade-up" style="margin:0 auto">그라운드케이만의 Full-Stack 모빌리티</p>
 </div>
-<div class="grid-2">
-<div class="card fade-up" style="padding:0;overflow:hidden">
-<div class="hero-image" style="aspect-ratio:16/9;border:none;border-radius:12px 12px 0 0">
-<div class="placeholder">
-<p style="font-weight:700;font-size:1rem">Louis Vuitton Pre-Fall VIP 수송</p>
+<div class="grid-2 fade-up">
+<!-- SERVICE card -->
+<div class="oxt-card oxt-blue">
+<span class="oxt-badge">SERVICE</span>
+<div class="oxt-icon-bg">
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="opacity:.15"><rect x="10" y="30" width="60" height="25" rx="8" stroke="#fff" stroke-width="3"/><circle cx="25" cy="55" r="6" stroke="#fff" stroke-width="3"/><circle cx="55" cy="55" r="6" stroke="#fff" stroke-width="3"/><path d="M50 30V20H30V30" stroke="#fff" stroke-width="3"/></svg>
 </div>
+<h3 class="oxt-title">Your Ground<br>Travel Partner</h3>
+<p class="oxt-desc">당신의 비즈니스 이동을 책임지는 운영 전문 파트너입니다.</p>
+<ul class="oxt-list">
+<li><span class="oxt-check">&#10003;</span> 프리미엄 의전수송</li>
+<li><span class="oxt-check">&#10003;</span> 메가이벤트 수송</li>
+<li><span class="oxt-check">&#10003;</span> 셔틀 위탁관리 (RIDEUS)</li>
+</ul>
+<div class="oxt-tags">
+<span>24/7 운영</span><span>50개국 네트워크</span><span>수송상황실(C.P.)</span>
 </div>
-<div style="padding:28px 32px">
-<h3 style="font-size:1.15rem;font-weight:800;margin-bottom:10px">글로벌 브랜드가 선택한 VIP 의전</h3>
-<p style="font-size:.95rem;color:var(--gray-500);line-height:1.7">보안, 응대, 동선 관리까지 빈틈없는 프리미엄 이동 경험을 제공합니다. 브랜드 경험을 해치지 않는 정교한 운영 품질로 VIP 의전의 기준을 높입니다.</p>
+<a href="solutions.html" class="oxt-link oxt-link-white">서비스 전체 보기 <span>&rarr;</span></a>
 </div>
+<!-- SOLUTION card -->
+<div class="oxt-card oxt-green">
+<span class="oxt-badge">SOLUTION</span>
+<div class="oxt-icon-bg">
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="opacity:.15"><path d="M20 60L35 30L50 50L65 20" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 20H65V25" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
 </div>
-<div class="card fade-up" style="padding:0;overflow:hidden">
-<div class="hero-image" style="aspect-ratio:16/9;border:none;border-radius:12px 12px 0 0">
-<div class="placeholder">
-<p style="font-weight:700;font-size:1rem">APEC 2025 KOREA 정상회의 공식 수송 운영</p>
+<h3 class="oxt-title">Your Ground<br>Digital Partner</h3>
+<p class="oxt-desc">당신의 수송 비즈니스를 한 단계 올리는 디지털 전환 파트너입니다.</p>
+<ul class="oxt-list">
+<li><span class="oxt-check">&#10003;</span> T-RiseUp PMS (의전·수송)</li>
+<li><span class="oxt-check">&#10003;</span> T-RiseUp TMS (관광·셔틀)</li>
+<li><span class="oxt-check">&#10003;</span> RIDEUS Marketplace <span class="oxt-new">NEW</span></li>
+</ul>
+<div class="oxt-tags">
+<span>AI 견적 95%+</span><span>GPS 관제</span><span>D2C 채널</span>
 </div>
-</div>
-<div style="padding:28px 32px">
-<h3 style="font-size:1.15rem;font-weight:800;margin-bottom:10px">21개국 정상급 의전과 대규모 수송을 총괄한 프로젝트</h3>
-<p style="font-size:.95rem;color:var(--gray-500);line-height:1.7">APEC 2025 KOREA 정상회의 공식 수송관리 파트너로서, 정상급 VIP 의전과 대규모 참가단 이동을 안정적으로 수행했습니다. 국가급 행사에서 검증된 운영 체계와 현장 대응 역량을 보유하고 있습니다.</p>
-</div>
-</div>
-</div>
-<div class="credential-bar" style="margin-top:48px;padding:24px 0;border:none;background:transparent">
-<p style="text-align:center;font-size:.85rem;color:var(--gray-600);margin-bottom:16px">국제행사와 글로벌 브랜드가 신뢰한 운영 파트너</p>
-<div class="credential-logos">
-<span>APEC 2025</span>
-<span>외교부</span>
-<span>문화체육관광부</span>
-<span>한국은행</span>
-<span>CHANEL</span>
-<span>Louis Vuitton</span>
-<span>Dior</span>
-<span>현대자동차</span>
-<span>SM C&amp;C</span>
+<a href="solutions.html#triseup-pms" class="oxt-link oxt-link-green">솔루션 전체 보기 <span>&rarr;</span></a>
 </div>
 </div>
 </div>
 </section>
 
-<!-- 3. PAIN POINT -->
+<!-- 3. RISE UP STORIES -->
 <section class="section bg-darker">
 <div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">PAIN POINT</div>
-<h2 class="section-title fade-up">복잡한 이동 운영, 문제는 비슷합니다</h2>
-<p class="section-desc fade-up" style="margin:0 auto">행사 규모와 관계없이 담당자는 같은 문제를 반복합니다.</p>
-</div>
-<div class="fade-up" style="max-width:800px;margin:0 auto">
-<div style="display:flex;align-items:flex-start;gap:32px;padding:32px 0;border-bottom:1px solid var(--gray-800)">
-<div style="font-size:3rem;font-weight:300;color:var(--gray-700);line-height:1;flex-shrink:0;min-width:72px">01</div>
+<div class="fade-up" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px">
 <div>
-<h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">공급사 관리가 분산됩니다</h3>
-<p style="font-size:.9rem;color:var(--gray-400);line-height:1.7">버스, 리무진, 기사, 정산까지 각각 연락하고 조율하다 보면 담당자의 시간과 커뮤니케이션 비용이 빠르게 늘어납니다.</p>
+<h2 style="font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:#1a56db;margin-bottom:6px">Rise Up Stories</h2>
+<p style="font-size:.95rem;color:var(--gray-500)">그라운드케이와 함께 한계를 넘어선 파트너들</p>
 </div>
+<a href="performance.html" style="font-size:.9rem;font-weight:600;color:#1a56db">프로젝트 전체 보기 &gt;</a>
 </div>
-<div style="display:flex;align-items:flex-start;gap:32px;padding:32px 0;border-bottom:1px solid var(--gray-800)">
-<div style="font-size:3rem;font-weight:300;color:var(--gray-700);line-height:1;flex-shrink:0;min-width:72px">02</div>
-<div>
-<h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">현장 변수는 많고, 통제는 어렵습니다</h3>
-<p style="font-size:.9rem;color:var(--gray-400);line-height:1.7">VIP 동선 변경, 기사 이슈, 차량 교체 같은 돌발 상황에 즉시 대응할 체계가 없으면 행사 리스크는 커집니다.</p>
+<div class="grid-3 fade-up">
+<div class="rise-card">
+<h3 class="rise-name">APEC 2025</h3>
+<div class="rise-before-label">BEFORE</div>
+<p class="rise-before">21개국 정상 의전, 복잡한 다자 동선</p>
+<div class="rise-arrow">&rarr; <strong>RISE UP</strong></div>
+<div class="rise-solution">T-RiseUp 수송상황실(C.P.)</div>
+<div class="rise-result"><span class="rise-check">&#10003;</span> 21개국 무사고 완료</div>
 </div>
+<div class="rise-card">
+<h3 class="rise-name">검암 프루지오</h3>
+<div class="rise-before-label">BEFORE</div>
+<p class="rise-before">4,805세대, 역까지 도보 25분</p>
+<div class="rise-arrow">&rarr; <strong>RISE UP</strong></div>
+<div class="rise-solution">RIDEUS All-in-One</div>
+<div class="rise-result"><span class="rise-check">&#10003;</span> 일 2,000+ &middot; 5년 연속</div>
 </div>
-<div style="display:flex;align-items:flex-start;gap:32px;padding:32px 0">
-<div style="font-size:3rem;font-weight:300;color:var(--gray-700);line-height:1;flex-shrink:0;min-width:72px">03</div>
-<div>
-<h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">정산 취합, 발주처 보고 — 행사 끝나도 일은 끝나지 않습니다</h3>
-<p style="font-size:.9rem;color:var(--gray-400);line-height:1.7">운행 기록과 비용, 운영 결과가 정리되지 않으면 발주처 보고와 다음 행사 개선 근거를 만들기 어렵습니다. 그 부담을 우리가 함께 가져갑니다.</p>
-</div>
+<div class="rise-card">
+<h3 class="rise-name">부산 산업단지</h3>
+<div class="rise-before-label">BEFORE</div>
+<p class="rise-before">11개 산단 수기 관리</p>
+<div class="rise-arrow">&rarr; <strong>RISE UP</strong></div>
+<div class="rise-solution">T-RiseUp TMS 전면 도입</div>
+<div class="rise-result"><span class="rise-check">&#10003;</span> 월 50,000명 &middot; 페이퍼리스</div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- 4. SOLUTION -->
+<!-- 4. 인사이트 -->
 <section class="section bg-light">
 <div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">SOLUTION</div>
-<h2 class="section-title fade-up">그라운드케이가 이동 운영의 전 과정을 직접 책임집니다</h2>
-<p class="section-desc fade-up" style="margin:0 auto">그라운드케이는 현장 운영 경험과 자체 기술을 결합해<br>행사 수송 전 과정을 더 안정적이고 효율적으로 관리합니다.</p>
+<div class="fade-up" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px">
+<h2 style="font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900">인사이트</h2>
+<a href="#" style="font-size:.9rem;font-weight:600;color:#1a56db">인사이트 더보기 &gt;</a>
 </div>
-<div class="fade-up" style="max-width:860px;margin:0 auto">
-<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--gray-700)">
-<div style="padding:12px 16px;font-size:.8rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em">문제</div>
-<div style="padding:12px 16px;font-size:.8rem;font-weight:600;color:#4CAF50;text-transform:uppercase;letter-spacing:.05em">해결</div>
+<div class="grid-3 fade-up">
+<a href="#" class="insight-card">
+<div class="insight-thumb" style="background:#1a2744">
+<div class="placeholder" style="color:#fff"><p style="font-weight:600;font-size:.9rem">APEC 2025 프로젝트</p></div>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--gray-800)">
-<div style="padding:24px 16px;background:rgba(255,255,255,.03)">
-<p style="font-size:.95rem;color:var(--gray-400);line-height:1.6">공급사가 분산됩니다</p>
+<div class="insight-meta">
+<span class="insight-cat cat-project">프로젝트 스토리</span>
+<span class="insight-date">2026.03</span>
 </div>
-<div style="padding:24px 16px">
-<h3 style="font-size:1rem;font-weight:700;margin-bottom:6px">전담 매니저가 끝까지 총괄합니다</h3>
-<p style="font-size:.85rem;color:var(--gray-400);line-height:1.6">차량·기사·정산을 단일 창구로</p>
+<h3 class="insight-title">APEC 2025, 21개국 정상을 모시기까지</h3>
+</a>
+<a href="#" class="insight-card">
+<div class="insight-thumb" style="background:#2a3a50">
+<div class="placeholder" style="color:#fff"><p style="font-weight:600;font-size:.9rem">MICE 수송 인사이트</p></div>
 </div>
+<div class="insight-meta">
+<span class="insight-cat cat-insight">산업 인사이트</span>
+<span class="insight-date">2026.03</span>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--gray-800)">
-<div style="padding:24px 16px;background:rgba(255,255,255,.03)">
-<p style="font-size:.95rem;color:var(--gray-400);line-height:1.6">현장 통제가 어렵습니다</p>
+<h3 class="insight-title">MICE 수송, 왜 전문 파트너가 필요한가</h3>
+</a>
+<a href="#" class="insight-card">
+<div class="insight-thumb" style="background:#3a4a60">
+<div class="placeholder" style="color:#fff"><p style="font-weight:600;font-size:.9rem">APEC 공식 파트너 선정</p></div>
 </div>
-<div style="padding:24px 16px">
-<h3 style="font-size:1rem;font-weight:700;margin-bottom:6px">자체 관제로 실시간 파악합니다</h3>
-<p style="font-size:.85rem;color:var(--gray-400);line-height:1.6">T-RiseUp 대시보드로 돌발 즉시 대응</p>
+<div class="insight-meta">
+<span class="insight-cat cat-news">뉴스</span>
+<span class="insight-date">2026.03</span>
 </div>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr">
-<div style="padding:24px 16px;background:rgba(255,255,255,.03)">
-<p style="font-size:.95rem;color:var(--gray-400);line-height:1.6">정산·보고까지 담당자 몫입니다</p>
-</div>
-<div style="padding:24px 16px">
-<h3 style="font-size:1rem;font-weight:700;margin-bottom:6px">운영 데이터는 보고서로 남습니다</h3>
-<p style="font-size:.85rem;color:var(--gray-400);line-height:1.6">운행기록·비용·지표를 리포트로 자동 정리</p>
-</div>
-</div>
+<h3 class="insight-title">APEC 2025 공식 수송 파트너 선정</h3>
+</a>
 </div>
 </div>
-</section>
-
-<!-- 5. SERVICES -->
-<section class="section bg-dark">
-<div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">SERVICES</div>
-<h2 class="section-title fade-up">행사·VIP·셔틀 이동 운영을 통합합니다</h2>
-<p class="section-desc fade-up" style="margin:0 auto">검증된 현장 운영 역량에 자체 관제 기술을 더해<br>프로젝트 수행부터 반복 운영까지 목적에 맞는 이동 솔루션을 제공합니다.</p>
-</div>
-<div class="svc-asym fade-up">
-<div class="service-card svc-main">
-<h3>대형행사 수송 운영</h3>
-<p>정상회의, 국제행사, 글로벌 컨퍼런스 등 복잡도 높은 프로젝트를 실시간 관제 기반으로 안정적으로 운영합니다.</p>
-<a href="performance.html" style="margin-top:auto">수송 레퍼런스 보기 &rarr;</a>
-</div>
-<div class="svc-side">
-<div class="service-card">
-<h3>프리미엄 VIP 의전 서비스</h3>
-<div class="sub">VIP Protocol &amp; Chauffeur</div>
-<p>럭셔리 브랜드, 주요 임원, 국빈급 외빈을 위한 보안 중심 의전 서비스로 동선 설계부터 현장 응대까지 정교하게 수행합니다.</p>
-<a href="performance.html" style="margin-top:auto">VIP 의전 사례 보기 &rarr;</a>
-</div>
-<div class="service-card">
-<h3>스마트 셔틀 운영 솔루션</h3>
-<div class="sub">On-Demand Shuttle Platform</div>
-<p>RIDEUS 기반 셔틀 운영으로 배차 효율을 높이고, 실시간 탑승 데이터로 반복 운영 체계를 최적화합니다.</p>
-<a href="solutions.html" style="margin-top:auto">셔틀 솔루션 알아보기 &rarr;</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- 6. WHY GROUNDK -->
-<section class="section bg-darker">
-<div class="container">
-<div class="why-grid fade-up">
-<div class="why-left">
-<div class="section-label">WHY GROUNDK</div>
-<h2 class="section-title" style="text-align:left">9년간 쌓아온 것들이<br>다음 행사를 지킵니다</h2>
-<p style="font-size:.9rem;color:var(--gray-400);line-height:1.7;margin-top:16px">국가급 레퍼런스, 자체 관제 기술, 9년 무사고.<br>세 가지가 함께 작동합니다.</p>
-</div>
-<div class="why-right">
-<div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--gray-800)">
-<span style="font-size:13px;font-weight:500;color:var(--gray-600);min-width:28px">01</span>
-<div>
-<h3 style="font-size:1rem;font-weight:700;margin-bottom:6px">국가급 행사로 검증된 운영</h3>
-<p style="font-size:.88rem;color:var(--gray-400);line-height:1.7">APEC, 한-아세안 등 주요 국제행사 공식 수송 수행 경험으로 복잡도 높은 프로젝트를 안정적으로 운영해왔습니다.</p>
-</div>
-</div>
-<div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--gray-800)">
-<span style="font-size:13px;font-weight:500;color:var(--gray-600);min-width:28px">02</span>
-<div>
-<h3 style="font-size:1rem;font-weight:700;margin-bottom:6px">자체 개발 관제 시스템</h3>
-<p style="font-size:.88rem;color:var(--gray-400);line-height:1.7">T-RiseUp과 RIDEUS를 통해 실시간 관제, 배차 관리, 운영 데이터 축적까지 현장 대응과 운영 효율을 함께 높이고 있습니다.</p>
-</div>
-</div>
-<div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--gray-800)">
-<span style="font-size:13px;font-weight:500;color:var(--gray-600);min-width:28px">03</span>
-<div>
-<h3 style="font-size:1rem;font-weight:700;margin-bottom:6px">9년 무사고 리스크 관리</h3>
-<p style="font-size:.88rem;color:var(--gray-400);line-height:1.7">보안 프로토콜, 예비 차량 운영, 보험 체계까지 VIP 이동과 대형행사에 필요한 안전 기준을 갖추고 있습니다.</p>
-</div>
-</div>
-<div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0">
-<span style="font-size:13px;font-weight:500;color:var(--gray-600);min-width:28px">04</span>
-<div>
-<h3 style="font-size:1rem;font-weight:700;margin-bottom:6px">국내외 프로젝트 대응 네트워크</h3>
-<p style="font-size:.88rem;color:var(--gray-400);line-height:1.7">서울, 부산, 싱가포르 거점과 50+개국 파트너 네트워크로 국내외 어디서든 일관된 운영 품질을 유지합니다.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- 7+8. KPI + TESTIMONIAL BANNER -->
-<section class="section bg-darker">
-<div class="container">
-<div class="fade-up" style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center">
-<div>
-<div style="font-size:2rem;font-weight:800">9년</div>
-<div style="font-size:.8rem;color:var(--gray-400);margin-top:4px">무사고 운영</div>
-</div>
-<div>
-<div style="font-size:2rem;font-weight:800">430+</div>
-<div style="font-size:.8rem;color:var(--gray-400);margin-top:4px">누적 고객사</div>
-</div>
-<div>
-<div style="font-size:2rem;font-weight:800">4회</div>
-<div style="font-size:.8rem;color:var(--gray-400);margin-top:4px">정상회의 공식 수송</div>
-</div>
-<div>
-<div style="font-size:2rem;font-weight:800">연 30%</div>
-<div style="font-size:.8rem;color:var(--gray-400);margin-top:4px">매출 성장률</div>
-</div>
-</div>
-<p class="fade-up" style="text-align:center;font-size:.85rem;color:var(--gray-500);margin-top:32px">이 숫자는 단순 실적이 아닙니다. 반복 검증된 운영 체계와 현장 팀의 결과입니다.</p>
 </section>
 
 <!-- 9. FINAL CTA -->
