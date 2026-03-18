@@ -94,7 +94,7 @@ img{max-width:100%;display:block}
 .hero-inner{flex-direction:column}
 .process-steps{grid-template-columns:1fr}.process-arrow{display:none}
 .check-grid{grid-template-columns:1fr}
-.ref-cards{grid-template-columns:1fr}
+.photo-grid{grid-template-columns:1fr}
 .related-cards{grid-template-columns:1fr}
 }
 
@@ -118,13 +118,14 @@ img{max-width:100%;display:block}
 .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .check-item{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;color:var(--gray-300);padding:12px 16px;background:#fff;border:1px solid #e5e5e5;border-radius:8px}
 .check-item .chk{color:#16a34a;font-weight:700;flex-shrink:0}
-.ref-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.ref-card{border:1px solid #e5e5e5;border-radius:16px;padding:32px 28px;background:#fff;position:relative;overflow:hidden}
-.ref-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#111}
-.ref-card h3{font-size:1.15rem;font-weight:800;margin-bottom:16px}
-.ref-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.ref-card li{font-size:.88rem;color:var(--gray-400);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
-.ref-card li .chk{color:#16a34a;font-weight:700;flex-shrink:0}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.photo-card{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.photo-thumb{width:100%;height:100%;transition:transform .4s}
+.photo-card:hover .photo-thumb{transform:scale(1.05)}
+.photo-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.photo-cat{font-size:.7rem;font-weight:600;color:#fbbf24;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.photo-card h3{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:2px}
+.photo-stat{font-size:.85rem;color:rgba(255,255,255,.7)}
 .cta-section{padding:100px 0;background:#f0f7ff;text-align:center}
 .cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
 .cta-section p{font-size:1rem;color:#666;margin-bottom:36px;line-height:1.7}
@@ -252,30 +253,54 @@ img{max-width:100%;display:block}
 <div class="section-label fade-up">Reference</div>
 <h2 class="section-title fade-up">대규모 수송, 이렇게 수행했습니다</h2>
 </div>
-<div class="ref-cards fade-up">
-<div class="ref-card">
-<h3>APEC 2025 KOREA</h3>
-<ul>
-<li><span class="chk">&#10003;</span> 차량 800대 / 21개 경제권</li>
-<li><span class="chk">&#10003;</span> 24개 노선 운영</li>
-<li><span class="chk">&#10003;</span> 수송 인원 20,000명</li>
-</ul>
+<div class="photo-grid fade-up">
+<div class="photo-card">
+<div class="photo-thumb" style="background:#1a2744"></div>
+<div class="photo-overlay">
+<span class="photo-cat">정부 (공식 지정)</span>
+<h3>APEC 2025</h3>
+<span class="photo-stat">21개국</span>
 </div>
-<div class="ref-card">
-<h3>한-아프리카 정상회의 2024</h3>
-<ul>
-<li><span class="chk">&#10003;</span> 차량 500대 / 48개국 3,000명</li>
-<li><span class="chk">&#10003;</span> 의전·셔틀·화물 동시 수송</li>
-<li><span class="chk">&#10003;</span> 전 일정 무지연 완수</li>
-</ul>
 </div>
-<div class="ref-card">
-<h3>한-ASEAN 특별정상회의 2019</h3>
-<ul>
-<li><span class="chk">&#10003;</span> 6개 운수사 / 차량 200대</li>
-<li><span class="chk">&#10003;</span> 2주간 매일 125대 운영</li>
-<li><span class="chk">&#10003;</span> 복합 동선 무사고 관리</li>
-</ul>
+<div class="photo-card">
+<div class="photo-thumb" style="background:#2a3a50"></div>
+<div class="photo-overlay">
+<span class="photo-cat">정부</span>
+<h3>한-아프리카 정상회의</h3>
+<span class="photo-stat">500대/48국</span>
+</div>
+</div>
+<div class="photo-card">
+<div class="photo-thumb" style="background:#3a4a60"></div>
+<div class="photo-overlay">
+<span class="photo-cat">국제금융기관</span>
+<h3>ADB 연차총회</h3>
+<span class="photo-stat">70대</span>
+</div>
+</div>
+<div class="photo-card">
+<div class="photo-thumb" style="background:#2a1f3a"></div>
+<div class="photo-overlay">
+<span class="photo-cat">엔터테인먼트</span>
+<h3>BLACKPINK World Tour</h3>
+<span class="photo-stat">5,000명</span>
+</div>
+</div>
+<div class="photo-card">
+<div class="photo-thumb" style="background:#3a2a20"></div>
+<div class="photo-overlay">
+<span class="photo-cat">럭셔리 브랜드</span>
+<h3>Louis Vuitton Pre-fall</h3>
+<span class="photo-stat">300대</span>
+</div>
+</div>
+<div class="photo-card">
+<div class="photo-thumb" style="background:#2a3040"></div>
+<div class="photo-overlay">
+<span class="photo-cat">국제스포츠</span>
+<h3>부산 세계탁구선수권</h3>
+<span class="photo-stat">200대</span>
+</div>
 </div>
 </div>
 </div>
