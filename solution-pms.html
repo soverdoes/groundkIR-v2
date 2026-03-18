@@ -59,7 +59,7 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .footer-bottom p{font-size:.8rem;color:var(--gray-600)}.footer-bottom-links{display:flex;gap:20px}.footer-bottom-links a{font-size:.8rem;color:var(--gray-600)}.footer-bottom-links a:hover{color:var(--gray-400)}
 .footer-brands{margin-top:20px;padding:20px 0;border-top:1px solid #e5e5e5;text-align:center}.footer-brands span{font-size:.8rem;color:var(--gray-600);margin:0 12px}
 @media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.hero-inner{flex-direction:column}.feature-row{grid-template-columns:1fr}.check-grid{grid-template-columns:1fr}.target-grid{grid-template-columns:1fr}.related-cards{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.hero-inner{flex-direction:column}.feature-row{grid-template-columns:1fr}.check-grid{grid-template-columns:1fr}.testimonial-row{grid-template-columns:1fr}.target-grid{grid-template-columns:1fr}.related-cards{grid-template-columns:1fr}}
 
 /* PAGE */
 .page-hero{padding:140px 0 60px;background:#fff}
@@ -88,6 +88,15 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .target-card{text-align:center;padding:28px 20px}
 .target-card h4{font-size:1rem;font-weight:800;margin-bottom:6px}
 .target-card p{font-size:.82rem;color:var(--gray-500);line-height:1.5}
+/* Testimonial */
+.testimonial-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.testimonial-img{border-radius:16px;overflow:hidden;background:#1a2744;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.9rem}
+.testimonial-quote{background:#f5f7fa;border-radius:16px;padding:40px 36px}
+.quote-mark{font-size:3rem;font-weight:900;color:#c9a84c;line-height:1;margin-bottom:12px}
+.quote-text{font-size:1.05rem;font-weight:500;color:#333;line-height:1.8;font-style:italic;margin-bottom:20px}
+.quote-author strong{font-size:.9rem;font-weight:700;color:#c9a84c;margin-right:12px}
+.quote-author span{font-size:.85rem;color:var(--gray-500)}
+
 .cta-section{padding:100px 0;background:#ecfdf5;text-align:center}
 .cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
 .cta-section p{font-size:1rem;color:#666;margin-bottom:36px;line-height:1.7}
@@ -243,6 +252,23 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 <div class="card target-card">
 <h4>기업 차량 관리팀</h4>
 <p>임원 차량 통합 관리</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 고객 후기 -->
+<section class="section bg-dark">
+<div class="container">
+<div class="testimonial-row fade-up">
+<div class="testimonial-img">T-RiseUp PMS 관제 화면 이미지</div>
+<div class="testimonial-quote">
+<div class="quote-mark">&ldquo;</div>
+<p class="quote-text">AI 자동 견적 덕분에 전화 견적에 쓰던 시간을 영업에 집중할 수 있게 됐습니다. 해외 결제까지 되니 매출이 확실히 늘었습니다.</p>
+<div class="quote-author">
+<strong>의전업체 대표</strong>
+<span>T-RiseUp PMS 도입 3개월 차</span>
+</div>
 </div>
 </div>
 </div>
