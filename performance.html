@@ -98,7 +98,7 @@ img{max-width:100%;display:block}
 @media(max-width:768px){
 .nav-links,.nav-cta-btn{display:none}
 .hamburger{display:flex}
-.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+.grid-2,.grid-3,.grid-4,.ref-grid{grid-template-columns:1fr}
 .section{padding:60px 0}
 .footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;text-align:center}
@@ -151,18 +151,26 @@ img{max-width:100%;display:block}
 .cta-section .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .cta-section .btn-ghost{border:1.5px solid #e5e5e5;color:#333;background:transparent;padding:16px 36px}
 .cta-section .btn-ghost:hover{background:#f5f5f5}
-.case-card{padding:36px}
-.case-card h3{font-size:1.15rem;font-weight:800;margin-bottom:6px}
-.case-card .case-summary{font-size:.9rem;color:var(--gray-500);margin-bottom:16px;font-style:italic}
-.case-card p{font-size:.95rem;color:var(--gray-400);line-height:1.7;margin-bottom:16px}
-.case-card ul{list-style:none;display:flex;flex-direction:column;gap:6px}
-.case-card ul li{font-size:.9rem;color:var(--gray-400);padding-left:16px;position:relative}
-.case-card ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:#333;position:absolute;left:0;top:10px}
-.case-nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px}
-.case-nav a{font-size:.85rem;font-weight:600;padding:8px 20px;border:1px solid #e5e5e5;border-radius:50px;color:#555;transition:var(--transition)}
-.case-nav a:hover{border-color:#111;color:#111}
-.why-matters{max-width:760px;margin:0 auto;text-align:center}
-.why-matters p{font-size:1.05rem;color:var(--gray-400);line-height:1.9}
+/* Tab Nav */
+.tab-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.tab-btn{padding:10px 24px;border-radius:50px;border:1.5px solid #e5e5e5;background:#fff;color:#555;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:var(--transition)}
+.tab-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-btn:hover:not(.active){border-color:#111;color:#111}
+/* Ref Photo Cards */
+.ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ref-photo-card{border-radius:16px;overflow:hidden;border:1px solid #e5e5e5;background:#fff;transition:var(--transition)}
+.ref-photo-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.ref-photo-card.hidden{display:none}
+.ref-thumb{aspect-ratio:16/10;position:relative;overflow:hidden}
+.ref-tags{position:absolute;top:12px;left:12px;right:12px;display:flex;gap:6px;flex-wrap:wrap}
+.ref-tag-cat{font-size:.65rem;font-weight:700;color:#fff;background:rgba(37,99,235,.85);padding:4px 12px;border-radius:4px}
+.ref-tag-type{font-size:.65rem;font-weight:700;color:#fff;background:rgba(0,0,0,.6);padding:4px 12px;border-radius:4px;margin-left:auto}
+.ref-tag-type.type-tech{background:rgba(37,99,235,.85)}
+.ref-info{padding:20px 24px}
+.ref-info h3{font-size:1.05rem;font-weight:800;margin-bottom:4px}
+.ref-stat{font-size:1.3rem;font-weight:900;color:#2563eb;margin-bottom:8px}
+.ref-link{font-size:.85rem;font-weight:600;color:var(--gray-500)}
+.ref-link:hover{color:#2563eb}
 </style>
 </head>
 <body>
@@ -226,275 +234,115 @@ img{max-width:100%;display:block}
 <!-- PAGE HERO -->
 <section class="page-hero">
 <div class="container">
-<div class="section-label fade-up">Reference & Case Studies</div>
+<div class="section-label fade-up">Reference &amp; Case Studies</div>
 <h1 class="fade-up">국가급 행사부터 글로벌 브랜드까지,<br>검증된 운영 레퍼런스</h1>
-<p class="fade-up">이동 운영은 리허설이 없습니다.<br>현장에서 바로 실행되고, 실패를 되돌릴 수 없습니다.<br>그래서 '해본 팀'이 가장 중요합니다.</p>
-<div class="hero-sub fade-up">130건 이상의 프로젝트, 정상회의 4회, 9년 무사고.<br>아래는 그 기록입니다.</div>
+<p class="fade-up">130건 이상의 프로젝트, 정상회의 4회, 9년 무사고.<br>아래는 그 기록입니다.</p>
 </div>
 </section>
 
-<!-- CASE CATEGORY NAV -->
+<!-- TAB FILTER + PHOTO CARDS -->
 <section class="section bg-dark" id="cases">
 <div class="container">
-<div class="case-nav fade-up">
-<a href="#case-summit">국제행사 / 정상회의</a>
-<a href="#case-vip">VIP 의전</a>
-<a href="#case-corporate">기업 행사 / 컨퍼런스</a>
-<a href="#case-shuttle">셔틀 / 반복 운영</a>
-<a href="#case-entertainment">엔터 · 스포츠</a>
+<!-- Tab Nav -->
+<div class="tab-nav fade-up">
+<button class="tab-btn active" onclick="filterCards('all')">전체 (11)</button>
+<button class="tab-btn" onclick="filterCards('vip')">의전수송 (1)</button>
+<button class="tab-btn" onclick="filterCards('mega')">메가이벤트 (5)</button>
+<button class="tab-btn" onclick="filterCards('shuttle')">셔틀 (3)</button>
+<button class="tab-btn" onclick="filterCards('solution')">솔루션도입 (3)</button>
 </div>
 
-<!-- CASE 1: 국제행사 / 정상회의 -->
-<div id="case-summit" style="margin-bottom:80px">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">국제행사 / 정상회의</div>
-<h2 class="section-title fade-up">국가가 선택한 운영 파트너</h2>
+<!-- Photo Card Grid -->
+<div class="ref-grid fade-up" id="refGrid">
+
+<div class="ref-photo-card" data-cat="vip">
+<div class="ref-thumb" style="background:#1a2744">
+<div class="ref-tags"><span class="ref-tag-cat">의전수송</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
-<div class="grid-2">
-<div class="card case-card fade-up">
-<h3>APEC 2025 KOREA 정상회의</h3>
-<div class="case-summary">21개 경제권 정상급 인사 의전 수행</div>
-<p>APEC 정상회의 공식 수송 파트너로서 전 차량의 실시간 관제와 배차를 수행했습니다. 경호 동선과 의전 프로토콜을 사전 시뮬레이션해 전체 일정을 안정적으로 완수했습니다.</p>
-<ul>
-<li>21개 경제권 정상 및 수행단 수송</li>
-<li>VMS 실시간 차량 관제 시스템 도입</li>
-<li>경호-의전 동선 사전 시뮬레이션 운영</li>
-<li>무지연 운영 달성</li>
-<li>✓ 투입 차량 800대 통합 관리 — 전 일정 무지연 완수</li>
-</ul>
-</div>
-<div class="card case-card fade-up">
-<h3>ADB 연차총회 2023</h3>
-<div class="case-summary">68개국 재무장관 &middot; 중앙은행 총재 의전</div>
-<p>아시아개발은행 연차총회에서 68개국 재무장관 및 중앙은행 총재를 대상으로 의전 수송을 수행했습니다. 각국 보안팀과의 사전 협의를 통해 개별 동선을 설계하고, 공항 &mdash; 숙소 &mdash; 회의장 전 구간을 원스톱으로 운영했습니다.</p>
-<ul>
-<li>68개국 고위급 인사 개별 동선 설계</li>
-<li>각국 보안팀 사전 협의 및 프로토콜 적용</li>
-<li>공항-숙소-회의장 전 구간 원스톱 운영</li>
-</ul>
-</div>
-</div>
+<div class="ref-info"><h3>한-아프리카 정상회의</h3><div class="ref-stat">500대 / 48국</div><a href="service-vip.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<!-- CASE 2: VIP 의전 -->
-<div id="case-vip" style="margin-bottom:80px">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">VIP 의전</div>
-<h2 class="section-title fade-up">브랜드 가치를 지키는 VIP 의전</h2>
+<div class="ref-photo-card" data-cat="mega">
+<div class="ref-thumb" style="background:#3a2a20">
+<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
-<div class="grid-2">
-<div class="card case-card fade-up">
-<h3>Louis Vuitton Pre-Fall Show</h3>
-<div class="case-summary">글로벌 VIP 게스트 의전 수송</div>
-<p>루이비통 프리폴 쇼에서 글로벌 VIP 게스트 의전을 수행했습니다. 차량 선정부터 맞춤 동선, 현장 안내까지 브랜드에 맞는 의전 경험을 설계했습니다.</p>
-<ul>
-<li>브랜드 가이드라인에 맞는 차량 큐레이션</li>
-<li>게스트별 개별 동선 및 시간 관리</li>
-<li>현장 안내 인력 배치 및 의전 매뉴얼 제공</li>
-<li>✓ 이후 CHANEL, Dior, BURBERRY 연속 의뢰 — 럭셔리 브랜드 레퍼런스 확장</li>
-</ul>
-</div>
-<div class="card case-card fade-up">
-<h3>글로벌 VIP 의전 (CHANEL, Dior, BURBERRY 외)</h3>
-<div class="case-summary">럭셔리 브랜드 행사 연간 10건+</div>
-<p>CHANEL M&eacute;tiers d'Art, Dior Fall Show, BURBERRY 이벤트 등 글로벌 럭셔리 브랜드의 국내 행사에서 VIP 의전을 반복 수행하고 있습니다. 브랜드별 보안과 프라이버시 기준을 충족하며 게스트 경험을 설계합니다.</p>
-<ul>
-<li>연간 10건 이상 럭셔리 브랜드 의전 수행</li>
-<li>브랜드별 보안 &middot; 프라이버시 기준 충족</li>
-<li>반복 수행을 통한 표준 운영 매뉴얼 확보</li>
-</ul>
-</div>
-</div>
+<div class="ref-info"><h3>Louis Vuitton Pre-fall Show</h3><div class="ref-stat">300대</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<!-- CASE 3: 기업 행사 / 컨퍼런스 -->
-<div id="case-corporate" style="margin-bottom:80px">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">기업 행사 / 컨퍼런스</div>
-<h2 class="section-title fade-up">기업 행사의 이동을 책임집니다</h2>
+<div class="ref-photo-card" data-cat="mega">
+<div class="ref-thumb" style="background:#1a2744">
+<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
-<div class="grid-2">
-<div class="card case-card fade-up">
-<h3>대기업 컨퍼런스 &middot; 워크숍 수송</h3>
-<div class="case-summary">주요 기업 행사 연간 반복 수행</div>
-<p>대기업 컨퍼런스, 워크숍, 임원 세미나 수송을 반복 수행하고 있습니다. 차량 편성, 시간대별 배차, 현장 대응까지 담당자의 운영 부담을 줄입니다.</p>
-<ul>
-<li>참석자 규모별 차량 편성 최적화</li>
-<li>시간대별 동적 배차 운영</li>
-<li>현장 컨틴전시 플랜 사전 수립</li>
-</ul>
-</div>
-<div class="card case-card fade-up">
-<h3>한-아세안 특별 정상회의</h3>
-<div class="case-summary">차량 150대 규모 정상 수행단 수송</div>
-<p>아세안 정상 및 수행단을 대상으로 차량 150대를 동시 운영했습니다. 보안 등급별 차량 배정과 실시간 동선 조정으로 국가급 행사의 복잡성을 체계적으로 관리한 사례입니다.</p>
-<ul>
-<li>차량 150대 동시 운영</li>
-<li>국가별 보안 등급 차량 배정</li>
-<li>경호 차량 연동 및 실시간 동선 조정</li>
-</ul>
-</div>
-</div>
+<div class="ref-info"><h3>APEC 2025 공식 수송</h3><div class="ref-stat">21개국</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<!-- CASE 4: 셔틀 / 반복 운영 -->
-<div id="case-shuttle">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">셔틀 / 반복 운영</div>
-<h2 class="section-title fade-up">반복되는 이동, 시스템으로 운영합니다</h2>
+<div class="ref-photo-card" data-cat="mega">
+<div class="ref-thumb" style="background:#2a1f3a">
+<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
-<div class="grid-2">
-<div class="card case-card fade-up">
-<h3>SBS 가요대전 Summer 셔틀</h3>
-<div class="case-summary">외국인 관람객 대규모 셔틀 운영</div>
-<p>K-POP 대형 행사에서 수천 명 규모의 외국인 관람객 셔틀을 운영했습니다. 다국어 안내, 실시간 탑승 관리, 증차 대응으로 행사 변동성에 대응했습니다.</p>
-<ul>
-<li>수천 명 규모 동시 셔틀 운영</li>
-<li>다국어 안내 및 실시간 탑승 관리</li>
-<li>피크 타임 증차 대응 체계</li>
-</ul>
-</div>
-<div class="card case-card fade-up">
-<h3>산업단지 통근버스 TMS 도입</h3>
-<div class="case-summary">T-RiseUp 기반 반복 운영 최적화</div>
-<p>산업단지 통근 셔틀에 자체 개발 TMS를 도입해 노선 최적화, 탑승률 분석, 실시간 운행 모니터링을 구현했습니다. 데이터 기반 운영 효율화를 구현한 사례입니다.</p>
-<ul>
-<li>TMS 기반 노선 최적화</li>
-<li>탑승률 분석 및 증감차 자동 추천</li>
-<li>실시간 운행 모니터링 대시보드</li>
-</ul>
-</div>
-</div>
+<div class="ref-info"><h3>BLACKPINK World Tour</h3><div class="ref-stat">5,000명</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<!-- CASE 5: 엔터테인먼트 / 스포츠 -->
-<div id="case-entertainment" style="margin-top:80px">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">엔터테인먼트 / 스포츠</div>
-<h2 class="section-title fade-up">무대 뒤 이동도 운영입니다</h2>
+<div class="ref-photo-card" data-cat="mega shuttle">
+<div class="ref-thumb" style="background:#2a3040">
+<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-cat">셔틀</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
-<div class="grid-2">
-<div class="card case-card fade-up">
-<h3>BLACKPINK World Tour 2025 고양</h3>
-<div class="case-summary">국내외 관객 5천명 수송</div>
-<p>호텔+셔틀 패키지를 설계해 국내외 관객의 이동을 통합 운영했습니다.</p>
-<ul>
-<li>국내외 관객 5,000명 수송</li>
-<li>호텔-공연장 셔틀 패키지 운영</li>
-<li>다국어 안내 및 실시간 배차</li>
-</ul>
-</div>
-<div class="card case-card fade-up">
-<h3>2025 쿠팡플레이 시리즈 : 뉴캐슬 &amp; 토트넘</h3>
-<div class="case-summary">선수단 VIP 수송 총괄</div>
-<p>선수단 VIP 수송, 협찬차 관리, 수하물 동시 수송을 총괄 운영했습니다.</p>
-<ul>
-<li>선수단 VIP 의전 수송</li>
-<li>협찬차량 관리 및 배치</li>
-<li>수하물 동시 수송 운영</li>
-</ul>
-</div>
-<div class="card case-card fade-up">
-<h3>SBS 가요대전 2024</h3>
-<div class="case-summary">46개국 외국인 관람객 6,000명</div>
-<p>버스 150대를 동시 투입해 대규모 외국인 관람객 셔틀을 운영했습니다.</p>
-<ul>
-<li>46개국 외국인 관람객 6,000명 수송</li>
-<li>버스 150대 동시 투입</li>
-<li>다국어 현장 안내 체계</li>
-</ul>
-</div>
-<div class="card case-card fade-up">
-<h3>발로란트 게임체인저스 챔피언십 서울</h3>
-<div class="case-summary">호텔~경기장 프라이빗 셔틀</div>
-<p>e스포츠 국제대회 참가 선수단의 호텔-경기장 프라이빗 셔틀을 운영했습니다.</p>
-<ul>
-<li>선수단 전용 프라이빗 셔틀</li>
-<li>호텔-경기장 정시 운행</li>
-<li>보안 동선 관리</li>
-</ul>
-</div>
-</div>
+<div class="ref-info"><h3>SBS 가요대전 2024</h3><div class="ref-stat">6,000명 / 150대</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<!-- RIDEUS 도입 사례 -->
-<div id="case-rideus" style="margin-top:80px">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">Rideus Cases</div>
-<h2 class="section-title fade-up">반복 운영으로 쌓은 데이터</h2>
+<div class="ref-photo-card" data-cat="mega">
+<div class="ref-thumb" style="background:#2a3a50">
+<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
-<div class="grid-4 fade-up">
-<div class="card" style="padding:28px;text-align:center">
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:12px">위시티 입주민 멤버십 셔틀</h3>
-<div style="font-size:.8rem;color:var(--gray-500);margin-bottom:12px">운영 기간: 19개월</div>
-<div style="font-size:1.4rem;font-weight:900;color:#111">36,500명</div>
-<div style="font-size:.8rem;color:var(--gray-500);margin-top:2px">누적 멤버십</div>
-<div style="font-size:1.1rem;font-weight:700;color:#111;margin-top:8px">5.9억원+</div>
-<div style="font-size:.8rem;color:var(--gray-500);margin-top:2px">누적 거래액</div>
-</div>
-<div class="card" style="padding:28px;text-align:center">
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:12px">검암역 입주민 셔틀</h3>
-<div style="font-size:1.4rem;font-weight:900;color:#111;margin-top:16px">900~1,000명</div>
-<div style="font-size:.8rem;color:var(--gray-500);margin-top:2px">일 수송</div>
-<div style="font-size:1.1rem;font-weight:700;color:#111;margin-top:8px">2~3만명</div>
-<div style="font-size:.8rem;color:var(--gray-500);margin-top:2px">월 수송</div>
-</div>
-<div class="card" style="padding:28px;text-align:center">
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:12px">JW중외 기업 통근 셔틀</h3>
-<div style="font-size:1.4rem;font-weight:900;color:#111;margin-top:16px">1,000~1,300명</div>
-<div style="font-size:.8rem;color:var(--gray-500);margin-top:2px">주 탑승</div>
-<div style="font-size:1.1rem;font-weight:700;color:#111;margin-top:8px">4,000명+</div>
-<div style="font-size:.8rem;color:var(--gray-500);margin-top:2px">월 탑승</div>
-</div>
-<div class="card" style="padding:28px;text-align:center">
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:12px">KCA 공공기관 주말 통근</h3>
-<div style="font-size:.9rem;color:var(--gray-400);margin-top:16px;line-height:1.7">KTX 노선 연계<br>QR 페이퍼리스 검표 구현</div>
-</div>
-</div>
+<div class="ref-info"><h3>부산 세계탁구선수권</h3><div class="ref-stat">200대</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
+<div class="ref-photo-card" data-cat="shuttle">
+<div class="ref-thumb" style="background:#1f2a3a">
+<div class="ref-tags"><span class="ref-tag-cat">셔틀</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
-</section>
+<div class="ref-info"><h3>검암 Royal Park City</h3><div class="ref-stat">일 2,000명 / 5년 연속</div><a href="service-shuttle.html" class="ref-link">자세히 보기 &gt;</a></div>
+</div>
 
-<!-- METRICS -->
-<section class="section bg-light">
-<div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">Key Metrics</div>
-<h2 class="section-title fade-up">숫자로 보는 운영 신뢰</h2>
+<div class="ref-photo-card" data-cat="shuttle solution">
+<div class="ref-thumb" style="background:#2a3040">
+<div class="ref-tags"><span class="ref-tag-cat">셔틀</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
-<div class="kpi-grid fade-up">
-<div class="card kpi-card">
-<div class="kpi-num">4개 카테고리</div>
-<div class="kpi-label">국제행사·VIP·기업·셔틀</div>
+<div class="ref-info"><h3>부산 11개 산업단지 통근</h3><div class="ref-stat">월 50,000명 / 46대</div><a href="service-shuttle.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
-<div class="card kpi-card">
-<div class="kpi-num">50+개국</div>
-<div class="kpi-label">수행 국가 범위</div>
+
+<div class="ref-photo-card" data-cat="solution">
+<div class="ref-thumb" style="background:#3a4a60">
+<div class="ref-tags"><span class="ref-tag-cat">솔루션도입</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
-<div class="card kpi-card">
-<div class="kpi-num">연간 10건+</div>
-<div class="kpi-label">럭셔리 브랜드 반복 수행</div>
+<div class="ref-info"><h3>에버랜드-T 플랫폼</h3><div class="ref-stat">10개 지역 / 3.6만명+</div><a href="solution-tms.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
-<div class="card kpi-card">
-<div class="kpi-num">차량 150대</div>
-<div class="kpi-label">단일 행사 최대 동시 운영</div>
+
+<div class="ref-photo-card" data-cat="solution">
+<div class="ref-thumb" style="background:#1a2744">
+<div class="ref-tags"><span class="ref-tag-cat">솔루션도입</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
+<div class="ref-info"><h3>위시티 멤버십 셔틀</h3><div class="ref-stat">5.9억+ / 36,500명</div><a href="solution-rideus.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
-<div class="why-matters fade-up" style="margin-top:48px">
-<p>이 숫자는 단순한 실적이 아닙니다. 고객사 현장에서 반복 검증된 체계의 기록입니다.</p>
+
+<div class="ref-photo-card" data-cat="mega">
+<div class="ref-thumb" style="background:#3a4a60">
+<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type">OPERATION</span></div>
+</div>
+<div class="ref-info"><h3>ADB 연차총회</h3><div class="ref-stat">68개국 / 70대</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
+</div>
+
 </div>
 </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- CTA -->
 <section class="cta-section">
 <div class="container">
-<h2 class="fade-up">유사 레퍼런스 사례와 맞춤 운영안을 함께 보내드립니다</h2>
+<h2 class="fade-up">유사 레퍼런스와 맞춤 운영안을 보내드립니다</h2>
 <p class="fade-up">행사 규모와 목적을 알려주시면 가장 가까운 사례부터 공유드립니다</p>
 <div class="fade-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
 <a href="ir.html#contact" class="btn btn-white">레퍼런스 + 제안서 받기 &rarr;</a>
-<a href="performance.html" class="btn btn-ghost">도입 사례 보기</a>
 </div>
 </div>
 </section>
@@ -549,6 +397,15 @@ img{max-width:100%;display:block}
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function toggleMobSub(btn){btn.classList.toggle('open');const sub=btn.nextElementSibling;sub.classList.toggle('open')}
 document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
+// Tab filter
+function filterCards(cat){
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+document.querySelectorAll('.ref-photo-card').forEach(c=>{
+if(cat==='all'){c.classList.remove('hidden')}
+else{c.classList.toggle('hidden',!c.dataset.cat.includes(cat))}
+});
+}
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
