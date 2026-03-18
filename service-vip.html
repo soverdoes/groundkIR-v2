@@ -119,6 +119,16 @@ img{max-width:100%;display:block}
 .btn-hero-blue{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:#2563eb;color:#fff;font-weight:700;font-size:.95rem;border-radius:8px;border:none;cursor:pointer;transition:var(--transition)}
 .btn-hero-blue:hover{background:#1d4ed8;transform:translateY(-2px)}
 
+/* Pain → Solution */
+.ps-box{border-radius:16px;padding:36px 32px}
+.ps-pain{background:#fff1f2;border:1px solid #fecdd3}
+.ps-sol{background:#ecfdf5;border:1px solid #a7f3d0}
+.ps-heading{font-size:1rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#ef4444;margin-bottom:20px}
+.ps-heading-sol{color:#10b981}
+.ps-item{display:flex;align-items:flex-start;gap:12px;font-size:.93rem;color:#333;padding:10px 0;line-height:1.5}
+.ps-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(239,68,68,.15);color:#ef4444;font-size:.75rem;font-weight:800;flex-shrink:0}
+.ps-chk{color:#10b981;font-weight:700;font-size:1rem;flex-shrink:0;margin-top:1px}
+
 /* KPI Bar */
 .kpi-bar{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;padding:48px 0}
 .kpi-item .kpi-num{font-size:2rem;font-weight:900}
@@ -334,54 +344,29 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
-<!-- 운영 차량 -->
+<!-- PAIN POINT → SOLUTION -->
 <section class="section bg-darker">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">Fleet</div>
-<h2 class="section-title fade-up">프로젝트에 맞는 차량을 직접 운영합니다</h2>
-<p class="section-desc fade-up" style="margin:0 auto">사용연수 3년 이하 기준 유지</p>
+<div class="section-label fade-up" style="color:#2563eb">PAIN POINT &rarr; SOLUTION</div>
+<h2 class="section-title fade-up">이런 고민, 그라운드케이가 해결합니다</h2>
 </div>
-<div class="grid-4 fade-up">
-<div class="card" style="text-align:center;padding:24px 16px">
-<div class="fleet-badge age">3년 이하</div>
-<h4 style="font-size:1rem;font-weight:800;margin-bottom:2px">G90</h4>
-<p style="font-size:.82rem;color:var(--gray-500)">럭셔리 세단</p>
+<div class="grid-2 fade-up">
+<div class="ps-box ps-pain">
+<h3 class="ps-heading">PAIN POINT</h3>
+<div class="ps-item"><span class="ps-num">1</span> VIP 차량 위치를 전화로 확인</div>
+<div class="ps-item"><span class="ps-num">2</span> 기사 no-show / 차량 고장 시 대응 지연</div>
+<div class="ps-item"><span class="ps-num">3</span> 해외 출장 시 현지 차량 수배 어려움</div>
+<div class="ps-item"><span class="ps-num">4</span> 비용 산정 기준 불투명</div>
+<div class="ps-item"><span class="ps-num">5</span> 다국어 커뮤니케이션 한계</div>
 </div>
-<div class="card" style="text-align:center;padding:24px 16px">
-<div class="fleet-badge age">3년 이하</div>
-<h4 style="font-size:1rem;font-weight:800;margin-bottom:2px">S-Class</h4>
-<p style="font-size:.82rem;color:var(--gray-500)">럭셔리 세단</p>
-</div>
-<div class="card" style="text-align:center;padding:24px 16px">
-<div class="fleet-badge eco">친환경</div>
-<h4 style="font-size:1rem;font-weight:800;margin-bottom:2px">EV6</h4>
-<p style="font-size:.82rem;color:var(--gray-500)">에코 세단</p>
-</div>
-<div class="card" style="text-align:center;padding:24px 16px">
-<div class="fleet-badge age">3년 이하</div>
-<h4 style="font-size:1rem;font-weight:800;margin-bottom:2px">Staria</h4>
-<p style="font-size:.82rem;color:var(--gray-500)">Executive Van</p>
-</div>
-<div class="card" style="text-align:center;padding:24px 16px">
-<div class="fleet-badge age">3년 이하</div>
-<h4 style="font-size:1rem;font-weight:800;margin-bottom:2px">Carnival Limousine</h4>
-<p style="font-size:.82rem;color:var(--gray-500)">Executive Van</p>
-</div>
-<div class="card" style="text-align:center;padding:24px 16px">
-<div class="fleet-badge age">3년 이하</div>
-<h4 style="font-size:1rem;font-weight:800;margin-bottom:2px">Solati</h4>
-<p style="font-size:.82rem;color:var(--gray-500)">Mini Coach</p>
-</div>
-<div class="card" style="text-align:center;padding:24px 16px">
-<div class="fleet-badge age">3년 이하</div>
-<h4 style="font-size:1rem;font-weight:800;margin-bottom:2px">Sprinter</h4>
-<p style="font-size:.82rem;color:var(--gray-500)">Luxury Van</p>
-</div>
-<div class="card" style="text-align:center;padding:24px 16px">
-<div class="fleet-badge eco">친환경</div>
-<h4 style="font-size:1rem;font-weight:800;margin-bottom:2px">Carnival Hybrid</h4>
-<p style="font-size:.82rem;color:var(--gray-500)">에코 밴</p>
+<div class="ps-box ps-sol">
+<h3 class="ps-heading ps-heading-sol">SOLUTION</h3>
+<div class="ps-item"><span class="ps-chk">&#10003;</span> T-RiseUp 실시간 GPS 관제 &mdash; 5초 간격 위치 업데이트</div>
+<div class="ps-item"><span class="ps-chk">&#10003;</span> AI 돌발감지 + 30분 내 예비 차량 자동 배차</div>
+<div class="ps-item"><span class="ps-chk">&#10003;</span> 50개국 300도시 검증 파트너 네트워크 원스톱 수배</div>
+<div class="ps-item"><span class="ps-chk">&#10003;</span> AI 자동 견적 시스템 &mdash; 20개+ 변수 기반 정확한 견적</div>
+<div class="ps-item"><span class="ps-chk">&#10003;</span> 다국어 CS 센터 + 글로벌 오퍼레이션 TF 지원</div>
 </div>
 </div>
 </div>
