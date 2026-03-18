@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인사이트 - 프로젝트 스토리·산업 인사이트·뉴스 | GroundK</title>
+<meta name="description" content="그라운드케이의 프로젝트 스토리, B2B 모빌리티 산업 인사이트, 최신 뉴스를 확인하세요.">
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#ffffff;--navy-light:#f9f9f9;--blue:#000;--blue-glow:rgba(0,0,0,.06);--gray-50:#f9f9f9;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-800:#111;--text-primary:#111;--text-secondary:#666;--shadow-md:0 4px 12px rgba(0,0,0,.06);--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+html{scroll-behavior:smooth}body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fff;color:var(--text-primary);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}.section{padding:100px 0}
+.section-label{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--blue);margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.3;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--transition);border:none;cursor:pointer;font-family:inherit}
+.btn-outline{border:1.5px solid #e5e5e5;color:#333;background:transparent}.btn-outline:hover{border-color:var(--blue);background:var(--blue-glow)}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.fade-up.visible{opacity:1;transform:translateY(0)}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:1px solid #e5e5e5}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:-0.5px;color:#111}.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}.nav-links>li{position:relative}
+.nav-links>li>a{font-size:.9rem;font-weight:500;color:var(--gray-400);transition:var(--transition);display:flex;align-items:center;gap:4px}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#111}
+.nav-links .arrow{font-size:.55rem;transition:transform .2s}.nav-links>li:hover .arrow{transform:rotate(180deg)}
+.nav-cta-btn{background:var(--blue);color:#fff!important;font-weight:600;padding:10px 22px;border-radius:50px;font-size:.85rem;transition:var(--transition)}.nav-cta-btn:hover{opacity:.85;transform:translateY(-1px)}
+.dropdown{position:absolute;top:calc(100% + 20px);left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.12);padding:12px;min-width:320px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;transform:translateX(-50%) translateY(8px);pointer-events:none}
+.nav-links>li:hover .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dropdown::before{content:'';position:absolute;top:-24px;left:0;right:0;height:24px;background:transparent}
+.dropdown::after{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:8px solid transparent;border-top:none;border-bottom:8px solid #fff}
+.dropdown-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:8px;transition:background .15s;text-decoration:none}.dropdown-item:hover{background:#f7f8fa}
+.dropdown-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px}
+.dropdown-icon.blue{background:#eef4ff;color:#2563eb}.dropdown-icon.green{background:#eefbf4;color:#16a34a}
+.dropdown-text strong{display:block;font-size:.875rem;font-weight:600;color:#111;margin-bottom:2px}.dropdown-text span{font-size:.78rem;color:var(--gray-500);line-height:1.4}
+.dropdown-badge{display:inline-block;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.dropdown-badge.saas{background:#dcfce7;color:#16a34a}.dropdown-badge.platform{background:#dbeafe;color:#2563eb}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}.hamburger span{display:block;width:22px;height:2px;background:#111;transition:var(--transition)}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;z-index:999;flex-direction:column;padding:24px;overflow-y:auto}.mobile-menu.open{display:flex}
+.mobile-menu .mob-section{margin-bottom:8px}.mobile-menu .mob-toggle{display:flex;align-items:center;justify-content:space-between;font-size:1.1rem;font-weight:600;color:#111;padding:14px 0;border:none;background:none;width:100%;cursor:pointer;border-bottom:1px solid #f0f0f0}
+.mobile-menu .mob-toggle .mob-arrow{font-size:.7rem;transition:transform .2s}.mobile-menu .mob-toggle.open .mob-arrow{transform:rotate(180deg)}
+.mobile-menu .mob-sub{display:none;padding:8px 0 8px 12px}.mobile-menu .mob-sub.open{display:block}
+.mobile-menu .mob-sub a{display:block;padding:10px 0;font-size:.95rem;color:var(--gray-400);border-bottom:1px solid #f5f5f5}.mobile-menu .mob-sub a strong{display:block;color:#111;font-weight:600;margin-bottom:2px}
+.mobile-menu .mob-link{display:block;font-size:1.1rem;font-weight:600;color:#111;padding:14px 0;border-bottom:1px solid #f0f0f0}
+.footer{background:var(--navy-light);border-top:1px solid #e5e5e5;padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:60px}
+.footer-brand{font-size:1.3rem;font-weight:900;margin-bottom:12px}.footer-brand span{color:var(--blue)}
+.footer-desc{font-size:.9rem;color:var(--gray-500);line-height:1.7}
+.footer h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray-400);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}.footer-links a{font-size:.9rem;color:var(--gray-500);transition:var(--transition)}.footer-links a:hover{color:var(--blue)}
+.footer-contact-item{font-size:.9rem;color:var(--gray-500);margin-bottom:8px}
+.footer-bottom{border-top:1px solid #e5e5e5;padding:24px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.footer-bottom p{font-size:.8rem;color:var(--gray-600)}.footer-bottom-links{display:flex;gap:20px}.footer-bottom-links a{font-size:.8rem;color:var(--gray-600)}.footer-bottom-links a:hover{color:var(--gray-400)}
+.footer-brands{margin-top:20px;padding:20px 0;border-top:1px solid #e5e5e5;text-align:center}.footer-brands span{font-size:.8rem;color:var(--gray-600);margin:0 12px}
+@media(max-width:1024px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.blog-grid{grid-template-columns:1fr}}
+
+/* PAGE */
+.page-hero{padding:140px 0 60px;background:#fff;text-align:center}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;margin-bottom:12px;letter-spacing:-1px}
+.page-hero p{font-size:1.05rem;color:var(--text-secondary);max-width:560px;margin:0 auto;line-height:1.8}
+/* Tab */
+.tab-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:48px}
+.tab-btn{padding:10px 24px;border-radius:50px;border:1.5px solid #e5e5e5;background:#fff;color:#555;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:var(--transition)}
+.tab-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-btn:hover:not(.active){border-color:#111;color:#111}
+/* Blog Grid */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.blog-card{border:1px solid #e5e5e5;border-radius:16px;overflow:hidden;background:#fff;transition:var(--transition);display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.blog-card.hidden{display:none}
+.blog-thumb{aspect-ratio:16/10;position:relative;overflow:hidden}
+.blog-thumb-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.85rem}
+.blog-cat{position:absolute;top:14px;left:14px;font-size:.7rem;font-weight:700;color:#fff;padding:5px 14px;border-radius:4px}
+.cat-project{background:#2563eb}
+.cat-insight{background:#0891b2}
+.cat-news{background:#64748b}
+.cat-pr{background:#7c3aed}
+.blog-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.blog-body h3{font-size:1.05rem;font-weight:800;margin-bottom:8px;line-height:1.4}
+.blog-body p{font-size:.88rem;color:var(--gray-500);line-height:1.6;margin-bottom:16px;flex:1}
+.blog-date{font-size:.8rem;color:var(--gray-600);display:flex;align-items:center;gap:6px;margin-top:auto}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"><div class="nav-inner">
+<a href="index.html" class="nav-logo">GROUND.<span>K</span></a>
+<ul class="nav-links">
+<li><a href="#">서비스 <span class="arrow">&#9660;</span></a><div class="dropdown"><a href="service-vip.html" class="dropdown-item"><div class="dropdown-icon blue">&#128664;</div><div class="dropdown-text"><strong>프리미엄 의전수송</strong><span>국가급 의전부터 글로벌 브랜드 VIP까지</span></div></a><a href="service-event.html" class="dropdown-item"><div class="dropdown-icon blue">&#127967;</div><div class="dropdown-text"><strong>메가이벤트 수송</strong><span>정상회의·국제행사·MICE 대규모 수송</span></div></a><a href="service-shuttle.html" class="dropdown-item"><div class="dropdown-icon blue">&#128652;</div><div class="dropdown-text"><strong>셔틀 위탁관리</strong><span>기업 통근·입주민·행사 셔틀 운영 대행</span></div></a><a href="service-marketing.html" class="dropdown-item"><div class="dropdown-icon blue">&#128142;</div><div class="dropdown-text"><strong>마케팅 모빌리티</strong><span>VIP 멤버십·카드사·항공사 프리미엄 서비스</span></div></a></div></li>
+<li><a href="#">솔루션 <span class="arrow">&#9660;</span></a><div class="dropdown"><a href="solution-pms.html" class="dropdown-item"><div class="dropdown-icon green">&#128202;</div><div class="dropdown-text"><strong>T-RiseUp PMS <span class="dropdown-badge saas">SaaS</span></strong><span>예약·배차·관제·정산 통합 관리 시스템</span></div></a><a href="solution-tms.html" class="dropdown-item"><div class="dropdown-icon green">&#127915;</div><div class="dropdown-text"><strong>T-RiseUp TMS <span class="dropdown-badge saas">SaaS</span></strong><span>티켓·탑승권·노선 관리 솔루션</span></div></a><a href="solution-rideus.html" class="dropdown-item"><div class="dropdown-icon green">&#128279;</div><div class="dropdown-text"><strong>RIDEUS Marketplace <span class="dropdown-badge platform">Platform</span></strong><span>셔틀 수요와 운수사를 연결하는 플랫폼</span></div></a></div></li>
+<li><a href="performance.html">프로젝트</a></li><li><a href="insight.html" class="active">인사이트</a></li><li><a href="company.html">기업</a></li>
+</ul>
+<a href="ir.html#contact" class="nav-cta-btn">문의하기</a>
+<button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu">
+<div class="mob-section"><button class="mob-toggle" onclick="toggleMobSub(this)">서비스 <span class="mob-arrow">&#9660;</span></button><div class="mob-sub"><a href="service-vip.html"><strong>프리미엄 의전수송</strong>국가급 의전부터 글로벌 브랜드 VIP까지</a><a href="service-event.html"><strong>메가이벤트 수송</strong>정상회의·국제행사·MICE 대규모 수송</a><a href="service-shuttle.html"><strong>셔틀 위탁관리</strong>기업 통근·입주민·행사 셔틀 운영 대행</a><a href="service-marketing.html"><strong>마케팅 모빌리티</strong>VIP 멤버십·카드사·항공사 프리미엄 서비스</a></div></div>
+<div class="mob-section"><button class="mob-toggle" onclick="toggleMobSub(this)">솔루션 <span class="mob-arrow">&#9660;</span></button><div class="mob-sub"><a href="solution-pms.html"><strong>T-RiseUp PMS</strong>예약·배차·관제·정산 통합 관리 시스템</a><a href="solution-tms.html"><strong>T-RiseUp TMS</strong>티켓·탑승권·노선 관리 솔루션</a><a href="solution-rideus.html"><strong>RIDEUS Marketplace</strong>셔틀 수요와 운수사를 연결하는 플랫폼</a></div></div>
+<a href="performance.html" class="mob-link">프로젝트</a><a href="insight.html" class="mob-link" style="color:var(--blue);font-weight:700">인사이트</a><a href="company.html" class="mob-link">기업</a>
+<a href="ir.html#contact" class="btn" style="margin-top:16px;text-align:center;border-radius:50px;background:#111;color:#fff">문의하기</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<div class="section-label fade-up">Insight</div>
+<h1 class="fade-up">인사이트</h1>
+<p class="fade-up">프로젝트 스토리, 산업 인사이트, 최신 뉴스를 확인하세요.</p>
+</div>
+</section>
+
+<!-- BLOG -->
+<section class="section" style="background:#fff;padding-top:0">
+<div class="container">
+<!-- Tab Filter -->
+<div class="tab-nav fade-up">
+<button class="tab-btn active" onclick="filterBlog('all')">전체</button>
+<button class="tab-btn" onclick="filterBlog('project')">프로젝트 스토리</button>
+<button class="tab-btn" onclick="filterBlog('insight')">산업 인사이트</button>
+<button class="tab-btn" onclick="filterBlog('news')">뉴스</button>
+<button class="tab-btn" onclick="filterBlog('pr')">PR</button>
+</div>
+
+<!-- Blog Grid -->
+<div class="blog-grid fade-up" id="blogGrid">
+
+<!-- 1 -->
+<a href="#" class="blog-card" data-cat="project">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">APEC 2025</div><span class="blog-cat cat-project">프로젝트 스토리</span></div>
+<div class="blog-body">
+<h3>APEC 2025, 21개국 정상을 모시기까지</h3>
+<p>21개국 정상급 인사의 의전수송을 완벽하게 수행한 APEC 2025 프로젝트의 비하인드 스토리.</p>
+<div class="blog-date">&#128197; 2025.11.15</div>
+</div>
+</a>
+
+<!-- 2 -->
+<a href="#" class="blog-card" data-cat="insight">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">MICE 수송 분석</div><span class="blog-cat cat-insight">산업 인사이트</span></div>
+<div class="blog-body">
+<h3>MICE 수송, 왜 전문 파트너가 필요한가</h3>
+<p>대규모 국제행사의 수송 운영에서 전문 파트너의 역할과 선택 기준을 분석합니다.</p>
+<div class="blog-date">&#128197; 2025.11.08</div>
+</div>
+</a>
+
+<!-- 3 -->
+<a href="#" class="blog-card" data-cat="news">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">APEC 파트너 선정</div><span class="blog-cat cat-news">뉴스</span></div>
+<div class="blog-body">
+<h3>APEC 2025 공식 수송 파트너 선정</h3>
+<p>그라운드케이가 APEC 2025 경주 정상회의 공식 수송 파트너로 선정되었습니다.</p>
+<div class="blog-date">&#128197; 2025.09.01</div>
+</div>
+</a>
+
+<!-- 4 -->
+<a href="#" class="blog-card" data-cat="project">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">BLACKPINK 수송</div><span class="blog-cat cat-project">프로젝트 스토리</span></div>
+<div class="blog-body">
+<h3>블랙핑크 월드투어, 5,000명을 움직이다</h3>
+<p>K-POP 콘서트 수송의 새로운 기준을 세운 블랙핑크 월드투어 프로젝트 이야기.</p>
+<div class="blog-date">&#128197; 2025.10.20</div>
+</div>
+</a>
+
+<!-- 5 -->
+<a href="#" class="blog-card" data-cat="insight">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">셔틀 위탁 가이드</div><span class="blog-cat cat-insight">산업 인사이트</span></div>
+<div class="blog-body">
+<h3>아파트 셔틀 위탁, 관리사무소가 알아야 할 모든 것</h3>
+<p>셔틀 위탁 도입을 검토하는 관리사무소를 위한 체크리스트와 운영 가이드.</p>
+<div class="blog-date">&#128197; 2025.10.05</div>
+</div>
+</a>
+
+<!-- 6 -->
+<a href="#" class="blog-card" data-cat="news">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">매출 성장</div><span class="blog-cat cat-news">뉴스</span></div>
+<div class="blog-body">
+<h3>2025년 매출 111.7억, 전년 대비 77% 성장</h3>
+<p>그라운드케이가 2025년 매출 111.7억원을 달성하며 3년 CAGR 48.1%의 고성장을 이어갔습니다.</p>
+<div class="blog-date">&#128197; 2025.12.20</div>
+</div>
+</a>
+
+<!-- 7 -->
+<a href="#" class="blog-card" data-cat="project">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">검암 프루지오</div><span class="blog-cat cat-project">프로젝트 스토리</span></div>
+<div class="blog-body">
+<h3>검암 프루지오, 5년 연속 운영의 비결</h3>
+<p>4,805세대 대단지에서 5년간 셔틀을 운영하며 쌓아온 노하우와 입주민 만족의 비결.</p>
+<div class="blog-date">&#128197; 2025.09.15</div>
+</div>
+</a>
+
+<!-- 8 -->
+<a href="#" class="blog-card" data-cat="insight">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">B2B SaaS 트렌드</div><span class="blog-cat cat-insight">산업 인사이트</span></div>
+<div class="blog-body">
+<h3>B2B 모빌리티 SaaS, 어디까지 왔나</h3>
+<p>수송 비즈니스의 디지털 전환 트렌드와 B2B 모빌리티 SaaS의 현재와 미래.</p>
+<div class="blog-date">&#128197; 2025.08.25</div>
+</div>
+</a>
+
+<!-- 9 -->
+<a href="#" class="blog-card" data-cat="news">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">강소기업 선정</div><span class="blog-cat cat-news">뉴스</span></div>
+<div class="blog-body">
+<h3>부산 서비스 강소기업 선정</h3>
+<p>그라운드케이가 부산광역시 서비스 강소기업으로 선정되어 지역 경제 기여를 인정받았습니다.</p>
+<div class="blog-date">&#128197; 2025.07.10</div>
+</div>
+</a>
+
+<!-- 10 -->
+<a href="#" class="blog-card" data-cat="pr" id="brand-renewal">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">브랜드 리뉴얼</div><span class="blog-cat cat-pr">PR</span></div>
+<div class="blog-body">
+<h3>그라운드케이, 'WE MOVE YOU' 브랜드 리뉴얼</h3>
+<p>'이동경험을 디자인합니다' &mdash; 그라운드케이의 새로운 브랜드 아이덴티티를 소개합니다.</p>
+<div class="blog-date">&#128197; 2026.03.01</div>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><div class="footer-brand">GROUND.<span>K</span></div><p class="footer-desc">현장에서 검증하고 기술로 확장하는 B2B 모빌리티 기업. 국제행사부터 기업 셔틀까지, 이동 운영의 모든 것을 연결합니다.</p></div>
+<div><h4>Services</h4><ul class="footer-links"><li><a href="service-vip.html">프리미엄 의전수송</a></li><li><a href="service-event.html">메가이벤트 수송</a></li><li><a href="service-shuttle.html">셔틀 위탁관리</a></li><li><a href="service-marketing.html">마케팅 모빌리티</a></li></ul></div>
+<div><h4>Solutions</h4><ul class="footer-links"><li><a href="solution-pms.html">T-RiseUp PMS</a></li><li><a href="solution-tms.html">T-RiseUp TMS</a></li><li><a href="solution-rideus.html">RIDEUS Marketplace</a></li></ul></div>
+<div><h4>Contact</h4><div class="footer-contact-item">02-863-3540</div><div class="footer-contact-item">ir@groundk.co.kr</div><a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">문의하기</a></div>
+</div>
+<div class="footer-brands"><span>groundk.com</span><span>triseup.com</span><span>rideus.co.kr</span></div>
+<div class="footer-bottom"><p>&copy; 2025 (주)그라운드케이. All rights reserved. 서울시 강서구 마곡중앙로서 161-17, 7층</p><div class="footer-bottom-links"><a href="#">개인정보처리방침</a><a href="#">이용약관</a></div></div>
+</div></footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function toggleMobSub(btn){btn.classList.toggle('open');const sub=btn.nextElementSibling;sub.classList.toggle('open')}
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
+// Tab filter
+function filterBlog(cat){
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+document.querySelectorAll('.blog-card').forEach(c=>{
+if(cat==='all'){c.classList.remove('hidden')}
+else{c.classList.toggle('hidden',c.dataset.cat!==cat)}
+});
+}
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
