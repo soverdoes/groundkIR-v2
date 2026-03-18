@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>회사소개 - 9년 무사고 B2B 모빌리티 기업 | GroundK</title>
-<meta name="description" content="그라운드케이는 대형행사 수송, VIP 의전, 셔틀 운영을 중심으로 이동 운영을 더 안정적이고 효율적으로 만드는 B2B 모빌리티 기업입니다.">
+<title>기업소개 - 9년 무사고 B2B 모빌리티 기업 | GroundK</title>
+<meta name="description" content="그라운드케이는 국가급 행사 수송, VIP 의전, 셔틀 운영을 직접 수행하며 자체 관제 시스템을 개발한 하이브리드형 B2B 모빌리티 기업입니다.">
 <style>
-/* ========== SHARED DESIGN SYSTEM ========== */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--navy:#ffffff;--navy-light:#f9f9f9;--navy-mid:#ffffff;--blue:#000;--blue-dark:#000;--blue-glow:rgba(0,0,0,.06);--gray-50:#f9f9f9;--gray-100:#f5f5f5;--gray-200:#e5e5e5;--gray-300:#363636;--gray-400:#363636;--gray-500:#555;--gray-600:#999;--gray-700:#666;--gray-800:#111;--white:#fff;--text-primary:#111;--text-secondary:#666;--gradient-blue:linear-gradient(135deg,#000,#111,#222);--gradient-dark:linear-gradient(180deg,#ffffff,#f9f9f9);--shadow-sm:0 1px 3px rgba(0,0,0,.05);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 10px 30px rgba(0,0,0,.08);--shadow-blue:0 4px 12px rgba(0,0,0,.1);--radius:12px;--radius-lg:12px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
@@ -27,7 +26,6 @@ img{max-width:100%;display:block}
 .bg-dark{background:var(--navy)}
 .bg-darker{background:var(--navy-light)}
 .bg-light{background:var(--gray-50);color:var(--gray-800)}
-.bg-light .section-desc{color:var(--gray-600)}
 .bg-light .section-title{color:var(--gray-800)}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
@@ -38,6 +36,7 @@ img{max-width:100%;display:block}
 .bg-light .card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
+/* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:1px solid #e5e5e5}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
 .nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:-0.5px;color:#111}
@@ -77,6 +76,7 @@ img{max-width:100%;display:block}
 .mobile-menu .mob-sub a{display:block;padding:10px 0;font-size:.95rem;color:var(--gray-400);border-bottom:1px solid #f5f5f5}
 .mobile-menu .mob-sub a strong{display:block;color:#111;font-weight:600;margin-bottom:2px}
 .mobile-menu .mob-link{display:block;font-size:1.1rem;font-weight:600;color:#111;padding:14px 0;border-bottom:1px solid #f0f0f0}
+/* FOOTER */
 .footer{background:var(--navy-light);border-top:1px solid #e5e5e5;padding:80px 0 0}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:60px}
 .footer-brand{font-size:1.3rem;font-weight:900;margin-bottom:12px}
@@ -102,75 +102,98 @@ img{max-width:100%;display:block}
 .section{padding:60px 0}
 .footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;text-align:center}
-.timeline-track{flex-direction:column;align-items:flex-start;gap:0;padding-bottom:0;margin-bottom:0}
-.timeline-track::before{top:0;bottom:0;left:4px;right:auto;width:1px;height:100%}
-.timeline-track>div{display:flex;align-items:center;gap:12px;padding:8px 0;flex:none}
-.timeline-dot{margin:0!important}
-.timeline-items{flex-direction:column;gap:0}
-.timeline-item{text-align:left;padding:12px 0;border-bottom:1px solid #e5e5e5}
-.timeline-item:last-child{border-bottom:none}
+.who-layout{grid-template-columns:1fr}
+.kpi-bar{flex-direction:column;gap:24px}
+.why-items{grid-template-columns:1fr}
+.tl-grid{grid-template-columns:1fr}
+.network-chips{flex-direction:column}
+.award-year-grid{grid-template-columns:repeat(2,1fr)}
+.culture-grid{grid-template-columns:1fr}
 }
-/* ========== END SHARED ========== */
 
-/* PAGE: COMPANY / ABOUT */
-.page-hero{padding:160px 0 80px;text-align:center;background:#fff;position:relative}
-.page-hero .container{position:relative;z-index:1}
-.page-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;margin-bottom:16px;letter-spacing:-1px;line-height:1.3}
-.page-hero p{font-size:1.1rem;color:var(--text-secondary);max-width:640px;margin:0 auto;line-height:1.8}
-.page-hero .hero-sub{font-size:.95rem;color:var(--gray-500);margin-top:16px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.8}
+/* PAGE: COMPANY */
+.page-hero{padding:160px 0 60px;text-align:center;background:#fff}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;margin-bottom:20px;letter-spacing:-1px;line-height:1.3}
+.page-hero p{font-size:1.05rem;color:var(--text-secondary);max-width:640px;margin:0 auto;line-height:1.8}
+.mission-bar{margin-top:28px;display:inline-block;padding:16px 24px;border-left:3px solid #111;text-align:left}
+.mission-bar .mission-label{font-size:.75rem;font-weight:800;letter-spacing:1px;color:var(--gray-500);margin-bottom:4px}
+.mission-bar p{font-size:.9rem;color:var(--gray-400);line-height:1.6;font-style:italic}
 
-.story-block{max-width:800px;margin:0 auto}
-.story-block p{font-size:1.05rem;color:var(--gray-300);line-height:1.9;margin-bottom:24px}
-.story-block p:last-child{margin-bottom:0}
+/* KPI Bar */
+.kpi-bar{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;padding:48px 0}
+.kpi-item .kpi-num{font-size:2rem;font-weight:900}
+.kpi-item .kpi-label{font-size:.8rem;color:var(--gray-500);margin-top:4px}
 
-.mission-card{text-align:center;padding:48px 36px}
-.mission-card h3{font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:16px}
-.mission-card p{font-size:1.05rem;color:var(--gray-300);line-height:1.8}
+/* Who We Are */
+.who-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.who-text p{font-size:.95rem;color:var(--gray-400);line-height:1.8;margin-bottom:16px}
+.who-diagram{display:flex;flex-direction:column;align-items:center;gap:16px}
+.who-boxes{display:flex;gap:16px}
+.who-box{border:1.5px solid #e5e5e5;border-radius:12px;padding:24px 20px;text-align:center;min-width:160px}
+.who-box h4{font-size:1rem;font-weight:800;margin-bottom:6px}
+.who-box p{font-size:.82rem;color:var(--gray-500);line-height:1.5}
+.who-plus{font-size:1.5rem;font-weight:300;color:var(--gray-600);display:flex;align-items:center}
+.who-result{font-size:.9rem;font-weight:700;color:#1a56db;padding:12px 24px;background:#eef4ff;border-radius:50px}
 
-.whatwedo-card h3{font-size:1.15rem;font-weight:700;margin-bottom:10px}
-.whatwedo-card p{font-size:.9rem;color:var(--gray-500);line-height:1.7}
+/* What We Do */
+.wwd-card{padding:32px;position:relative;overflow:hidden}
+.wwd-card .wwd-dot{width:10px;height:10px;border-radius:50%;margin-bottom:16px}
+.wwd-card h3{font-size:1.1rem;font-weight:800;margin-bottom:10px}
+.wwd-card p{font-size:.9rem;color:var(--gray-500);line-height:1.7}
 
-.whyus-card{border-left:3px solid #111;padding-left:28px}
-.whyus-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
-.whyus-card p{font-size:.9rem;color:var(--gray-500);line-height:1.7}
+/* Why GroundK */
+.why-items{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.why-item{display:flex;gap:16px;align-items:flex-start}
+.why-icon{font-size:1.5rem;flex-shrink:0;margin-top:4px}
+.why-item h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.why-item p{font-size:.9rem;color:var(--gray-500);line-height:1.7}
 
-.timeline{max-width:900px;margin:48px auto 0}
-.timeline-track{display:flex;align-items:flex-end;position:relative;margin-bottom:24px;padding-bottom:12px}
-.timeline-track::before{content:'';position:absolute;bottom:4px;left:10%;right:10%;height:1px;background:#ccc;z-index:0}
-.timeline-dot{width:10px;height:10px;border-radius:50%;background:#111;position:relative;z-index:1}
-.timeline-year{font-size:11px;font-weight:600;color:var(--gray-500);margin-bottom:8px}
-.timeline-items{display:flex;gap:0}
-.timeline-item{flex:1;padding:0 8px;text-align:center}
-.timeline-item h3{font-size:12px;font-weight:600;margin-bottom:4px;line-height:1.5}
-.timeline-item p{font-size:11px;color:var(--gray-500);line-height:1.5}
+/* Leadership */
+.leader-card{text-align:center;padding:40px 28px}
+.leader-avatar{width:80px;height:80px;border-radius:50%;background:#e5e5e5;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:var(--gray-600);font-size:1.5rem}
+.leader-card h3{font-size:1.1rem;font-weight:800;margin-bottom:4px}
+.leader-card .leader-title{font-size:.85rem;color:#1a56db;font-weight:600;margin-bottom:12px}
+.leader-card .leader-bio{font-size:.85rem;color:var(--gray-500);line-height:1.6}
 
-.network-block{max-width:800px;margin:0 auto;text-align:center}
-.network-block p{font-size:1.05rem;color:var(--gray-300);line-height:1.9;margin-bottom:16px}
-.network-block .network-sub{font-size:.9rem;color:var(--gray-500);line-height:1.7}
+/* Timeline */
+.tl-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.tl-step{position:relative;padding:0 16px 0 0;text-align:left}
+.tl-step::before{content:'';position:absolute;top:8px;left:0;right:0;height:2px;background:#e5e5e5}
+.tl-dot{width:16px;height:16px;border-radius:50%;background:#111;position:relative;z-index:1;margin-bottom:16px}
+.tl-step:last-child .tl-dot{background:#1a56db}
+.tl-year{font-size:.8rem;font-weight:700;color:#1a56db;margin-bottom:4px}
+.tl-title{font-size:.95rem;font-weight:700;margin-bottom:6px}
+.tl-desc{font-size:.82rem;color:var(--gray-500);line-height:1.5}
 
-.kpi-number{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#111;margin-bottom:4px}
-.kpi-label{font-size:.9rem;color:var(--gray-500);font-weight:500}
+/* Network */
+.network-chips{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
+.network-chip{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;border:1px solid #e5e5e5;border-radius:50px;font-size:.85rem;font-weight:600}
+.network-chip small{font-size:.75rem;color:var(--gray-500);font-weight:400}
+.coverage-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:24px}
+.coverage-list li{font-size:.9rem;color:var(--gray-400);display:flex;gap:8px}
+.coverage-list li strong{color:#111;min-width:100px}
 
-.culture-card{text-align:center;padding:40px 28px}
-.culture-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
-.culture-card p{font-size:.9rem;color:var(--gray-500);line-height:1.7}
+/* Awards */
+.award-year{margin-bottom:32px}
+.award-year h4{font-size:1.1rem;font-weight:800;margin-bottom:12px;color:#1a56db}
+.award-year-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.award-badge{font-size:.82rem;font-weight:600;color:#333;background:#f5f7fa;border:1px solid #e5e5e5;border-radius:8px;padding:10px 14px;text-align:center}
 
-.awards-year{margin-bottom:36px}
-.awards-year h3{font-size:1.15rem;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.awards-year h3 span{font-size:.75rem;font-weight:600;background:rgba(0,0,0,.1);color:var(--blue);padding:3px 10px;border-radius:50px}
-.awards-year .awards-list{display:flex;flex-wrap:wrap;gap:10px}
-.awards-year .award-tag{font-size:.85rem;color:var(--gray-300);background:var(--navy-mid);border:1px solid #e5e5e5;padding:8px 18px;border-radius:50px;transition:var(--transition)}
-.awards-year .award-tag:hover{border-color:#ccc}
-.awards-year .award-tag.badge-blue{background:#E6F1FB;color:#185FA5;border-color:#B5D4F4}
-.awards-year .award-tag.badge-blue:hover{border-color:#7BB3E8}
+/* Culture */
+.culture-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.culture-card{padding:28px 24px}
+.culture-card .culture-num{font-size:.75rem;font-weight:700;color:var(--gray-600);margin-bottom:8px}
+.culture-card h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+.culture-card p{font-size:.85rem;color:var(--gray-500);line-height:1.6}
 
-.cta-section{padding:100px 0;background:#f9f9f9;text-align:center;color:#111}
-.cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
-.cta-section p{font-size:1rem;color:#666;margin-bottom:36px;line-height:1.7}
-.cta-section .btn-white{background:var(--blue);color:#fff;font-weight:700;padding:16px 36px;border-radius:50px}
-.cta-section .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
-.cta-section .btn-ghost{border:1.5px solid #e5e5e5;color:#333;background:transparent;padding:16px 36px;border-radius:50px}
-.cta-section .btn-ghost:hover{background:#f5f5f5}
+/* CTA */
+.cta-dark{padding:100px 0;background:#111;text-align:center;color:#fff}
+.cta-dark h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
+.cta-dark p{font-size:1rem;color:rgba(255,255,255,.7);margin-bottom:36px;line-height:1.7}
+.cta-dark .btn-white{background:#fff;color:#111;font-weight:700;padding:16px 36px}
+.cta-dark .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,255,255,.15)}
+.cta-dark .btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:#fff;background:transparent;padding:16px 36px}
+.cta-dark .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.05)}
 </style>
 </head>
 <body>
@@ -181,20 +204,20 @@ img{max-width:100%;display:block}
 <a href="index.html" class="nav-logo">GROUND.<span>K</span></a>
 <ul class="nav-links">
 <li>
-<a href="#">서비스 <span class="arrow">▼</span></a>
+<a href="#">서비스 <span class="arrow">&#9660;</span></a>
 <div class="dropdown">
-<a href="solutions.html#vip" class="dropdown-item"><div class="dropdown-icon blue">🚘</div><div class="dropdown-text"><strong>프리미엄 의전수송</strong><span>국가급 의전부터 글로벌 브랜드 VIP까지</span></div></a>
-<a href="solutions.html#event" class="dropdown-item"><div class="dropdown-icon blue">🏟</div><div class="dropdown-text"><strong>메가이벤트 수송</strong><span>정상회의·국제행사·MICE 대규모 수송</span></div></a>
-<a href="solutions.html#shuttle" class="dropdown-item"><div class="dropdown-icon blue">🚌</div><div class="dropdown-text"><strong>셔틀 위탁관리</strong><span>기업 통근·입주민·행사 셔틀 운영 대행</span></div></a>
-<a href="solutions.html#marketing" class="dropdown-item"><div class="dropdown-icon blue">💎</div><div class="dropdown-text"><strong>마케팅 모빌리티</strong><span>VIP 멤버십·카드사·항공사 프리미엄 서비스</span></div></a>
+<a href="solutions.html#vip" class="dropdown-item"><div class="dropdown-icon blue">&#128664;</div><div class="dropdown-text"><strong>프리미엄 의전수송</strong><span>국가급 의전부터 글로벌 브랜드 VIP까지</span></div></a>
+<a href="solutions.html#event" class="dropdown-item"><div class="dropdown-icon blue">&#127967;</div><div class="dropdown-text"><strong>메가이벤트 수송</strong><span>정상회의·국제행사·MICE 대규모 수송</span></div></a>
+<a href="solutions.html#shuttle" class="dropdown-item"><div class="dropdown-icon blue">&#128652;</div><div class="dropdown-text"><strong>셔틀 위탁관리</strong><span>기업 통근·입주민·행사 셔틀 운영 대행</span></div></a>
+<a href="solutions.html#marketing" class="dropdown-item"><div class="dropdown-icon blue">&#128142;</div><div class="dropdown-text"><strong>마케팅 모빌리티</strong><span>VIP 멤버십·카드사·항공사 프리미엄 서비스</span></div></a>
 </div>
 </li>
 <li>
-<a href="#">솔루션 <span class="arrow">▼</span></a>
+<a href="#">솔루션 <span class="arrow">&#9660;</span></a>
 <div class="dropdown">
-<a href="solutions.html#triseup-pms" class="dropdown-item"><div class="dropdown-icon green">📊</div><div class="dropdown-text"><strong>T-RiseUp PMS <span class="dropdown-badge saas">SaaS</span></strong><span>예약·배차·관제·정산 통합 관리 시스템</span></div></a>
-<a href="solutions.html#triseup-tms" class="dropdown-item"><div class="dropdown-icon green">🎫</div><div class="dropdown-text"><strong>T-RiseUp TMS <span class="dropdown-badge saas">SaaS</span></strong><span>티켓·탑승권·노선 관리 솔루션</span></div></a>
-<a href="solutions.html#rideus" class="dropdown-item"><div class="dropdown-icon green">🔗</div><div class="dropdown-text"><strong>RIDEUS Marketplace <span class="dropdown-badge platform">Platform</span></strong><span>셔틀 수요와 운수사를 연결하는 플랫폼</span></div></a>
+<a href="solutions.html#triseup-pms" class="dropdown-item"><div class="dropdown-icon green">&#128202;</div><div class="dropdown-text"><strong>T-RiseUp PMS <span class="dropdown-badge saas">SaaS</span></strong><span>예약·배차·관제·정산 통합 관리 시스템</span></div></a>
+<a href="solutions.html#triseup-tms" class="dropdown-item"><div class="dropdown-icon green">&#127915;</div><div class="dropdown-text"><strong>T-RiseUp TMS <span class="dropdown-badge saas">SaaS</span></strong><span>티켓·탑승권·노선 관리 솔루션</span></div></a>
+<a href="solutions.html#rideus" class="dropdown-item"><div class="dropdown-icon green">&#128279;</div><div class="dropdown-text"><strong>RIDEUS Marketplace <span class="dropdown-badge platform">Platform</span></strong><span>셔틀 수요와 운수사를 연결하는 플랫폼</span></div></a>
 </div>
 </li>
 <li><a href="performance.html">프로젝트</a></li>
@@ -209,7 +232,7 @@ img{max-width:100%;display:block}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
 <div class="mob-section">
-<button class="mob-toggle" onclick="toggleMobSub(this)">서비스 <span class="mob-arrow">▼</span></button>
+<button class="mob-toggle" onclick="toggleMobSub(this)">서비스 <span class="mob-arrow">&#9660;</span></button>
 <div class="mob-sub">
 <a href="solutions.html#vip"><strong>프리미엄 의전수송</strong>국가급 의전부터 글로벌 브랜드 VIP까지</a>
 <a href="solutions.html#event"><strong>메가이벤트 수송</strong>정상회의·국제행사·MICE 대규모 수송</a>
@@ -218,7 +241,7 @@ img{max-width:100%;display:block}
 </div>
 </div>
 <div class="mob-section">
-<button class="mob-toggle" onclick="toggleMobSub(this)">솔루션 <span class="mob-arrow">▼</span></button>
+<button class="mob-toggle" onclick="toggleMobSub(this)">솔루션 <span class="mob-arrow">&#9660;</span></button>
 <div class="mob-sub">
 <a href="solutions.html#triseup-pms"><strong>T-RiseUp PMS</strong>예약·배차·관제·정산 통합 관리 시스템</a>
 <a href="solutions.html#triseup-tms"><strong>T-RiseUp TMS</strong>티켓·탑승권·노선 관리 솔루션</a>
@@ -231,269 +254,338 @@ img{max-width:100%;display:block}
 <a href="ir.html#contact" class="btn btn-primary" style="margin-top:16px;text-align:center;border-radius:50px">문의하기</a>
 </div>
 
-<!-- PAGE HERO -->
+<!-- SECTION 0 : HERO -->
 <section class="page-hero">
 <div class="container">
 <div class="section-label fade-up">About GroundK</div>
-<h1 class="fade-up">운영과 기술로 기업 이동 운영의 기준을 높여온 팀</h1>
-<div class="hero-sub fade-up">APEC 정상회의, 루이비통, 샤넬 — 국가와 글로벌 브랜드가 선택한<br>운영 체계를 9년간 현장에서 직접 만들어왔습니다.</div>
-<div class="fade-up" style="margin-top:24px;padding-left:16px;border-left:3px solid #111;display:inline-block;text-align:left">
-<p style="font-size:.875rem;color:var(--gray-500);font-style:italic;line-height:1.6"><strong style="font-style:normal;color:var(--gray-400)">Mission</strong>&nbsp;&nbsp;기업과 기관의 이동 운영을 더 안정적이고 효율적으로 만든다</p>
+<h1 class="fade-up">운영과 기술로<br>기업 이동의 기준을 높여온 팀</h1>
+<p class="fade-up">APEC 정상회의, 루이비통, 샤넬 &mdash;<br>국가와 글로벌 브랜드가 선택한 운영 체계를<br>9년간 현장에서 직접 만들어왔습니다.</p>
+<div class="mission-bar fade-up">
+<div class="mission-label">Mission</div>
+<p>기업과 기관의 이동 운영을<br>더 안정적이고 효율적으로 만든다</p>
 </div>
 </div>
 </section>
 
-<!-- WHO WE ARE -->
-<section class="section bg-darker">
+<!-- SECTION 1 : KPI BAR -->
+<section class="bg-darker" style="border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5">
+<div class="container">
+<div class="kpi-bar fade-up">
+<div class="kpi-item"><div class="kpi-num">2016</div><div class="kpi-label">설립연도</div></div>
+<div class="kpi-item"><div class="kpi-num">430+</div><div class="kpi-label">기업 고객사</div></div>
+<div class="kpi-item"><div class="kpi-num">130+</div><div class="kpi-label">누적 프로젝트</div></div>
+<div class="kpi-item"><div class="kpi-num">9년</div><div class="kpi-label">무사고 운영</div></div>
+<div class="kpi-item"><div class="kpi-num">연 25~30%</div><div class="kpi-label">매출 성장률</div></div>
+</div>
+<p class="fade-up" style="text-align:center;font-size:.82rem;color:var(--gray-600);padding-bottom:32px">2016년 6월 28일 설립 &middot; 서울 강서구 마곡</p>
+</div>
+</section>
+
+<!-- SECTION 2 : WHO WE ARE -->
+<section class="section bg-dark">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
 <div class="section-label fade-up">Who We Are</div>
 <h2 class="section-title fade-up">우리는 이동을 차량이 아닌 운영으로 봅니다</h2>
 </div>
-<div class="story-block fade-up">
+<div class="who-layout fade-up">
+<div class="who-text">
 <p>기업과 기관의 이동 운영은 차량 배정으로 끝나지 않습니다. 행사 목적, VIP 동선, 운영 계획, 현장 대응, 정산과 보고까지 연결돼야 프로젝트가 완성됩니다.</p>
-<p>그라운드케이는 직접 수행 경험을 축적하며 필요한 관제·운영 시스템을 자체적으로 발전시켜 왔습니다.</p>
-<p>그 결과, 현장을 이해하는 운영 역량과 이를 효율화하는 기술 역량을 함께 갖춘 하이브리드형 B2B 모빌리티 기업으로 성장하고 있습니다.</p>
+<p>그라운드케이는 직접 수행 경험을 축적하며 필요한 관제·운영 시스템을 자체적으로 발전시켜 왔습니다. 현장을 이해하는 운영 역량과 이를 효율화하는 기술 역량을 함께 갖춘 하이브리드형 B2B 모빌리티 기업입니다.</p>
+</div>
+<div class="who-diagram">
+<div class="who-boxes">
+<div class="who-box">
+<h4>운영 역량</h4>
+<p>현장 직접<br>수행·관리</p>
+</div>
+<div class="who-plus">+</div>
+<div class="who-box">
+<h4>기술 역량</h4>
+<p>자체 개발<br>시스템</p>
+</div>
+</div>
+<div style="font-size:1.2rem;color:var(--gray-600)">&darr;</div>
+<div class="who-result">하이브리드형 B2B 모빌리티</div>
+</div>
 </div>
 </div>
 </section>
 
-<!-- WHAT WE DO -->
+<!-- SECTION 3 : WHAT WE DO -->
 <section class="section bg-light">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
 <div class="section-label fade-up">What We Do</div>
 <h2 class="section-title fade-up">그라운드케이의 역할</h2>
-<p class="section-desc fade-up" style="margin:0 auto">서비스, 운영 시스템, 반복형 플랫폼으로<br>이동 운영 전 과정을 연결합니다.</p>
+<p class="section-desc fade-up" style="margin:0 auto">서비스, 운영 시스템, 반복형 플랫폼으로<br>이동 운영 전 과정을 연결합니다</p>
 </div>
-<div class="grid-4">
-<div class="card whatwedo-card fade-up">
+<div class="grid-2 fade-up">
+<div class="card wwd-card">
+<div class="wwd-dot" style="background:#2563eb"></div>
 <h3>대형행사 수송</h3>
-<p>정상회의, 국제행사, 글로벌 컨퍼런스, 기업 이벤트의 복잡한 이동을 안정적으로 수행합니다.</p>
+<p>정상회의·국제행사·글로벌 컨퍼런스·기업 이벤트의 복잡한 이동을 안정적으로 수행합니다</p>
 </div>
-<div class="card whatwedo-card fade-up">
+<div class="card wwd-card">
+<div class="wwd-dot" style="background:#2563eb"></div>
 <h3>프리미엄 VIP 의전</h3>
-<p>주요 임원, 외빈, 럭셔리 브랜드 고객을 위한 보안 중심 의전을 제공합니다.</p>
+<p>주요 임원·외빈·럭셔리 브랜드 고객을 위한 보안 중심 의전을 제공합니다</p>
 </div>
-<div class="card whatwedo-card fade-up">
+<div class="card wwd-card">
+<div class="wwd-dot" style="background:#10b981"></div>
 <h3>스마트 셔틀 운영</h3>
-<p>기업 통근, 행사 셔틀, 반복 이동을 체계적으로 설계·운영합니다.</p>
+<p>기업 통근·행사 셔틀·반복 이동을 더 효율적으로 설계·운영합니다</p>
 </div>
-<div class="card whatwedo-card fade-up">
+<div class="card wwd-card">
+<div class="wwd-dot" style="background:#10b981"></div>
 <h3>관제·운영 SaaS</h3>
-<p>예약·배차·관제·정산을 연결해 운영 효율과 데이터 기반 의사결정을 지원합니다.</p>
+<p>예약·배차·관제·정산을 연결해 운영 효율과 데이터 기반 의사결정을 지원합니다</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- WHY US -->
-<section class="section bg-dark">
+<!-- SECTION 4 : WHY GROUNDK -->
+<section class="section bg-darker">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
 <div class="section-label fade-up">Why GroundK</div>
 <h2 class="section-title fade-up">왜 그라운드케이인가</h2>
 </div>
-<div class="grid-2">
-<div class="whyus-card fade-up">
+<div class="why-items fade-up">
+<div class="why-item">
+<div class="why-icon">&#127963;</div>
+<div>
 <h3>국가급 프로젝트 경험</h3>
-<p>APEC, 주요 국제행사, 정부&#183;기관 프로젝트를 수행하며 운영 안정성과 대응 역량을 검증받았습니다.</p>
+<p>APEC·한-아프리카·ADB 등 주요 국제행사를 수행하며 운영 안정성과 대응 역량을 검증받았습니다</p>
 </div>
-<div class="whyus-card fade-up">
+</div>
+<div class="why-item">
+<div class="why-icon">&#9881;</div>
+<div>
 <h3>현장을 이해하는 기술</h3>
-<p>현장 문제를 해결하는 과정에서 기술을 발전시켜 왔습니다.</p>
+<p>현장 문제를 해결하는 과정에서 기술을 발전시켰습니다. T-RiseUp과 RIDEUS는 실제 운영 현장의 산물입니다</p>
 </div>
-<div class="whyus-card fade-up">
+</div>
+<div class="why-item">
+<div class="why-icon">&#128203;</div>
+<div>
 <h3>운영 품질을 지탱하는 표준 체계</h3>
-<p>SOP, 관제 프로세스, 현장 브리핑, 결과 리포팅으로 일관된 품질을 유지합니다.</p>
+<p>SOP·관제 프로세스·현장 브리핑·결과 리포팅까지 일관된 품질을 유지하는 체계를 갖추고 있습니다</p>
 </div>
-<div class="whyus-card fade-up">
+</div>
+<div class="why-item">
+<div class="why-icon">&#128200;</div>
+<div>
 <h3>서비스와 확장성을 함께 보는 구조</h3>
-<p>직접 수행으로 신뢰를 만들고, SaaS와 플랫폼으로 반복 운영과 확장성을 키워갑니다.</p>
+<p>직접 수행으로 신뢰를 만들고 SaaS와 플랫폼으로 반복 운영과 확장성을 키웁니다</p>
+</div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- LEADERSHIP TEAM -->
-<section class="section bg-lighter">
+<!-- SECTION 5 : LEADERSHIP -->
+<section class="section bg-dark">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
 <div class="section-label fade-up">Team</div>
 <h2 class="section-title fade-up">이 일을 직접 만들어온 팀</h2>
-<p class="section-desc fade-up" style="margin:0 auto">운영 현장과 기술 개발을 함께 이끌어온 창업팀과 핵심 리더십입니다.</p>
+<p class="section-desc fade-up" style="margin:0 auto">운영 현장과 기술 개발을 함께 이끌어온 창업팀과 핵심 리더십입니다</p>
 </div>
 <div class="grid-3 fade-up">
-<div class="card" style="text-align:center;padding:40px 28px">
-<div style="width:80px;height:80px;border-radius:50%;background:#e5e5e5;margin:0 auto 20px"></div>
-<h3 style="font-size:1.1rem;font-weight:800;margin-bottom:4px">[대표자 이름]</h3>
-<p style="font-size:.85rem;color:var(--gray-500);margin-bottom:12px">대표이사 / CEO</p>
-<p style="font-size:.85rem;color:var(--gray-400);line-height:1.6">[주요 경력 1~2줄]</p>
-<p style="font-size:.85rem;color:var(--gray-500);font-style:italic;margin-top:8px">[운영 철학 또는 비전 한 줄]</p>
+<div class="card leader-card">
+<div class="leader-avatar">&#128100;</div>
+<h3>[대표자 이름]</h3>
+<div class="leader-title">대표이사 &middot; CEO</div>
+<div class="leader-bio">[주요 경력 1~2줄]</div>
 </div>
-<div class="card" style="text-align:center;padding:40px 28px">
-<div style="width:80px;height:80px;border-radius:50%;background:#e5e5e5;margin:0 auto 20px"></div>
-<h3 style="font-size:1.1rem;font-weight:800;margin-bottom:4px">[이름]</h3>
-<p style="font-size:.85rem;color:var(--gray-500);margin-bottom:12px">CTO / 기술 총괄</p>
-<p style="font-size:.85rem;color:var(--gray-400);line-height:1.6">[주요 경력 1~2줄]</p>
+<div class="card leader-card">
+<div class="leader-avatar">&#128100;</div>
+<h3>[이름]</h3>
+<div class="leader-title">CTO &middot; 기술 총괄</div>
+<div class="leader-bio">[주요 경력 1~2줄]</div>
 </div>
-<div class="card" style="text-align:center;padding:40px 28px">
-<div style="width:80px;height:80px;border-radius:50%;background:#e5e5e5;margin:0 auto 20px"></div>
-<h3 style="font-size:1.1rem;font-weight:800;margin-bottom:4px">[이름]</h3>
-<p style="font-size:.85rem;color:var(--gray-500);margin-bottom:12px">운영 총괄 / COO</p>
-<p style="font-size:.85rem;color:var(--gray-400);line-height:1.6">[주요 경력 1~2줄]</p>
+<div class="card leader-card">
+<div class="leader-avatar">&#128100;</div>
+<h3>[이름]</h3>
+<div class="leader-title">운영 총괄 &middot; COO</div>
+<div class="leader-bio">[주요 경력 1~2줄]</div>
 </div>
 </div>
-<p class="fade-up" style="text-align:center;font-size:.8rem;color:var(--gray-600);margin-top:32px">* 팀 프로필 및 사진은 업데이트 예정입니다. 자세한 내용은 IR <a href="ir.html#contact" style="text-decoration:underline">문의</a>를 통해 확인해주세요.</p>
+<p class="fade-up" style="text-align:center;font-size:.82rem;color:var(--gray-600);margin-top:24px">* 팀 프로필 및 사진은 업데이트 예정입니다. 자세한 내용은 협력 문의를 통해 확인해주세요.</p>
 </div>
 </section>
 
-<!-- NETWORK -->
-<section class="section bg-dark">
+<!-- SECTION 6 : MILESTONES -->
+<section class="section bg-light">
+<div class="container">
+<div style="text-align:center;margin-bottom:56px">
+<div class="section-label fade-up">Milestones</div>
+<h2 class="section-title fade-up">주요 이정표</h2>
+</div>
+<div class="tl-grid fade-up">
+<div class="tl-step">
+<div class="tl-dot"></div>
+<div class="tl-year">2016 ~ 2018</div>
+<div class="tl-title">프리미엄 이동 서비스 역량 구축</div>
+<div class="tl-desc">VIP 의전과 기업 수송 프로젝트 수행으로 현장 운영 체계 고도화</div>
+</div>
+<div class="tl-step">
+<div class="tl-dot"></div>
+<div class="tl-year">2019 ~ 2020</div>
+<div class="tl-title">국제행사 및 국가급 프로젝트 확대</div>
+<div class="tl-desc">한-ASEAN 특별정상회의 등 복잡도 높은 행사 경험 축적</div>
+</div>
+<div class="tl-step">
+<div class="tl-dot"></div>
+<div class="tl-year">2021 ~ 2022</div>
+<div class="tl-title">자체 관제·운영 시스템 고도화</div>
+<div class="tl-desc">T-RiseUp 실시간 관제·배차·리포팅 체계 강화</div>
+</div>
+<div class="tl-step">
+<div class="tl-dot"></div>
+<div class="tl-year">2023 ~ 2024</div>
+<div class="tl-title">셔틀 및 반복 운영 플랫폼 확장</div>
+<div class="tl-desc">RIDEUS 기반 반복 이동 수요 플랫폼 구조 발전</div>
+</div>
+<div class="tl-step">
+<div class="tl-dot"></div>
+<div class="tl-year">2025 ~</div>
+<div class="tl-title">글로벌 파트너 네트워크 확대</div>
+<div class="tl-desc">APEC 2025 공식 수송 수행, 국내외 프로젝트 대응 범위 확장</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 7 : NETWORK -->
+<section class="section bg-darker">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
 <div class="section-label fade-up">Network</div>
 <h2 class="section-title fade-up">국내외 프로젝트를 연결하는 네트워크</h2>
 </div>
-<div class="network-block fade-up">
-<p>서울·부산·싱가포르·태국 거점과 유럽 25개국, 미주 7개국, 아시아 9개국, 중동 5개국 등 50개국 이상 40개 국제 제휴사 네트워크로 국내외 어디서든 일관된 운영 품질을 제공합니다.</p>
-<div class="network-sub">국내 행사부터 글로벌 프로젝트까지 연결하는 실행 네트워크가 경쟁력입니다.</div>
+<div class="fade-up" style="max-width:800px;margin:0 auto">
+<p style="font-size:.95rem;color:var(--gray-400);line-height:1.8;margin-bottom:24px;text-align:center">서울·부산·싱가포르·태국 거점과 유럽 25개국, 미주 7개국, 아시아 9개국, 중동 5개국 등 50개국 이상 40개 국제 제휴사 네트워크로 국내외 어디서든 일관된 운영 품질을 제공합니다</p>
+<div class="network-chips" style="justify-content:center">
+<div class="network-chip">&#127472;&#127479; Seoul, Korea <small>본사</small></div>
+<div class="network-chip">&#127472;&#127479; Busan, Korea <small>남부 거점</small></div>
+<div class="network-chip">&#127480;&#127468; Singapore <small>해외지사</small></div>
+<div class="network-chip">&#127481;&#127469; Thailand <small>해외지사</small></div>
+</div>
+<ul class="coverage-list" style="margin-top:32px">
+<li><strong>유럽 25개국</strong> 영국·프랑스·독일·이탈리아 외</li>
+<li><strong>미주 7개국</strong> 미국·캐나다·브라질 외</li>
+<li><strong>아시아 9개국</strong> 일본·중국·싱가포르·태국 외</li>
+<li><strong>중동 5개국</strong> UAE·카타르·사우디아라비아 외</li>
+<li><strong>기타</strong> 오세아니아 2개국 &middot; 아프리카 2개국</li>
+</ul>
 </div>
 </div>
 </section>
 
-<!-- KPI -->
-<section class="section bg-light">
+<!-- SECTION 8 : AWARDS -->
+<section class="section bg-dark">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">Track Record</div>
-<h2 class="section-title fade-up">숫자로 보는 그라운드케이</h2>
+<div class="section-label fade-up">Awards &amp; Certifications</div>
+<h2 class="section-title fade-up">수상 및 인증</h2>
 </div>
-<div class="grid-4 fade-up" style="text-align:center">
-<div>
-<div class="kpi-number">2016</div>
-<div class="kpi-label">서비스 시작</div>
-</div>
-<div>
-<div class="kpi-number">20건+</div>
-<div class="kpi-label">수상·인증 누적</div>
-</div>
-<div>
-<div class="kpi-number">2건</div>
-<div class="kpi-label">보유 특허</div>
-</div>
-<div>
-<div class="kpi-number">3곳</div>
-<div class="kpi-label">서울·부산·싱가포르 거점</div>
+<div class="fade-up" style="max-width:900px;margin:0 auto">
+<div class="award-year">
+<h4>2025</h4>
+<div class="award-year-grid">
+<div class="award-badge">관광벤처의날 우수기업</div>
+<div class="award-badge">부산 서비스 강소기업</div>
 </div>
 </div>
-<p class="fade-up" style="text-align:center;font-size:.85rem;color:var(--gray-500);margin-top:24px">2016년 설립 · 연 25~30% 매출 성장</p>
+<div class="award-year">
+<h4>2024</h4>
+<div class="award-year-grid">
+<div class="award-badge">MICE 우수기업</div>
+<div class="award-badge">MICE 대상 디지털전환</div>
+<div class="award-badge">관광플러스테크</div>
+<div class="award-badge">전략산업 선도기업</div>
+</div>
+</div>
+<div class="award-year">
+<h4>2023</h4>
+<div class="award-year-grid">
+<div class="award-badge">부산형 히든챔피언</div>
+<div class="award-badge">Core 100</div>
+<div class="award-badge">글로벌 강소기업 1,000+</div>
+<div class="award-badge">특허 2건 / 저작권 1건</div>
+</div>
+</div>
+<div class="award-year">
+<h4>2022</h4>
+<div class="award-year-grid">
+<div class="award-badge">Main-Biz</div>
+<div class="award-badge">기술평가 T-4</div>
+<div class="award-badge">성장관광벤처기업</div>
+<div class="award-badge">청년친화 강소기업</div>
+</div>
+</div>
+<div class="award-year">
+<h4>2021</h4>
+<div class="award-year-grid">
+<div class="award-badge">벤처기업 인증</div>
+<div class="award-badge">MICE 디지털전환 최우수상</div>
+<div class="award-badge">관광글로벌 선도기업</div>
+</div>
+</div>
+<div class="award-year">
+<h4>2020</h4>
+<div class="award-year-grid">
+<div class="award-badge">SW 고성장클럽 200</div>
+<div class="award-badge">고용노동부 강소기업</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 
-
-<!-- CULTURE / WORKING PRINCIPLES -->
-<section class="section bg-dark">
+<!-- SECTION 9 : HOW WE WORK -->
+<section class="section bg-light">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
 <div class="section-label fade-up">How We Work</div>
 <h2 class="section-title fade-up">일하는 방식</h2>
 </div>
-<div class="grid-4">
-<div class="card culture-card fade-up">
+<div class="culture-grid fade-up">
+<div class="card culture-card">
+<div class="culture-num">01</div>
 <h3>현장을 중심으로 판단합니다</h3>
-<p>모든 서비스와 시스템은 실제 현장 기준으로 설계합니다.</p>
+<p>모든 서비스와 시스템은 실제 현장 기준으로 설계합니다</p>
 </div>
-<div class="card culture-card fade-up">
+<div class="card culture-card">
+<div class="culture-num">02</div>
 <h3>리스크를 먼저 관리합니다</h3>
-<p>이동 운영의 품질은 문제가 생기기 전 구조적으로 줄이는 데서 시작됩니다.</p>
+<p>이동 운영의 품질은 문제가 생기기 전 구조적으로 줄이는 데서 시작됩니다</p>
 </div>
-<div class="card culture-card fade-up">
+<div class="card culture-card">
+<div class="culture-num">03</div>
 <h3>데이터로 개선합니다</h3>
-<p>운행 기록과 운영 데이터를 분석해 다음 프로젝트의 리스크를 줄이고 정확도를 높입니다.</p>
+<p>운행 기록과 운영 데이터를 분석해 다음 프로젝트를 더 안정적으로 만듭니다</p>
 </div>
-<div class="card culture-card fade-up">
+<div class="card culture-card">
+<div class="culture-num">04</div>
 <h3>고객 부담을 줄이는 것이 우리의 역할입니다</h3>
-<p>최소 리소스로 최고 품질을 운영할 수 있도록 명확한 실행 체계를 제공합니다.</p>
+<p>더 적은 리소스로 더 높은 품질을 운영할 수 있도록 명확한 실행 체계를 제공합니다</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- AWARDS & CERTIFICATIONS -->
-<section class="section bg-lighter">
+<!-- SECTION 10 : CTA -->
+<section class="cta-dark">
 <div class="container">
-<div class="section-label fade-up">Awards &amp; Certifications</div>
-<h2 class="section-title fade-up">수상 및 인증</h2>
-<div style="margin-top:48px">
-
-<div class="awards-year fade-up">
-<h3>2025 <span>2</span></h3>
-<div class="awards-list">
-<div class="award-tag">관광벤처의날 우수기업</div>
-<div class="award-tag">부산 서비스 강소기업</div>
-</div>
-</div>
-
-<div class="awards-year fade-up">
-<h3>2024 <span>4</span></h3>
-<div class="awards-list">
-<div class="award-tag">MICE 우수기업</div>
-<div class="award-tag">MICE 대상 디지털전환</div>
-<div class="award-tag">관광플러스테크</div>
-<div class="award-tag">전략산업 선도기업</div>
-</div>
-</div>
-
-<div class="awards-year fade-up">
-<h3>2023 <span>4</span></h3>
-<div class="awards-list">
-<div class="award-tag">부산형 히든챔피언</div>
-<div class="award-tag">Core 100</div>
-<div class="award-tag">글로벌 강소기업 1000+</div>
-<div class="award-tag badge-blue">특허 2건/저작권 1건</div>
-</div>
-</div>
-
-<div class="awards-year fade-up">
-<h3>2022 <span>4</span></h3>
-<div class="awards-list">
-<div class="award-tag">Main-Biz</div>
-<div class="award-tag">기술평가 T-4</div>
-<div class="award-tag">성장관광벤처기업</div>
-<div class="award-tag">청년친화 강소기업</div>
-</div>
-</div>
-
-<div class="awards-year fade-up">
-<h3>2021 <span>3</span></h3>
-<div class="awards-list">
-<div class="award-tag">벤처기업 인증</div>
-<div class="award-tag">MICE 디지털전환 최우수상</div>
-<div class="award-tag">관광글로벌 선도기업</div>
-</div>
-</div>
-
-<div class="awards-year fade-up">
-<h3>2020 <span>2</span></h3>
-<div class="awards-list">
-<div class="award-tag">SW 고성장클럽 200</div>
-<div class="award-tag">고용노동부 강소기업</div>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta-section">
-<div class="container">
-<h2 class="fade-up">그라운드케이와 함께할 프로젝트를 논의해보세요</h2>
-<p class="fade-up">대형행사 수송, VIP 의전, 셔틀 운영까지<br>목적에 맞는 운영안을 빠르게 제안드립니다.</p>
+<h2 class="fade-up">함께할 프로젝트를 논의해보세요</h2>
+<p class="fade-up">대형행사 수송, VIP 의전, 셔틀 운영까지<br>목적에 맞는 운영안을 빠르게 제안드립니다</p>
 <div class="fade-up" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-<a href="performance.html" class="btn btn-ghost">도입 사례 보기</a>
 <a href="ir.html#contact" class="btn btn-white">운영안 제안 요청 &rarr;</a>
+<a href="ir.html#contact" class="btn btn-ghost">협력 문의</a>
 </div>
 </div>
 </section>
@@ -509,17 +601,17 @@ img{max-width:100%;display:block}
 <div>
 <h4>Services</h4>
 <ul class="footer-links">
-<li><a href="solutions.html">대형행사 수송</a></li>
-<li><a href="solutions.html">VIP 의전</a></li>
-<li><a href="solutions.html">셔틀 운영</a></li>
-<li><a href="solutions.html">T-RiseUp</a></li>
+<li><a href="solutions.html#vip">프리미엄 의전수송</a></li>
+<li><a href="solutions.html#event">메가이벤트 수송</a></li>
+<li><a href="solutions.html#shuttle">셔틀 위탁관리</a></li>
+<li><a href="solutions.html#marketing">마케팅 모빌리티</a></li>
 </ul>
 </div>
 <div>
 <h4>Company</h4>
 <ul class="footer-links">
-<li><a href="performance.html">레퍼런스</a></li>
-<li><a href="company.html">회사소개</a></li>
+<li><a href="performance.html">프로젝트</a></li>
+<li><a href="company.html">기업소개</a></li>
 <li><a href="ir.html">협력 문의</a></li>
 </ul>
 </div>
@@ -527,7 +619,7 @@ img{max-width:100%;display:block}
 <h4>Contact</h4>
 <div class="footer-contact-item">02-863-3540</div>
 <div class="footer-contact-item">ir@groundk.co.kr</div>
-<a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">도입 사례 보기</a>
+<a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">문의하기</a>
 </div>
 </div>
 <div class="footer-brands">
@@ -544,7 +636,6 @@ img{max-width:100%;display:block}
 </footer>
 
 <script>
-// Mobile menu
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function toggleMobSub(btn){btn.classList.toggle('open');const sub=btn.nextElementSibling;sub.classList.toggle('open')}
 document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
