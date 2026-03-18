@@ -84,6 +84,23 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .check-item{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;color:var(--gray-300);padding:12px 16px;background:#fff;border:1px solid #e5e5e5;border-radius:8px}
 .check-item .chk{color:#16a34a;font-weight:700;flex-shrink:0}
+/* Adoption Cards */
+.adopt-card{border:1px solid #e5e5e5;border-radius:16px;padding:36px 28px;background:#fff;display:flex;flex-direction:column}
+.adopt-primary{background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;border:none}
+.adopt-primary .adopt-sub,.adopt-primary .adopt-chk{color:rgba(255,255,255,.8)}
+.adopt-primary .adopt-target{background:rgba(255,255,255,.15);color:rgba(255,255,255,.9)}
+.adopt-icon{font-size:2rem;margin-bottom:16px}
+.adopt-card h3{font-size:1.3rem;font-weight:900;margin-bottom:4px}
+.adopt-sub{font-size:.85rem;color:var(--gray-500);margin-bottom:20px}
+.adopt-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.adopt-list li{display:flex;align-items:center;gap:8px;font-size:.9rem;font-weight:500}
+.adopt-chk{color:#2563eb;font-weight:700}
+.adopt-target{font-size:.82rem;color:var(--gray-500);padding:12px 16px;background:#f5f7fa;border-radius:8px;margin-bottom:16px;margin-top:auto}
+.adopt-btn{display:block;text-align:center;padding:14px;border:1.5px solid #2563eb;border-radius:8px;font-size:.95rem;font-weight:700;color:#2563eb;transition:var(--transition)}
+.adopt-btn:hover{background:#eef4ff}
+.adopt-btn-fill{background:#fff;color:#2563eb;border-color:#fff}
+.adopt-btn-fill:hover{background:#f0f4ff}
+
 .cta-section{padding:100px 0;background:#f0f7ff;text-align:center}
 .cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
 .cta-section p{font-size:1rem;color:#666;margin-bottom:36px;line-height:1.7}
@@ -198,21 +215,58 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </div>
 </section>
 
-<!-- 서비스 포함 내용 -->
+<!-- 도입 방식 -->
 <section class="section bg-light">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
-<h2 class="section-title fade-up">서비스에 포함된 내용</h2>
+<div class="section-label fade-up" style="color:#2563eb">ADOPTION MODEL</div>
+<h2 class="section-title fade-up">3가지 도입 방식, 맞춤형으로 선택하세요</h2>
 </div>
-<div class="check-grid fade-up">
-<div class="check-item"><span class="chk">&#10003;</span> 노선 설계부터 운영까지 전담</div>
-<div class="check-item"><span class="chk">&#10003;</span> QR 탑승권 + 실시간 버스 위치 확인</div>
-<div class="check-item"><span class="chk">&#10003;</span> 사번·학번 인증 (불특정 탑승 방지)</div>
-<div class="check-item"><span class="chk">&#10003;</span> HR·스마트홈·학사 시스템 연동</div>
-<div class="check-item"><span class="chk">&#10003;</span> 해외 결제 연동 (PayPal·VISA 등)</div>
-<div class="check-item"><span class="chk">&#10003;</span> 다양한 정산 방식 (선불·후불·기간정산)</div>
-<div class="check-item"><span class="chk">&#10003;</span> 탑승 데이터 기반 노선 개선 리포트</div>
-<div class="check-item"><span class="chk">&#10003;</span> 증차·감차 자동 추천</div>
+<div class="grid-3 fade-up">
+<!-- 풀 위탁 -->
+<div class="adopt-card adopt-primary">
+<div class="adopt-icon">&#128101;</div>
+<h3>풀 위탁</h3>
+<p class="adopt-sub">RIDEUS가 6개 모듈 전체 운영</p>
+<ul class="adopt-list">
+<li><span class="adopt-chk">&#10003;</span> IT 시스템</li>
+<li><span class="adopt-chk">&#10003;</span> 차량 수배</li>
+<li><span class="adopt-chk">&#10003;</span> 조직 구성</li>
+<li><span class="adopt-chk">&#10003;</span> 운영 관리</li>
+<li><span class="adopt-chk">&#10003;</span> CS 센터</li>
+<li><span class="adopt-chk">&#10003;</span> 노선 기획</li>
+</ul>
+<div class="adopt-target">셔틀 운영을 완전히 맡기고 싶은 관리사무소</div>
+<a href="ir.html#contact" class="adopt-btn adopt-btn-fill">풀 위탁 상담 &gt;</a>
+</div>
+<!-- 부분 위탁 -->
+<div class="adopt-card">
+<div class="adopt-icon">&#9881;</div>
+<h3>부분 위탁</h3>
+<p class="adopt-sub">필요한 모듈만 선택 위탁</p>
+<ul class="adopt-list">
+<li><span class="adopt-chk">&#10003;</span> 선택 조합 가능</li>
+<li><span class="adopt-chk">&#10003;</span> 맞춤형 패키지</li>
+<li><span class="adopt-chk">&#10003;</span> 단계적 도입</li>
+<li><span class="adopt-chk">&#10003;</span> 유연한 운영</li>
+</ul>
+<div class="adopt-target">일부 자체 운영하고 싶은 기업 총무팀</div>
+<a href="ir.html#contact" class="adopt-btn">부분 위탁 상담 &gt;</a>
+</div>
+<!-- 시스템만 도입 -->
+<div class="adopt-card">
+<div class="adopt-icon">&#128187;</div>
+<h3>시스템만 도입</h3>
+<p class="adopt-sub">T-RiseUp TMS만 도입</p>
+<ul class="adopt-list">
+<li><span class="adopt-chk">&#10003;</span> IT 시스템만 제공</li>
+<li><span class="adopt-chk">&#10003;</span> 노선 최적화</li>
+<li><span class="adopt-chk">&#10003;</span> 실시간 관제</li>
+<li><span class="adopt-chk">&#10003;</span> QR 검표</li>
+</ul>
+<div class="adopt-target">직접 운영 중인 사업자</div>
+<a href="ir.html#contact" class="adopt-btn">TMS 데모 신청 &gt;</a>
+</div>
 </div>
 </div>
 </section>
