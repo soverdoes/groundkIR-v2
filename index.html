@@ -204,15 +204,20 @@ img{max-width:100%;display:block}
 .oxt-link-green:hover{background:#ecfdf5}
 
 /* RISE UP STORIES */
-.rise-card{background:#fff;border:1px solid #e5e5e5;border-radius:16px;padding:32px;transition:var(--transition)}
+.rise-card{background:#fff;border:1px solid #e5e5e5;border-radius:16px;padding:36px 32px;transition:var(--transition);display:flex;flex-direction:column}
 .rise-card:hover{border-color:#ccc;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.rise-name{font-size:1.3rem;font-weight:900;color:#111;margin-bottom:20px}
-.rise-before-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#111;margin-bottom:6px}
-.rise-before{font-size:.9rem;color:var(--gray-500);margin-bottom:20px;line-height:1.6}
-.rise-arrow{font-size:.9rem;font-weight:600;color:#1a56db;margin-bottom:16px}
-.rise-solution{font-size:.9rem;font-weight:600;color:#333;padding:12px 16px;border:1px solid #e5e5e5;border-radius:8px;margin-bottom:16px}
-.rise-result{font-size:.9rem;font-weight:600;color:#333;display:flex;align-items:center;gap:8px}
-.rise-check{color:#059669;font-size:.85rem}
+.rise-tag{display:inline-block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#555;background:#f3f4f6;border:1px solid #e5e5e5;border-radius:50px;padding:4px 14px;margin-bottom:16px;width:fit-content}
+.rise-name{font-size:1.35rem;font-weight:900;color:#111;margin-bottom:24px}
+.rise-block{border-left:3px solid transparent;padding:10px 16px;border-radius:6px;margin-bottom:8px}
+.rise-block.before{background:#fff1f2;border-color:#ef4444}
+.rise-block.after{background:#ecfdf5;border-color:#10b981}
+.rise-block-label{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rise-block-label.red{color:#ef4444}
+.rise-block-label.green{color:#10b981}
+.rise-block p{font-size:.88rem;color:#333;line-height:1.5;font-weight:500}
+.rise-arrow-down{text-align:center;padding:8px 0;color:var(--gray-600);font-size:1rem}
+.rise-link{margin-top:auto;padding-top:20px;font-size:.9rem;font-weight:600;color:#1a56db}
+.rise-link:hover{text-decoration:underline}
 
 /* INSIGHT CARDS */
 .insight-card{display:block;text-decoration:none;transition:var(--transition)}
@@ -418,28 +423,46 @@ img{max-width:100%;display:block}
 </div>
 <div class="grid-3 fade-up">
 <div class="rise-card">
-<h3 class="rise-name">APEC 2025</h3>
-<div class="rise-before-label">BEFORE</div>
-<p class="rise-before">21개국 정상 의전, 복잡한 다자 동선</p>
-<div class="rise-arrow">&rarr; <strong>RISE UP</strong></div>
-<div class="rise-solution">T-RiseUp 수송상황실(C.P.)</div>
-<div class="rise-result"><span class="rise-check">&#10003;</span> 21개국 무사고 완료</div>
+<div class="rise-tag">OP&times;TECH</div>
+<h3 class="rise-name">APEC 2025 공식 수송</h3>
+<div class="rise-block before">
+<div class="rise-block-label red">BEFORE</div>
+<p>21개국 정상 의전, 복잡한 다자 동선, 실시간 관제 필요</p>
+</div>
+<div class="rise-arrow-down">&darr;</div>
+<div class="rise-block after">
+<div class="rise-block-label green">AFTER</div>
+<p>21개국 의전 수송 무사고 완료 &middot; 공식 파트너</p>
+</div>
+<a href="performance.html" class="rise-link">자세히 보기 &rarr;</a>
 </div>
 <div class="rise-card">
-<h3 class="rise-name">검암 프루지오</h3>
-<div class="rise-before-label">BEFORE</div>
-<p class="rise-before">4,805세대, 역까지 도보 25분</p>
-<div class="rise-arrow">&rarr; <strong>RISE UP</strong></div>
-<div class="rise-solution">RIDEUS All-in-One</div>
-<div class="rise-result"><span class="rise-check">&#10003;</span> 일 2,000+ &middot; 5년 연속</div>
+<div class="rise-tag">SERVICE + SOLUTION</div>
+<h3 class="rise-name">검암 Royal Park City</h3>
+<div class="rise-block before">
+<div class="rise-block-label red">BEFORE</div>
+<p>4,805세대, 역까지 도보 25분, 입주민 이동 불편 심각</p>
+</div>
+<div class="rise-arrow-down">&darr;</div>
+<div class="rise-block after">
+<div class="rise-block-label green">AFTER</div>
+<p>일 2,000+ 탑승객 / 5년 연속 운영 / 6대 상시 운행</p>
+</div>
+<a href="performance.html" class="rise-link">자세히 보기 &rarr;</a>
 </div>
 <div class="rise-card">
-<h3 class="rise-name">부산 산업단지</h3>
-<div class="rise-before-label">BEFORE</div>
-<p class="rise-before">11개 산단 수기 관리</p>
-<div class="rise-arrow">&rarr; <strong>RISE UP</strong></div>
-<div class="rise-solution">T-RiseUp TMS 전면 도입</div>
-<div class="rise-result"><span class="rise-check">&#10003;</span> 월 50,000명 &middot; 페이퍼리스</div>
+<div class="rise-tag">TECHNOLOGY</div>
+<h3 class="rise-name">부산 11개 산업단지 통근</h3>
+<div class="rise-block before">
+<div class="rise-block-label red">BEFORE</div>
+<p>11개 산단 수기 관리, 엑셀 배차, 탑승 현황 파악 불가</p>
+</div>
+<div class="rise-arrow-down">&darr;</div>
+<div class="rise-block after">
+<div class="rise-block-label green">AFTER</div>
+<p>월 50,000명 수송 &middot; 46대 버스 99회 &middot; 페이퍼리스</p>
+</div>
+<a href="performance.html" class="rise-link">자세히 보기 &rarr;</a>
 </div>
 </div>
 </div>
