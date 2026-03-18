@@ -42,17 +42,40 @@ img{max-width:100%;display:block}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
 .nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:-0.5px;color:#111}
 .nav-logo span{color:var(--blue)}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{font-size:.9rem;font-weight:500;color:var(--gray-400);transition:var(--transition)}
-.nav-links a:hover,.nav-links a.active{color:#111}
-.nav-cta{display:flex;gap:10px}
-.nav-cta .btn{padding:10px 22px;font-size:.85rem}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links>li{position:relative}
+.nav-links>li>a{font-size:.9rem;font-weight:500;color:var(--gray-400);transition:var(--transition);display:flex;align-items:center;gap:4px}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#111}
+.nav-links .arrow{font-size:.55rem;transition:transform .2s}
+.nav-links>li:hover .arrow{transform:rotate(180deg)}
+.nav-cta-btn{background:var(--blue);color:#fff!important;font-weight:600;padding:10px 22px;border-radius:50px;font-size:.85rem;transition:var(--transition)}
+.nav-cta-btn:hover{opacity:.85;transform:translateY(-1px)}
+.dropdown{position:absolute;top:calc(100% + 20px);left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.12);padding:12px;min-width:320px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;transform:translateX(-50%) translateY(8px);pointer-events:none}
+.nav-links>li:hover .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dropdown::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:8px solid transparent;border-top:none;border-bottom:8px solid #fff}
+.dropdown-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:8px;transition:background .15s;text-decoration:none}
+.dropdown-item:hover{background:#f7f8fa}
+.dropdown-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px}
+.dropdown-icon.blue{background:#eef4ff;color:#2563eb}
+.dropdown-icon.green{background:#eefbf4;color:#16a34a}
+.dropdown-text strong{display:block;font-size:.875rem;font-weight:600;color:#111;margin-bottom:2px}
+.dropdown-text span{font-size:.78rem;color:var(--gray-500);line-height:1.4}
+.dropdown-badge{display:inline-block;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.dropdown-badge.saas{background:#dcfce7;color:#16a34a}
+.dropdown-badge.platform{background:#dbeafe;color:#2563eb}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .hamburger span{display:block;width:22px;height:2px;background:#111;transition:var(--transition)}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;z-index:999;flex-direction:column;padding:24px;overflow-y:auto}
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-size:1.2rem;font-weight:600;color:var(--gray-300)}
-.mobile-menu a:hover{color:#111}
+.mobile-menu .mob-section{margin-bottom:8px}
+.mobile-menu .mob-toggle{display:flex;align-items:center;justify-content:space-between;font-size:1.1rem;font-weight:600;color:#111;padding:14px 0;border:none;background:none;width:100%;cursor:pointer;border-bottom:1px solid #f0f0f0}
+.mobile-menu .mob-toggle .mob-arrow{font-size:.7rem;transition:transform .2s}
+.mobile-menu .mob-toggle.open .mob-arrow{transform:rotate(180deg)}
+.mobile-menu .mob-sub{display:none;padding:8px 0 8px 12px}
+.mobile-menu .mob-sub.open{display:block}
+.mobile-menu .mob-sub a{display:block;padding:10px 0;font-size:.95rem;color:var(--gray-400);border-bottom:1px solid #f5f5f5}
+.mobile-menu .mob-sub a strong{display:block;color:#111;font-weight:600;margin-bottom:2px}
+.mobile-menu .mob-link{display:block;font-size:1.1rem;font-weight:600;color:#111;padding:14px 0;border-bottom:1px solid #f0f0f0}
 .footer{background:var(--navy-light);border-top:1px solid #e5e5e5;padding:80px 0 0}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:60px}
 .footer-brand{font-size:1.3rem;font-weight:900;margin-bottom:12px}
@@ -72,7 +95,7 @@ img{max-width:100%;display:block}
 .footer-brands span{font-size:.8rem;color:var(--gray-600);margin:0 12px}
 @media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){
-.nav-links,.nav-cta{display:none}
+.nav-links,.nav-cta-btn{display:none}
 .hamburger{display:flex}
 .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
 .section{padding:60px 0}
@@ -177,22 +200,55 @@ img{max-width:100%;display:block}
 <div class="nav-inner">
 <a href="index.html" class="nav-logo">GROUND.<span>K</span></a>
 <ul class="nav-links">
-<li><a href="solutions.html">서비스</a></li>
-<li><a href="performance.html">레퍼런스</a></li>
-<li><a href="company.html">회사소개</a></li>
-<li><a href="ir.html" class="active">협력 문의</a></li>
+<li>
+<a href="#">서비스 <span class="arrow">▼</span></a>
+<div class="dropdown">
+<a href="solutions.html#vip" class="dropdown-item"><div class="dropdown-icon blue">🚘</div><div class="dropdown-text"><strong>프리미엄 의전수송</strong><span>국가급 의전부터 글로벌 브랜드 VIP까지</span></div></a>
+<a href="solutions.html#event" class="dropdown-item"><div class="dropdown-icon blue">🏟</div><div class="dropdown-text"><strong>메가이벤트 수송</strong><span>정상회의·국제행사·MICE 대규모 수송</span></div></a>
+<a href="solutions.html#shuttle" class="dropdown-item"><div class="dropdown-icon blue">🚌</div><div class="dropdown-text"><strong>셔틀 위탁관리</strong><span>기업 통근·입주민·행사 셔틀 운영 대행</span></div></a>
+<a href="solutions.html#marketing" class="dropdown-item"><div class="dropdown-icon blue">💎</div><div class="dropdown-text"><strong>마케팅 모빌리티</strong><span>VIP 멤버십·카드사·항공사 프리미엄 서비스</span></div></a>
+</div>
+</li>
+<li>
+<a href="#">솔루션 <span class="arrow">▼</span></a>
+<div class="dropdown">
+<a href="solutions.html#triseup-pms" class="dropdown-item"><div class="dropdown-icon green">📊</div><div class="dropdown-text"><strong>T-RiseUp PMS <span class="dropdown-badge saas">SaaS</span></strong><span>예약·배차·관제·정산 통합 관리 시스템</span></div></a>
+<a href="solutions.html#triseup-tms" class="dropdown-item"><div class="dropdown-icon green">🎫</div><div class="dropdown-text"><strong>T-RiseUp TMS <span class="dropdown-badge saas">SaaS</span></strong><span>티켓·탑승권·노선 관리 솔루션</span></div></a>
+<a href="solutions.html#rideus" class="dropdown-item"><div class="dropdown-icon green">🔗</div><div class="dropdown-text"><strong>RIDEUS Marketplace <span class="dropdown-badge platform">Platform</span></strong><span>셔틀 수요와 운수사를 연결하는 플랫폼</span></div></a>
+</div>
+</li>
+<li><a href="performance.html">프로젝트</a></li>
+<li><a href="#">인사이트</a></li>
+<li><a href="company.html">기업</a></li>
 </ul>
-<button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+<a href="ir.html#contact" class="nav-cta-btn active">문의하기</a>
+<button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
 <span></span><span></span><span></span>
 </button>
 </div>
 </nav>
-<div class="mobile-menu">
-<a href="solutions.html" onclick="this.parentElement.classList.remove('open')">서비스</a>
-<a href="performance.html" onclick="this.parentElement.classList.remove('open')">레퍼런스</a>
-<a href="company.html" onclick="this.parentElement.classList.remove('open')">회사소개</a>
-<a href="ir.html" onclick="this.parentElement.classList.remove('open')">협력 문의</a>
-<a href="ir.html#contact" class="btn btn-primary" style="margin-top:16px">운영안 제안 요청 &rarr;</a>
+<div class="mobile-menu" id="mobileMenu">
+<div class="mob-section">
+<button class="mob-toggle" onclick="toggleMobSub(this)">서비스 <span class="mob-arrow">▼</span></button>
+<div class="mob-sub">
+<a href="solutions.html#vip"><strong>프리미엄 의전수송</strong>국가급 의전부터 글로벌 브랜드 VIP까지</a>
+<a href="solutions.html#event"><strong>메가이벤트 수송</strong>정상회의·국제행사·MICE 대규모 수송</a>
+<a href="solutions.html#shuttle"><strong>셔틀 위탁관리</strong>기업 통근·입주민·행사 셔틀 운영 대행</a>
+<a href="solutions.html#marketing"><strong>마케팅 모빌리티</strong>VIP 멤버십·카드사·항공사 프리미엄 서비스</a>
+</div>
+</div>
+<div class="mob-section">
+<button class="mob-toggle" onclick="toggleMobSub(this)">솔루션 <span class="mob-arrow">▼</span></button>
+<div class="mob-sub">
+<a href="solutions.html#triseup-pms"><strong>T-RiseUp PMS</strong>예약·배차·관제·정산 통합 관리 시스템</a>
+<a href="solutions.html#triseup-tms"><strong>T-RiseUp TMS</strong>티켓·탑승권·노선 관리 솔루션</a>
+<a href="solutions.html#rideus"><strong>RIDEUS Marketplace</strong>셔틀 수요와 운수사를 연결하는 플랫폼</a>
+</div>
+</div>
+<a href="performance.html" class="mob-link">프로젝트</a>
+<a href="#" class="mob-link">인사이트</a>
+<a href="company.html" class="mob-link">기업</a>
+<a href="ir.html#contact" class="btn btn-primary" style="margin-top:16px;text-align:center;border-radius:50px">문의하기</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -523,6 +579,10 @@ img{max-width:100%;display:block}
 </footer>
 
 <script>
+// Mobile menu
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function toggleMobSub(btn){btn.classList.toggle('open');const sub=btn.nextElementSibling;sub.classList.toggle('open')}
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
