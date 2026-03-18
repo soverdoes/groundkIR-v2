@@ -103,6 +103,7 @@ img{max-width:100%;display:block}
 .footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;text-align:center}
 .hero-inner{flex-direction:column}
+.intro-row{grid-template-columns:1fr}
 .check-grid{grid-template-columns:1fr}
 .grade-cards{grid-template-columns:1fr}
 .ref-cards{grid-template-columns:1fr}
@@ -128,6 +129,12 @@ img{max-width:100%;display:block}
 .ps-item{display:flex;align-items:flex-start;gap:12px;font-size:.93rem;color:#333;padding:10px 0;line-height:1.5}
 .ps-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(239,68,68,.15);color:#ef4444;font-size:.75rem;font-weight:800;flex-shrink:0}
 .ps-chk{color:#10b981;font-weight:700;font-size:1rem;flex-shrink:0;margin-top:1px}
+
+/* Intro Row */
+.intro-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.intro-img{border-radius:16px;overflow:hidden}
+.intro-tags{display:flex;flex-wrap:wrap;gap:8px}
+.intro-tag{font-size:.85rem;font-weight:600;color:#333;padding:8px 18px;border:1.5px solid #e5e5e5;border-radius:8px;background:#fff}
 
 /* KPI Bar */
 .kpi-bar{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;padding:48px 0}
@@ -372,37 +379,23 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
-<!-- 대표 레퍼런스 -->
+<!-- 비즈니스 첫인상 -->
 <section class="section bg-dark">
 <div class="container">
-<div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">Reference</div>
-<h2 class="section-title fade-up">이 서비스를 선택한 이유가 있습니다</h2>
+<div class="intro-row fade-up">
+<div class="intro-img">
+<div style="background:#2a3040;border-radius:16px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.9rem;overflow:hidden">VIP 의전 현장 이미지</div>
 </div>
-<div class="ref-cards fade-up">
-<div class="ref-card">
-<h3>APEC 2025 KOREA</h3>
-<ul>
-<li><span class="chk">&#10003;</span> 21개국 정상 의전 수행</li>
-<li><span class="chk">&#10003;</span> 투입 차량 800대 통합 관리</li>
-<li><span class="chk">&#10003;</span> 전 일정 무지연 완수</li>
-</ul>
+<div class="intro-text">
+<h2 style="font-size:clamp(1.5rem,3.5vw,2rem);font-weight:900;margin-bottom:16px">비즈니스의 첫인상은 이동에서 시작됩니다</h2>
+<p style="font-size:.95rem;color:var(--gray-500);line-height:1.8;margin-bottom:24px">CHANEL, LOUIS VUITTON, APEC 정상회의까지 &mdash; 그라운드케이는 대한민국을 대표하는 기업과 정부의 VIP 이동을 책임져 왔습니다. 글로벌 50개국 네트워크와 T-RiseUp 실시간 관제 시스템으로 어디서든 같은 품질의 프리미엄 의전을 제공합니다.</p>
+<div class="intro-tags">
+<span class="intro-tag">공항 의전</span>
+<span class="intro-tag">행사 VIP 수송</span>
+<span class="intro-tag">비즈니스 의전</span>
+<span class="intro-tag">글로벌 의전</span>
 </div>
-<div class="ref-card">
-<h3>Louis Vuitton 2023 Pre-Fall</h3>
-<ul>
-<li><span class="chk">&#10003;</span> 의전차량 300대</li>
-<li><span class="chk">&#10003;</span> 국내외 VIP·Celeb 1,000명 이상</li>
-<li><span class="chk">&#10003;</span> 이후 CHANEL, Dior, BURBERRY 연속 의뢰</li>
-</ul>
-</div>
-<div class="ref-card">
-<h3>ADB 연차총회 2023</h3>
-<ul>
-<li><span class="chk">&#10003;</span> 68개국 재무장관·중앙은행 총재</li>
-<li><span class="chk">&#10003;</span> 각국 보안팀 사전 협의</li>
-<li><span class="chk">&#10003;</span> 공항-숙소-회의장 원스톱</li>
-</ul>
+<a href="ir.html#contact" class="btn-hero-blue" style="margin-top:24px">의전 서비스 문의 &gt;</a>
 </div>
 </div>
 </div>
