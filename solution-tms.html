@@ -59,7 +59,7 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .footer-bottom p{font-size:.8rem;color:var(--gray-600)}.footer-bottom-links{display:flex;gap:20px}.footer-bottom-links a{font-size:.8rem;color:var(--gray-600)}.footer-bottom-links a:hover{color:var(--gray-400)}
 .footer-brands{margin-top:20px;padding:20px 0;border-top:1px solid #e5e5e5;text-align:center}.footer-brands span{font-size:.8rem;color:var(--gray-600);margin:0 12px}
 @media(max-width:1024px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.grid-2,.grid-3{grid-template-columns:1fr}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.hero-inner{flex-direction:column}.check-grid{grid-template-columns:1fr}.mockup-row{grid-template-columns:1fr}.ref-cards{grid-template-columns:1fr}.related-cards{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.grid-2,.grid-3{grid-template-columns:1fr}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.hero-inner{flex-direction:column}.check-grid{grid-template-columns:1fr}.mockup-row{grid-template-columns:1fr}.ref-cards{grid-template-columns:1fr}.testi-row{grid-template-columns:1fr}.related-cards{grid-template-columns:1fr}}
 
 /* PAGE */
 .page-hero{padding:140px 0 60px;background:#fff}
@@ -85,6 +85,14 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .ref-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .ref-card li{font-size:.88rem;color:var(--gray-400);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
 .ref-card li .chk{color:#16a34a;font-weight:700;flex-shrink:0}
+/* Testimonial & Cross-link */
+.testi-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.testi-img{border-radius:16px;overflow:hidden;background:#1a2744;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.9rem}
+.testi-quote{background:#f5f7fa;border-radius:16px;padding:40px 36px}
+.crosslink-box{background:#f0f4ff;border:1px solid #dbeafe;border-radius:16px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.crosslink-btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:#fff;border:1.5px solid #2563eb;border-radius:8px;color:#2563eb;font-weight:700;font-size:.9rem;white-space:nowrap}
+.crosslink-btn:hover{background:#eef4ff}
+
 .cta-section{padding:100px 0;background:#ecfdf5;text-align:center}
 .cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
 .cta-section p{font-size:1rem;color:#666;margin-bottom:36px;line-height:1.7}
@@ -215,6 +223,37 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 <li><span class="chk">&#10003;</span> 온라인 예약·결제·탑승 일원화</li>
 </ul>
 </div>
+</div>
+</div>
+</section>
+
+<!-- 고객 후기 -->
+<section class="section bg-dark">
+<div class="container">
+<div class="testi-row fade-up">
+<div class="testi-img">T-RiseUp TMS 관제 화면 이미지</div>
+<div class="testi-quote">
+<div style="font-size:2.5rem;font-weight:900;color:#c9a84c;line-height:1;margin-bottom:12px">&ldquo;</div>
+<p style="font-size:1.05rem;font-weight:500;color:#333;line-height:1.8;font-style:italic;margin-bottom:20px">AI 자동 견적 덕분에 전화 견적에 쓰던 시간을 영업에 집중할 수 있게 됐습니다. 해외 결제까지 되니 매출이 확실히 늘었습니다.</p>
+<div>
+<strong style="font-size:.9rem;font-weight:700;color:#c9a84c;margin-right:12px">의전업체 대표</strong>
+<span style="font-size:.85rem;color:var(--gray-500)">T-RiseUp PMS 도입 3개월 차</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES CROSS-LINK -->
+<section class="section bg-darker">
+<div class="container">
+<div class="crosslink-box fade-up">
+<div>
+<div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#2563eb;margin-bottom:8px">SERVICES CROSS-LINK</div>
+<h3 style="font-size:1.2rem;font-weight:800;margin-bottom:8px">기술에 운영을 더하면?</h3>
+<p style="font-size:.9rem;color:var(--gray-500);line-height:1.7;max-width:560px">프리미엄 의전수송, 메가이벤트 수송 &mdash; 그라운드케이의 운영 전문성과 T-RiseUp 기술을 함께 경험하세요.</p>
+</div>
+<a href="solutions.html" class="crosslink-btn">서비스 알아보기 &gt;</a>
 </div>
 </div>
 </section>
