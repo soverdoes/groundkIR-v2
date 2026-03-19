@@ -92,7 +92,7 @@ img{max-width:100%;display:block}
 .section{padding:60px 0}.footer-grid{grid-template-columns:1fr}
 .footer-bottom{flex-direction:column;text-align:center}
 .hero-inner{flex-direction:column}
-.process-steps{grid-template-columns:1fr}.process-arrow{display:none}
+.process-body-inner{grid-template-columns:1fr}
 .check-grid{grid-template-columns:1fr}
 .photo-grid{grid-template-columns:1fr}
 .related-cards{grid-template-columns:1fr}
@@ -109,12 +109,22 @@ img{max-width:100%;display:block}
 .page-hero p{font-size:1.05rem;color:var(--text-secondary);line-height:1.8}
 .kpi-bar{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;padding:48px 0}
 .kpi-item .kpi-num{font-size:2rem;font-weight:900}.kpi-item .kpi-label{font-size:.8rem;color:var(--gray-500);margin-top:4px}
-.process-steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:start}
-.process-step{text-align:center;padding:0 12px}
-.process-num{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#111;color:#fff;font-weight:800;font-size:1rem;margin-bottom:14px}
-.process-step h4{font-size:.95rem;font-weight:700;margin-bottom:8px}
-.process-step p{font-size:.82rem;color:var(--gray-500);line-height:1.5}
-.process-arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--gray-600);padding-top:10px}
+.process-accordion{max-width:800px;margin:0 auto}
+.process-item{border:1px solid #e5e5e5;border-radius:16px;margin-bottom:16px;background:#fff;overflow:hidden;transition:var(--transition)}
+.process-item:hover{border-color:#ccc;box-shadow:var(--shadow-sm)}
+.process-header{display:flex;align-items:center;gap:16px;padding:24px 28px;cursor:pointer;position:relative}
+.process-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#2563eb;color:#fff;font-weight:800;font-size:.85rem;flex-shrink:0}
+.process-header .d-tag{font-size:.9rem;font-weight:700;color:#2563eb;min-width:40px}
+.process-header h4{font-size:1.05rem;font-weight:800;flex:1}
+.process-header .sub{font-size:.85rem;color:var(--gray-500);margin-top:2px}
+.process-toggle{position:absolute;right:28px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--gray-600);transition:transform .3s}
+.process-item.open .process-toggle{transform:translateY(-50%) rotate(180deg)}
+.process-body{display:none;padding:0 28px 28px;padding-left:80px}
+.process-item.open .process-body{display:block}
+.process-body-inner{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.process-body p{font-size:.93rem;color:var(--gray-400);line-height:1.8}
+.process-body .process-img{border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#e5e7eb;display:flex;align-items:center;justify-content:center}
+.process-body .process-img span{font-size:.85rem;color:#999}
 .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .check-item{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;color:var(--gray-300);padding:12px 16px;background:#fff;border:1px solid #e5e5e5;border-radius:8px}
 .check-item .chk{color:#16a34a;font-weight:700;flex-shrink:0}
@@ -171,7 +181,7 @@ img{max-width:100%;display:block}
 <div class="hero-content">
 <div class="breadcrumb fade-up"><a href="solutions.html">서비스</a> &gt; 메가이벤트 수송</div>
 <div class="section-label fade-up">SERVICE 02</div>
-<h1 class="fade-up">100대 이상 차량도<br>하나의 시스템으로 통제합니다</h1>
+<h1 class="fade-up">행사의 성공은,<br>수송의 완벽함에서 시작됩니다.</h1>
 <p class="fade-up">정상회의·국제행사·MICE 대규모 수송을<br>실시간 관제 기반으로 안정적으로 운영합니다</p>
 </div>
 <div class="fade-up" style="flex-shrink:0"><div class="hero-badge">SERVICE</div></div>
@@ -196,32 +206,89 @@ img{max-width:100%;display:block}
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
 <div class="section-label fade-up">Process</div>
-<h2 class="section-title fade-up">체계적인 4단계 운영 프로세스</h2>
+<h2 class="section-title fade-up">체계적인 5단계 운영 프로세스</h2>
 <p class="section-desc fade-up" style="margin:0 auto">요구사항 분석부터 결과 보고까지 빈틈없이 설계합니다</p>
 </div>
-<div class="process-steps fade-up">
-<div class="process-step">
+<div class="process-accordion fade-up">
+<div class="process-item open">
+<div class="process-header" onclick="toggleProcess(this)">
 <div class="process-num">1</div>
-<h4>요구사항 분석</h4>
-<p>전담 컨설턴트 배정<br>목적·예산 최적화<br>노쇼·자원 낭비 최소화</p>
+<div>
+<div style="display:flex;align-items:center;gap:12px"><span class="d-tag">D-60</span><h4>기획 수립</h4></div>
+<div class="sub">규모 · 노선 · 차량 산정, 현장 답사, 운수사 섭외</div>
 </div>
-<div class="process-arrow">&rarr;</div>
-<div class="process-step">
+<span class="process-toggle">&#8964;</span>
+</div>
+<div class="process-body">
+<div class="process-body-inner">
+<p>행사 규모와 참가자 동선을 분석하여 최적 노선을 설계합니다. 현장 답사를 통해 거점 위치, 주차 공간, 교통 상황을 사전에 파악합니다.</p>
+<div class="process-img"><span>현장 답사 이미지</span></div>
+</div>
+</div>
+</div>
+<div class="process-item">
+<div class="process-header" onclick="toggleProcess(this)">
 <div class="process-num">2</div>
-<h4>서비스 기획</h4>
-<p>경로 최적화 설계<br>차량·인력 수배<br>사전 교육 및 브리핑<br>홍보물·제작물 현장 배치</p>
+<div>
+<div style="display:flex;align-items:center;gap:12px"><span class="d-tag">D-30</span><h4>시스템 구축</h4></div>
+<div class="sub">T-RiseUp 수송상황실(C.P.) 구축, 기사 교육</div>
 </div>
-<div class="process-arrow">&rarr;</div>
-<div class="process-step">
+<span class="process-toggle">&#8964;</span>
+</div>
+<div class="process-body">
+<div class="process-body-inner">
+<p>T-RiseUp 기반 관제 시스템을 세팅하고, 수송상황실(C.P.)을 구축합니다. 투입 기사 대상 행사 브리핑과 동선 교육을 실시합니다.</p>
+<div class="process-img"><span>시스템 구축 이미지</span></div>
+</div>
+</div>
+</div>
+<div class="process-item">
+<div class="process-header" onclick="toggleProcess(this)">
 <div class="process-num">3</div>
-<h4>현장 운영</h4>
-<p>365일 24시간 운영센터<br>실시간 관제·모니터링<br>외국어 CS 제공<br>비상 대응체계 완비</p>
+<div>
+<div style="display:flex;align-items:center;gap:12px"><span class="d-tag">D-7</span><h4>최종 점검</h4></div>
+<div class="sub">노선 리허설, 비상 시나리오, 예비 차량 배치</div>
 </div>
-<div class="process-arrow">&rarr;</div>
-<div class="process-step">
+<span class="process-toggle">&#8964;</span>
+</div>
+<div class="process-body">
+<div class="process-body-inner">
+<p>전 노선 리허설을 진행하고, 비상 시나리오별 대응 매뉴얼을 최종 점검합니다. 예비 차량과 인력을 거점별로 사전 배치합니다.</p>
+<div class="process-img"><span>리허설 이미지</span></div>
+</div>
+</div>
+</div>
+<div class="process-item">
+<div class="process-header" onclick="toggleProcess(this)">
 <div class="process-num">4</div>
-<h4>결과 보고</h4>
-<p>운행 기록·비용 정리<br>패턴 리포트 제공<br>다음 행사 개선 인사이트</p>
+<div>
+<div style="display:flex;align-items:center;gap:12px"><span class="d-tag">D</span><h4>D-Day 운영</h4></div>
+<div class="sub">24/7 관제 · AI 돌발감지 · 실시간 지령</div>
+</div>
+<span class="process-toggle">&#8964;</span>
+</div>
+<div class="process-body">
+<div class="process-body-inner">
+<p>수송상황실에서 전 차량을 실시간 관제합니다. AI 돌발감지 시스템으로 이상 징후를 사전 포착하고, 즉시 대체 차량을 투입합니다.</p>
+<div class="process-img"><span>관제 운영 이미지</span></div>
+</div>
+</div>
+</div>
+<div class="process-item">
+<div class="process-header" onclick="toggleProcess(this)">
+<div class="process-num">5</div>
+<div>
+<div style="display:flex;align-items:center;gap:12px"><span class="d-tag">D+7</span><h4>결과 보고</h4></div>
+<div class="sub">운행 데이터 리포트, 정산, 성과 분석</div>
+</div>
+<span class="process-toggle">&#8964;</span>
+</div>
+<div class="process-body">
+<div class="process-body-inner">
+<p>운행 데이터를 기반으로 결과 리포트를 작성합니다. 정산 내역과 성과 분석, 다음 행사를 위한 개선 인사이트를 제공합니다.</p>
+<div class="process-img"><span>리포트 이미지</span></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -338,6 +405,13 @@ function toggleMobSub(btn){btn.classList.toggle('open');const sub=btn.nextElemen
 document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+// Process accordion
+function toggleProcess(header){
+const item=header.parentElement;
+const wasOpen=item.classList.contains('open');
+document.querySelectorAll('.process-item').forEach(i=>i.classList.remove('open'));
+if(!wasOpen) item.classList.add('open');
+}
 </script>
 </body>
 </html>
