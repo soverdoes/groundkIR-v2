@@ -199,7 +199,10 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 <div class="form-group"><div class="form-label">이메일 <span class="req">*</span></div><input class="form-input" type="email" placeholder="example@company.com" required></div>
 <div class="form-group"><div class="form-label">연락처 <span class="req">*</span></div><input class="form-input" type="tel" placeholder="010-1234-5678" required></div>
 </div>
-<div class="form-group"><div class="form-label">현재 사용 중인 시스템</div><input class="form-input" placeholder="엑셀, 자체 개발 시스템, 없음 등"></div>
+<div class="form-row">
+<div class="form-group"><div class="form-label">관심 제품 <span class="req">*</span></div><select class="form-input" required><option value="" disabled selected>선택해 주세요</option><option value="pms">T-RiseUp PMS (예약·배차·관제·정산)</option><option value="tms">T-RiseUp TMS (티켓·탑승권·노선)</option><option value="both">PMS + TMS 통합</option></select></div>
+<div class="form-group"><div class="form-label">차량 규모</div><select class="form-input"><option value="" disabled selected>선택해 주세요</option><option value="1-10">1~10대</option><option value="11-50">11~50대</option><option value="51-100">51~100대</option><option value="100+">100대 이상</option></select></div>
+</div>
 <div class="form-group"><div class="form-label">문의 내용</div><textarea class="form-textarea" placeholder="문의 사항을 자유롭게 작성해 주세요."></textarea></div>
 <label class="form-privacy"><input type="checkbox" required> <span>* 개인정보 수집 및 이용에 동의합니다. (이름, 연락처, 이메일을 문의 응대 목적으로 수집하며, 응대 완료 후 6개월 이내 파기합니다.)</span></label>
 <button type="submit" class="form-submit">문의 접수하기</button>
