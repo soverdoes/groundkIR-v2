@@ -136,6 +136,15 @@ img{max-width:100%;display:block}
 .hero-dot{width:10px;height:10px;border-radius:50%;background:#d4d4d4;border:none;cursor:pointer;transition:var(--transition)}
 .hero-dot.active{background:var(--blue);transform:scale(1.2)}
 
+/* Slide 1: Dark Navy */
+.hero-slide.dark-navy{background:#0f172a}
+.hero-slide.dark-navy .hero-text h1{color:#fff}
+.hero-slide.dark-navy .hero-text p{color:rgba(255,255,255,.65)}
+.hero-slide.dark-navy .hero-tagline{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:1px;margin-bottom:24px}
+.hero-slide.dark-navy .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;position:absolute;bottom:48px;left:24px}
+.hero-slide.dark-navy .hero-badges span{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:6px 16px}
+@media(max-width:768px){.hero-slide.dark-navy .hero-badges{position:static;margin-top:24px}}
+
 .credential-bar{padding:40px 0;background:var(--navy-light);border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5}
 .credential-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;opacity:.5}
 .credential-logos span{font-size:.85rem;font-weight:600;color:var(--gray-400);white-space:nowrap}
@@ -306,12 +315,34 @@ img{max-width:100%;display:block}
 
 <!-- 1. HERO SLIDER -->
 <section class="hero-slider" id="heroSlider">
-<div class="hero-slide active" data-slide="0">
+<!-- Slide 1: GroundK 소개 -->
+<div class="hero-slide dark-navy active" data-slide="0">
+<div class="hero-inner" style="position:relative">
+<div class="hero-text">
+<h1>운영으로 증명하고,
+기술로 확장합니다</h1>
+<p>비즈니스 이동의 운영(Operation)과<br>기술(Technology)을 설계합니다</p>
+<div class="hero-tagline">Your Ground Travel &amp; Digital Partner</div>
+<div class="hero-buttons">
+<a href="solutions.html" class="btn btn-primary">서비스 전체 보기 &rarr;</a>
+</div>
+</div>
+<div style="display:flex;align-items:flex-end;justify-content:flex-end;height:100%">
+<div class="hero-badges" style="position:static">
+<span>SERVICE</span>
+<span>SaaS</span>
+<span>Platform</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 2: APEC 2025 -->
+<div class="hero-slide" data-slide="1">
 <div class="hero-inner">
 <div class="hero-text">
 <h1>APEC 2025 KOREA
 공식 수송관리 파트너</h1>
-<p>대한민국 APEC을 움직인 팀이 이번 행사의 이동 운영을 설계합니다</p>
+<p>대한민국 APEC을 움직인 팀이<br>이번 행사의 이동 운영을 설계합니다</p>
 <div class="hero-buttons">
 <a href="performance.html" class="btn btn-primary">국가급 운영 사례 보기 &rarr;</a>
 </div>
@@ -324,7 +355,8 @@ img{max-width:100%;display:block}
 </div>
 </div>
 </div>
-<div class="hero-slide" data-slide="1">
+<!-- Slide 3: 하나의 플랫폼 -->
+<div class="hero-slide" data-slide="2">
 <div class="hero-inner">
 <div class="hero-text">
 <h1>하나의 플랫폼. 하나의 관리 화면.
@@ -343,24 +375,6 @@ img{max-width:100%;display:block}
 <div class="placeholder" style="color:rgba(255,255,255,.5)">
 <p style="font-weight:600;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;color:rgba(255,255,255,.35)">Our Technology</p>
 <p style="font-weight:700;font-size:1rem;color:rgba(255,255,255,.6)">T-RiseUp PMS &middot; TMS &middot; RIDEUS Marketplace</p>
-</div>
-</div>
-</div>
-</div>
-<div class="hero-slide" data-slide="2">
-<div class="hero-inner">
-<div class="hero-text">
-<h1>글로벌 브랜드가
-선택한 VIP 의전</h1>
-<p>루이비통, 샤넬, Dior — 글로벌 브랜드가 반복 선택한 이유가 있습니다</p>
-<div class="hero-buttons">
-<a href="ir.html#contact" class="btn btn-primary">VIP 의전 제안받기 &rarr;</a>
-</div>
-</div>
-<div class="hero-image">
-<div class="placeholder">
-<p style="font-weight:700;font-size:1.1rem;margin-bottom:8px">Louis Vuitton Pre-Fall</p>
-<p style="font-size:.85rem">VIP 수송 장면</p>
 </div>
 </div>
 </div>
