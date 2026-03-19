@@ -61,6 +61,14 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 @media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.hero-inner{flex-direction:column}.feature-row{grid-template-columns:1fr}.check-grid{grid-template-columns:1fr}.testimonial-row{grid-template-columns:1fr}.target-grid{grid-template-columns:1fr}.related-cards{grid-template-columns:1fr}}
 
+/* SOL SUBNAV */
+.sol-subnav{background:#fff;border-bottom:1px solid #e5e5e5;position:sticky;top:72px;z-index:999;transition:box-shadow .2s}
+.sol-subnav.stuck{box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.sol-subnav-inner{display:flex;align-items:center;gap:32px;height:48px;overflow-x:auto}
+.sol-subnav-link{font-size:.9rem;font-weight:500;color:var(--gray-500);white-space:nowrap;padding:12px 0;border-bottom:2px solid transparent;transition:all .2s}
+.sol-subnav-link:hover{color:#111}
+.sol-subnav-link.active{color:#2563eb;font-weight:700;border-bottom-color:#2563eb}
+
 /* HERO */
 .vip-hero{position:relative;padding:72px 0 0;background:#1a1f2e;color:#fff;overflow:hidden}
 .vip-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,20,35,.85),rgba(15,20,35,.6));z-index:0}
@@ -151,14 +159,20 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 <span style="font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:4px;background:rgba(16,185,129,.15);color:#34d399">T-RiseUp TMS &middot; SaaS</span>
 <span style="font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:4px;background:rgba(37,99,235,.15);color:#60a5fa">RIDEUS &middot; Platform</span>
 </div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="#pms" class="btn-hero-blue" style="padding:12px 28px">PMS</a>
-<a href="#tms" class="btn-hero-blue" style="padding:12px 28px">TMS</a>
-<a href="#rideus" class="btn-hero-blue" style="padding:12px 28px">RIDEUS</a>
-</div>
 </div>
 </div>
 </section>
+
+<!-- SUB NAV (sticky) -->
+<div class="sol-subnav" id="solSubnav">
+<div class="container">
+<div class="sol-subnav-inner">
+<a href="#pms" class="sol-subnav-link active">T-RiseUp PMS</a>
+<a href="#tms" class="sol-subnav-link">T-RiseUp TMS</a>
+<a href="#rideus" class="sol-subnav-link">RIDEUS</a>
+</div>
+</div>
+</div>
 
 <!-- SECTION 1: T-RiseUp PMS -->
 <section class="section bg-dark" id="pms">
@@ -340,6 +354,24 @@ function toggleMobSub(btn){btn.classList.toggle('open');const sub=btn.nextElemen
 document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+// Subnav scroll spy
+(function(){
+const subnav=document.getElementById('solSubnav');
+const links=subnav.querySelectorAll('.sol-subnav-link');
+const sections=[document.getElementById('pms'),document.getElementById('tms'),document.getElementById('rideus')];
+const offset=130;
+window.addEventListener('scroll',function(){
+subnav.classList.toggle('stuck',window.scrollY>200);
+let current='pms';
+sections.forEach(s=>{if(s&&s.offsetTop-offset<=window.scrollY)current=s.id});
+links.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+current)});
+});
+links.forEach(l=>l.addEventListener('click',function(e){
+e.preventDefault();
+const t=document.querySelector(this.getAttribute('href'));
+if(t)window.scrollTo({top:t.offsetTop-offset+1,behavior:'smooth'});
+}));
+})();
 </script>
 </body>
 </html>
