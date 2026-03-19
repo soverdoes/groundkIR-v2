@@ -43,6 +43,12 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .mobile-menu .mob-sub{display:none;padding:8px 0 8px 12px}.mobile-menu .mob-sub.open{display:block}
 .mobile-menu .mob-sub a{display:block;padding:10px 0;font-size:.95rem;color:var(--gray-400);border-bottom:1px solid #f5f5f5}.mobile-menu .mob-sub a strong{display:block;color:#111;font-weight:600;margin-bottom:2px}
 .mobile-menu .mob-link{display:block;font-size:1.1rem;font-weight:600;color:#111;padding:14px 0;border-bottom:1px solid #f0f0f0}
+.footer-sns{display:flex;gap:10px;margin-top:16px}
+.sns-icon{width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;color:var(--gray-500);font-size:1rem;transition:all .2s ease}
+.sns-icon:hover{transform:translateY(-2px)}
+.sns-ig:hover{background:#E1306C;color:#fff}
+.sns-naver:hover{background:#03C75A;color:#fff}
+.sns-fb:hover{background:#1877F2;color:#fff}
 .footer{background:var(--navy-light);border-top:1px solid #e5e5e5;padding:80px 0 0}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:60px}
 .footer-brand{font-size:1.3rem;font-weight:900;margin-bottom:12px}.footer-brand span{color:var(--blue)}
@@ -82,6 +88,7 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .blog-body p{font-size:.88rem;color:var(--gray-500);line-height:1.6;margin-bottom:16px;flex:1}
 .blog-date{font-size:.8rem;color:var(--gray-600);display:flex;align-items:center;gap:6px;margin-top:auto}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -234,7 +241,7 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 <!-- FOOTER -->
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><div class="footer-brand">GROUND.<span>K</span></div><p class="footer-desc">현장에서 검증하고 기술로 확장하는 B2B 모빌리티 기업. 국제행사부터 기업 셔틀까지, 이동 운영의 모든 것을 연결합니다.</p></div>
+<div><div class="footer-brand">GROUND.<span>K</span></div><p class="footer-desc">현장에서 검증하고 기술로 확장하는 B2B 모빌리티 기업. 국제행사부터 기업 셔틀까지, 이동 운영의 모든 것을 연결합니다.</p><div class="footer-sns"><a href="https://www.instagram.com/ground__k/" target="_blank" rel="noopener" aria-label="그라운드케이 인스타그램" class="sns-icon sns-ig"><i class="fab fa-instagram"></i></a><a href="https://blog.naver.com/groundkgk" target="_blank" rel="noopener" aria-label="그라운드케이 네이버 블로그" class="sns-icon sns-naver"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M9.45 7.55L4.3 0H0v14h4.55V6.45L9.7 14H14V0H9.45v7.55z"/></svg></a><a href="https://www.facebook.com/groundk.pr/" target="_blank" rel="noopener" aria-label="그라운드케이 페이스북" class="sns-icon sns-fb"><i class="fab fa-facebook-f"></i></a></div></div>
 <div><h4>Services</h4><ul class="footer-links"><li><a href="service-vip.html">프리미엄 의전수송</a></li><li><a href="service-event.html">메가이벤트 수송</a></li><li><a href="service-shuttle.html">셔틀 위탁관리</a></li><li><a href="service-marketing.html">마케팅 모빌리티</a></li></ul></div>
 <div><h4>Solutions</h4><ul class="footer-links"><li><a href="solution-pms.html">T-RiseUp PMS</a></li><li><a href="solution-pms.html#tms">T-RiseUp TMS</a></li><li><a href="solution-pms.html#rideus">RIDEUS Marketplace</a></li></ul></div>
 <div><h4>Contact</h4><div class="footer-contact-item">02-863-3540</div><div class="footer-contact-item">ir@groundk.co.kr</div><a href="ir.html#contact" class="btn btn-outline" style="margin-top:12px;padding:10px 20px;font-size:.85rem">문의하기</a></div>
