@@ -61,6 +61,16 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 @media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.hero-inner{flex-direction:column}.feature-row{grid-template-columns:1fr}.check-grid{grid-template-columns:1fr}.testimonial-row{grid-template-columns:1fr}.target-grid{grid-template-columns:1fr}.related-cards{grid-template-columns:1fr}}
 
+/* HERO */
+.vip-hero{position:relative;padding:72px 0 0;background:#1a1f2e;color:#fff;overflow:hidden}
+.vip-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,20,35,.85),rgba(15,20,35,.6));z-index:0}
+.vip-hero-inner{padding:100px 0 80px;max-width:700px}
+.vip-hero-tag{font-size:.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:20px}
+.vip-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.25;margin-bottom:16px;letter-spacing:-1px}
+.vip-hero p{font-size:1.1rem;color:rgba(255,255,255,.6);margin-bottom:32px;line-height:1.7}
+.btn-hero-blue{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:#2563eb;color:#fff;font-weight:700;font-size:.95rem;border-radius:8px;border:none;cursor:pointer;transition:var(--transition)}
+.btn-hero-blue:hover{background:#1d4ed8;transform:translateY(-2px)}
+
 /* PAGE */
 .page-hero{padding:140px 0 60px;background:#fff}
 .hero-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:40px}.hero-content{max-width:680px}
@@ -129,22 +139,22 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </div>
 
 <!-- SECTION 0: HERO -->
-<section class="page-hero" style="padding:140px 0 80px">
-<div class="container">
-<div class="fade-up">
-<div class="section-label">Solutions</div>
-<h1 style="font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:900;letter-spacing:-1px;line-height:1.3;margin-bottom:16px">하나의 플랫폼. 하나의 관리 화면.<br>모든 운영.</h1>
-<p style="font-size:1.05rem;color:var(--text-secondary);line-height:1.8;margin-bottom:20px">운영 현장에서 태어난 그라운드케이의<br>자체 모빌리티 SaaS &middot; 플랫폼</p>
-<div style="font-size:.82rem;color:var(--gray-600);margin-bottom:24px">현장 검증 완료 &middot; 자체 개발</div>
+<section class="vip-hero">
+<div class="vip-hero-overlay"></div>
+<div class="container" style="position:relative;z-index:1">
+<div class="vip-hero-inner fade-up">
+<div class="vip-hero-tag">SOLUTIONS &mdash; SaaS &middot; PLATFORM</div>
+<h1>하나의 플랫폼. 하나의 관리 화면.<br>모든 운영.</h1>
+<p>운영 현장에서 태어난 그라운드케이의<br>자체 모빌리티 SaaS &middot; 플랫폼</p>
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px">
-<span style="font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:4px;background:#dcfce7;color:#16a34a">T-RiseUp PMS &middot; SaaS</span>
-<span style="font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:4px;background:#dcfce7;color:#16a34a">T-RiseUp TMS &middot; SaaS</span>
-<span style="font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:4px;background:#dbeafe;color:#2563eb">RIDEUS &middot; Platform</span>
+<span style="font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:4px;background:rgba(16,185,129,.15);color:#34d399">T-RiseUp PMS &middot; SaaS</span>
+<span style="font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:4px;background:rgba(16,185,129,.15);color:#34d399">T-RiseUp TMS &middot; SaaS</span>
+<span style="font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:4px;background:rgba(37,99,235,.15);color:#60a5fa">RIDEUS &middot; Platform</span>
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="#pms" style="padding:10px 24px;background:#111;color:#fff;border-radius:8px;font-size:.85rem;font-weight:700">PMS</a>
-<a href="#tms" style="padding:10px 24px;background:#111;color:#fff;border-radius:8px;font-size:.85rem;font-weight:700">TMS</a>
-<a href="#rideus" style="padding:10px 24px;background:#111;color:#fff;border-radius:8px;font-size:.85rem;font-weight:700">RIDEUS</a>
+<a href="#pms" class="btn-hero-blue" style="padding:12px 28px">PMS</a>
+<a href="#tms" class="btn-hero-blue" style="padding:12px 28px">TMS</a>
+<a href="#rideus" class="btn-hero-blue" style="padding:12px 28px">RIDEUS</a>
 </div>
 </div>
 </div>
