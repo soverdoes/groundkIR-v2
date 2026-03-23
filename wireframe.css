@@ -63,6 +63,7 @@ body { background: #fff; color: #222; }
 .dropdown::after { border-bottom-color: #fff; }
 .dropdown-item:hover { background: #f5f5f5; }
 .dropdown-icon { border-radius: 4px; }
+.dropdown-icon { display: none !important; }
 .dropdown-icon.blue, .dropdown-icon.green { background: #f5f5f5; color: #222; }
 .dropdown-badge.saas, .dropdown-badge.platform { background: #f0f0f0; color: #444; }
 
@@ -159,26 +160,29 @@ body { background: #fff; color: #222; }
 
 /* ---- VIP / Service Hero (dark) ---- */
 .vip-hero, .co-hero, .mk-hero, .page-hero {
-  background: #f0f0f0 !important;
-  border-bottom: 1px solid #d0d0d0;
+  background: #1a1f2e !important;
+  border-bottom: 1px solid #333;
 }
 .vip-hero *, .co-hero *, .mk-hero *, .page-hero * {
   text-shadow: none !important;
 }
 .vip-hero h1, .co-hero h1, .mk-hero h1, .page-hero h1,
 .vip-hero .hero-content h1, .page-hero .hero-content h1 {
-  color: #111 !important;
+  color: #fff !important;
 }
 .vip-hero p, .co-hero p, .mk-hero p, .page-hero p,
 .vip-hero .hero-content p, .page-hero .hero-content p {
-  color: #888 !important;
+  color: rgba(255,255,255,.6) !important;
 }
-.vip-hero .hero-tagline, .page-hero .hero-tagline { color: #aaa !important; }
-.vip-hero::before, .co-hero-overlay, .mk-hero-overlay {
+.vip-hero .vip-hero-tag, .page-hero .hero-tagline { color: rgba(255,255,255,.5) !important; }
+.vip-hero-overlay, .co-hero-overlay, .mk-hero-overlay {
   background: transparent !important;
   opacity: 0 !important;
 }
-.mk-hero-tag { background: #e0e0e0 !important; color: #444 !important; }
+.btn-hero-blue { background: transparent !important; color: #fff !important; border: 1.5px solid #fff !important; border-radius: 4px; }
+.btn-hero-blue:hover { background: rgba(255,255,255,.1) !important; }
+.mk-hero-tag { background: rgba(255,255,255,.1) !important; color: rgba(255,255,255,.7) !important; }
+.vip-hero-inner span[style*="background:rgba"] { background: rgba(255,255,255,.1) !important; color: rgba(255,255,255,.6) !important; }
 
 /* ---- Process Steps ---- */
 .process-step .step-num {
