@@ -90,6 +90,7 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .cross-link-box{background:#f0f4ff;border:1px solid #dbeafe;border-radius:16px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .cl-tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#2563eb;margin-bottom:8px}
 .btn-cl{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:#fff;border:1.5px solid #2563eb;border-radius:8px;color:#2563eb;font-weight:700;font-size:.9rem;white-space:nowrap}.btn-cl:hover{background:#eef4ff}
+.case-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;transition:var(--transition)}.case-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}.case-thumb{position:relative;aspect-ratio:4/3;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#999;font-weight:500}.case-tag{position:absolute;top:12px;left:12px;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:4px;color:#fff}.case-tag.blue{background:#2563eb}.case-tag.green{background:#059669}.case-body{padding:24px}.case-body h4{font-size:1.05rem;font-weight:800;line-height:1.4;margin-bottom:10px}.case-body p{font-size:.88rem;color:var(--gray-500);line-height:1.7;margin-bottom:16px}.case-stat{font-size:.82rem;font-weight:700;color:#2563eb;padding:10px 14px;background:#f0f4ff;border-radius:8px;display:inline-block}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="wireframe.css">
@@ -241,20 +242,38 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 <h2 class="section-title fade-up">브랜드가 반복 선택한 이유가 있습니다</h2>
 </div>
 <div class="grid-3 fade-up">
-<div class="card" style="padding:28px 24px">
-<div style="font-size:.75rem;font-weight:700;color:var(--blue);margin-bottom:8px">금융 &middot; 증권</div>
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:4px">삼성증권 SNI Honors</h3>
-<p style="font-size:.85rem;color:var(--gray-500)">최상위 등급 회원 공항 픽샌딩 &amp; 골프장 수행기사. 2018~현재</p>
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">금융 &middot; 증권</span>
+[ 삼성증권 SNI Honors ]
 </div>
-<div class="card" style="padding:28px 24px">
-<div style="font-size:.75rem;font-weight:700;color:var(--blue);margin-bottom:8px">카드사</div>
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:4px">삼성카드 THE O V2</h3>
-<p style="font-size:.85rem;color:var(--gray-500)">VIP 회원 공항 왕복 리무진 송영 바우처. 2018~현재</p>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">삼성증권 SNI Honors 멤버십</h4>
+<p style="font-size:.82rem">최상위 등급 회원 공항 픽샌딩 &amp; 골프장 수행기사 서비스</p>
+<span class="case-stat" style="font-size:.75rem">2018 ~ 현재</span>
 </div>
-<div class="card" style="padding:28px 24px">
-<div style="font-size:.75rem;font-weight:700;color:var(--blue);margin-bottom:8px">항공사</div>
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:4px">American Airlines</h3>
-<p style="font-size:.85rem;color:var(--gray-500)">퍼스트 &middot; 비즈니스클래스 공항 픽샌딩 서비스. 항공편 트래킹 연동</p>
+</div>
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">카드사</span>
+[ 삼성카드 THE O V2 ]
+</div>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">삼성카드 THE O V2 기프트</h4>
+<p style="font-size:.82rem">VIP 회원 공항 왕복 리무진 송영 바우처 제공</p>
+<span class="case-stat" style="font-size:.75rem">2018 ~ 현재</span>
+</div>
+</div>
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">항공사</span>
+[ American Airlines ]
+</div>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">American Airlines 퍼스트 &middot; 비즈니스</h4>
+<p style="font-size:.82rem">퍼스트 &middot; 비즈니스클래스 공항 픽샌딩. 항공편 트래킹 연동</p>
+<span class="case-stat" style="font-size:.75rem">2018 ~ 2020</span>
+</div>
 </div>
 </div>
 </div>

@@ -116,6 +116,7 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .related-card{display:flex;align-items:center;gap:16px;padding:20px 24px;border:1px solid #e5e5e5;border-radius:12px;background:#fff;transition:var(--transition)}.related-card:hover{border-color:#111;box-shadow:var(--shadow-md)}
 .related-card .rc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .related-card h4{font-size:.95rem;font-weight:700}.related-card p{font-size:.8rem;color:var(--gray-500)}
+.case-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;transition:var(--transition)}.case-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}.case-thumb{position:relative;aspect-ratio:4/3;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#999;font-weight:500}.case-tag{position:absolute;top:12px;left:12px;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:4px;color:#fff}.case-tag.blue{background:#2563eb}.case-tag.green{background:#059669}.case-body{padding:24px}.case-body h4{font-size:1.05rem;font-weight:800;line-height:1.4;margin-bottom:10px}.case-body p{font-size:.88rem;color:var(--gray-500);line-height:1.7;margin-bottom:16px}.case-stat{font-size:.82rem;font-weight:700;color:#2563eb;padding:10px 14px;background:#f0f4ff;border-radius:8px;display:inline-block}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="wireframe.css">
@@ -287,20 +288,38 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 <h2 class="section-title fade-up">셔틀 도입 레퍼런스</h2>
 </div>
 <div class="grid-3 fade-up">
-<div class="card" style="padding:28px 24px">
-<div style="font-size:.75rem;font-weight:700;color:var(--blue);margin-bottom:8px">기업 통근</div>
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:4px">부산 산업단지 통근버스</h3>
-<p style="font-size:.85rem;color:var(--gray-500)">11개 산단, 월 50,000명 통근 셔틀 운영</p>
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">기업 통근</span>
+[ 부산 산업단지 통근버스 ]
 </div>
-<div class="card" style="padding:28px 24px">
-<div style="font-size:.75rem;font-weight:700;color:var(--blue);margin-bottom:8px">공공 셔틀</div>
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:4px">광진구 동행버스</h3>
-<p style="font-size:.85rem;color:var(--gray-500)">광진구 공공 셔틀 위탁 운영</p>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">부산 산업단지 통근버스</h4>
+<p style="font-size:.82rem">11개 산단 통근 셔틀 위탁 운영</p>
+<span class="case-stat" style="font-size:.75rem">월 50,000명 &middot; 11개 산단</span>
 </div>
-<div class="card" style="padding:28px 24px">
-<div style="font-size:.75rem;font-weight:700;color:var(--blue);margin-bottom:8px">테마파크</div>
-<h3 style="font-size:1.05rem;font-weight:800;margin-bottom:4px">에버랜드 셔틀</h3>
-<p style="font-size:.85rem;color:var(--gray-500)">10개 지역, 11개 운수사 통합 예약 시스템 구축</p>
+</div>
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">공공 셔틀</span>
+[ 광진구 동행버스 ]
+</div>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">광진구 동행버스</h4>
+<p style="font-size:.82rem">광진구 공공 셔틀 위탁 운영</p>
+<span class="case-stat" style="font-size:.75rem">공공 셔틀 위탁</span>
+</div>
+</div>
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">테마파크</span>
+[ 에버랜드 셔틀 ]
+</div>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">에버랜드 글로벌 셔틀 예약 시스템</h4>
+<p style="font-size:.82rem">10개 지역, 11개 운수사 통합 예약 시스템 구축</p>
+<span class="case-stat" style="font-size:.75rem">누적 3.6만명 &middot; 5.9억+</span>
+</div>
 </div>
 </div>
 </div>
