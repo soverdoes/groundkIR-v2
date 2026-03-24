@@ -155,8 +155,10 @@ img{max-width:100%;display:block}
 .related-card:hover{border-color:#111;box-shadow:var(--shadow-md)}
 .related-card .rc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .related-card h4{font-size:.95rem;font-weight:700}.related-card p{font-size:.8rem;color:var(--gray-500)}
+.case-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;transition:var(--transition)}.case-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}.case-thumb{position:relative;aspect-ratio:4/3;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#999;font-weight:500}.case-tag{position:absolute;top:12px;left:12px;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:4px;color:#fff}.case-tag.blue{background:#2563eb}.case-tag.green{background:#059669}.case-body{padding:24px}.case-body h4{font-size:1.05rem;font-weight:800;line-height:1.4;margin-bottom:10px}.case-body p{font-size:.88rem;color:var(--gray-500);line-height:1.7;margin-bottom:16px}.case-stat{font-size:.82rem;font-weight:700;color:#2563eb;padding:10px 14px;background:#f0f4ff;border-radius:8px;display:inline-block}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="wireframe.css">
 </head>
 <body>
 
@@ -165,7 +167,7 @@ img{max-width:100%;display:block}
 <div class="nav-inner">
 <a href="index.html" class="nav-logo">GROUND.<span>K</span></a>
 <ul class="nav-links">
-<li><a href="#" class="active">서비스 <span class="arrow">&#9660;</span></a><div class="dropdown"><a href="service-vip.html" class="dropdown-item"><div class="dropdown-icon blue">&#128664;</div><div class="dropdown-text"><strong>프리미엄 의전수송</strong><span>국가급 의전부터 글로벌 브랜드 VIP까지</span></div></a><a href="service-event.html" class="dropdown-item"><div class="dropdown-icon blue">&#127967;</div><div class="dropdown-text"><strong>메가이벤트 수송</strong><span>정상회의·국제행사·MICE 대규모 수송</span></div></a><a href="service-shuttle.html" class="dropdown-item"><div class="dropdown-icon blue">&#128652;</div><div class="dropdown-text"><strong>셔틀 위탁관리</strong><span>기업 통근·입주민·행사 셔틀 운영 대행</span></div></a><a href="service-marketing.html" class="dropdown-item"><div class="dropdown-icon blue">&#128142;</div><div class="dropdown-text"><strong>마케팅 모빌리티</strong><span>VIP 멤버십·카드사·항공사 프리미엄 서비스</span></div></a></div></li>
+<li><a href="#" class="active">서비스 <span class="arrow">&#9660;</span></a><div class="dropdown"><a href="service-vip.html" class="dropdown-item"><div class="dropdown-icon blue"></div><div class="dropdown-text"><strong>프리미엄 의전수송</strong><span>국가급 의전부터 글로벌 브랜드 VIP까지</span></div></a><a href="service-event.html" class="dropdown-item"><div class="dropdown-icon blue"></div><div class="dropdown-text"><strong>메가이벤트 수송</strong><span>정상회의·국제행사·MICE 대규모 수송</span></div></a><a href="service-shuttle.html" class="dropdown-item"><div class="dropdown-icon blue"></div><div class="dropdown-text"><strong>셔틀 위탁관리</strong><span>기업 통근·입주민·행사 셔틀 운영 대행</span></div></a><a href="service-marketing.html" class="dropdown-item"><div class="dropdown-icon blue"></div><div class="dropdown-text"><strong>마케팅 모빌리티</strong><span>VIP 멤버십·카드사·항공사 프리미엄 서비스</span></div></a></div></li>
 <li><a href="solution-pms.html">솔루션</a></li>
 <li><a href="performance.html">프로젝트</a></li>
 <li><a href="insight.html">인사이트</a></li>
@@ -219,19 +221,16 @@ img{max-width:100%;display:block}
 </div>
 <div class="grid-3 fade-up">
 <div class="card" style="padding:36px 28px;display:flex;flex-direction:column;gap:12px">
-<div style="font-size:2rem">🏛️</div>
 <h3 style="font-size:1.15rem;font-weight:800">컨퍼런스 &amp; 컨벤션</h3>
 <p style="font-size:.9rem;color:var(--gray-500);line-height:1.7;flex:1">정부 고위급 회의, 국제 회의,<br>학술 대회, MICE 행사 등</p>
 <div style="font-size:.82rem;font-weight:600;color:#2563eb;padding:10px 14px;background:#f0f4ff;border-radius:8px">정상회의 &middot; ADB &middot; APEC 수행 경험</div>
 </div>
 <div class="card" style="padding:36px 28px;display:flex;flex-direction:column;gap:12px">
-<div style="font-size:2rem">💎</div>
 <h3 style="font-size:1.15rem;font-weight:800">럭셔리 브랜드</h3>
 <p style="font-size:.9rem;color:var(--gray-500);line-height:1.7;flex:1">패션쇼, 브랜드 런칭쇼,<br>셀러브리티 행사, VIP 초청 이벤트 등</p>
 <div style="font-size:.82rem;font-weight:600;color:#2563eb;padding:10px 14px;background:#f0f4ff;border-radius:8px">루이비통 &middot; 샤넬 &middot; Dior 수행 경험</div>
 </div>
 <div class="card" style="padding:36px 28px;display:flex;flex-direction:column;gap:12px">
-<div style="font-size:2rem">🏆</div>
 <h3 style="font-size:1.15rem;font-weight:800">스포츠 &amp; 엔터테인먼트</h3>
 <p style="font-size:.9rem;color:var(--gray-500);line-height:1.7;flex:1">선수단, 스폰서, VIP,<br>방송국 및 미디어 수송 등</p>
 <div style="font-size:.82rem;font-weight:600;color:#2563eb;padding:10px 14px;background:#f0f4ff;border-radius:8px">GENESIS Championships &middot; AFC 수행 경험</div>
@@ -337,56 +336,41 @@ img{max-width:100%;display:block}
 <section class="section bg-darker">
 <div class="container">
 <div style="text-align:center;margin-bottom:48px">
-<div class="section-label fade-up">Reference</div>
+<div class="section-label fade-up">References</div>
 <h2 class="section-title fade-up">대규모 수송, 이렇게 수행했습니다</h2>
 </div>
-<div class="photo-grid fade-up">
-<div class="photo-card">
-<div class="photo-thumb" style="background:#1a2744"></div>
-<div class="photo-overlay">
-<span class="photo-cat">정부 (공식 지정)</span>
-<h3>APEC 2025</h3>
-<span class="photo-stat">21개국</span>
+<div class="grid-3 fade-up">
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">정부 (공식 지정)</span>
+[ APEC 2025 정상회의 ]
+</div>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">APEC 정상회의 차량 800대 통합 관제</h4>
+<p style="font-size:.82rem">21개 경제권 수송을 단일 시스템으로 통합 관리</p>
+<span class="case-stat" style="font-size:.75rem">차량 800대 &middot; 21개국</span>
 </div>
 </div>
-<div class="photo-card">
-<div class="photo-thumb" style="background:#2a3a50"></div>
-<div class="photo-overlay">
-<span class="photo-cat">정부</span>
-<h3>한-아프리카 정상회의</h3>
-<span class="photo-stat">500대/48국</span>
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">정부</span>
+[ 한-아프리카 정상회의 ]
+</div>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">48개국 수행단 차량 500대 운영</h4>
+<p style="font-size:.82rem">48개국 수행단 동시 수송 &middot; 실시간 배차 관제</p>
+<span class="case-stat" style="font-size:.75rem">차량 500대 &middot; 48개국</span>
 </div>
 </div>
-<div class="photo-card">
-<div class="photo-thumb" style="background:#3a4a60"></div>
-<div class="photo-overlay">
-<span class="photo-cat">국제금융기관</span>
-<h3>ADB 연차총회</h3>
-<span class="photo-stat">70대</span>
+<div class="case-card" style="font-size:.9em">
+<div class="case-thumb" style="aspect-ratio:3/2">
+<span class="case-tag blue">엔터테인먼트</span>
+[ SBS 가요대전 2024 ]
 </div>
-</div>
-<div class="photo-card">
-<div class="photo-thumb" style="background:#2a1f3a"></div>
-<div class="photo-overlay">
-<span class="photo-cat">엔터테인먼트</span>
-<h3>BLACKPINK World Tour</h3>
-<span class="photo-stat">5,000명</span>
-</div>
-</div>
-<div class="photo-card">
-<div class="photo-thumb" style="background:#3a2a20"></div>
-<div class="photo-overlay">
-<span class="photo-cat">럭셔리 브랜드</span>
-<h3>Louis Vuitton Pre-fall</h3>
-<span class="photo-stat">300대</span>
-</div>
-</div>
-<div class="photo-card">
-<div class="photo-thumb" style="background:#2a3040"></div>
-<div class="photo-overlay">
-<span class="photo-cat">국제스포츠</span>
-<h3>부산 세계탁구선수권</h3>
-<span class="photo-stat">200대</span>
+<div class="case-body" style="padding:18px">
+<h4 style="font-size:.95rem">46개국 외국인 관람객 6,000명 수송</h4>
+<p style="font-size:.82rem">버스 150대 운영, QR 탑승권 &middot; 다국어 CS 연동</p>
+<span class="case-stat" style="font-size:.75rem">버스 150대 &middot; 6,000명</span>
 </div>
 </div>
 </div>
