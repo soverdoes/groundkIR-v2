@@ -237,96 +237,111 @@ img{max-width:100%;display:block}
 <!-- TAB FILTER + PHOTO CARDS -->
 <section class="section bg-dark" id="cases">
 <div class="container">
+<!-- Search Bar -->
+<div class="search-bar fade-up" style="max-width:480px;margin:0 auto 24px;position:relative">
+<input type="text" id="searchInput" placeholder="행사명 · 키워드 검색" style="width:100%;padding:14px 20px 14px 44px;border:1.5px solid #e5e5e5;border-radius:50px;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#2563eb'" onblur="this.style.borderColor='#e5e5e5'">
+<svg style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#999" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-width="2" stroke-linecap="round"/></svg>
+</div>
+
 <!-- Tab Nav -->
 <div class="tab-nav fade-up">
-<button class="tab-btn active" onclick="filterCards('all')">전체 (11)</button>
-<button class="tab-btn" onclick="filterCards('vip')">의전수송 (1)</button>
-<button class="tab-btn" onclick="filterCards('mega')">메가이벤트 (5)</button>
-<button class="tab-btn" onclick="filterCards('shuttle')">셔틀 (3)</button>
-<button class="tab-btn" onclick="filterCards('solution')">솔루션도입 (3)</button>
+<button class="tab-btn active" onclick="filterCards('all')">전체</button>
+<button class="tab-btn" onclick="filterCards('summit')">국제행사·정상회의</button>
+<button class="tab-btn" onclick="filterCards('luxury')">럭셔리·패션</button>
+<button class="tab-btn" onclick="filterCards('corporate')">기업행사·포럼</button>
+<button class="tab-btn" onclick="filterCards('concert')">공연·스포츠</button>
+<button class="tab-btn" onclick="filterCards('shuttle')">셔틀·관광</button>
+</div>
+
+<!-- Pinned Items -->
+<div class="ref-grid fade-up" id="pinnedGrid" style="margin-bottom:32px">
+
+<div class="ref-photo-card" data-cat="summit" data-pinned="true">
+<div class="ref-thumb" style="background:#1a2744">
+<div class="ref-tags"><span class="ref-tag-cat">국제행사·정상회의</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
+</div>
+<div class="ref-info"><h3>APEC 2025 공식 수송</h3><div class="ref-stat">21개국</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
+</div>
+
 </div>
 
 <!-- Photo Card Grid -->
 <div class="ref-grid fade-up" id="refGrid">
 
-<div class="ref-photo-card" data-cat="vip">
+<div class="ref-photo-card" data-cat="summit">
 <div class="ref-thumb" style="background:#1a2744">
-<div class="ref-tags"><span class="ref-tag-cat">의전수송</span><span class="ref-tag-type">OPERATION</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">국제행사·정상회의</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
 <div class="ref-info"><h3>한-아프리카 정상회의</h3><div class="ref-stat">500대 / 48국</div><a href="service-vip.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<div class="ref-photo-card" data-cat="mega">
+<div class="ref-photo-card" data-cat="luxury">
 <div class="ref-thumb" style="background:#3a2a20">
-<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type">OPERATION</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">럭셔리·패션</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
 <div class="ref-info"><h3>Louis Vuitton Pre-fall Show</h3><div class="ref-stat">300대</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<div class="ref-photo-card" data-cat="mega">
-<div class="ref-thumb" style="background:#1a2744">
-<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
-</div>
-<div class="ref-info"><h3>APEC 2025 공식 수송</h3><div class="ref-stat">21개국</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
-</div>
-
-<div class="ref-photo-card" data-cat="mega">
+<div class="ref-photo-card" data-cat="concert">
 <div class="ref-thumb" style="background:#2a1f3a">
-<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type">OPERATION</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">공연·스포츠</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
 <div class="ref-info"><h3>BLACKPINK World Tour</h3><div class="ref-stat">5,000명</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<div class="ref-photo-card" data-cat="mega shuttle">
+<div class="ref-photo-card" data-cat="concert">
 <div class="ref-thumb" style="background:#2a3040">
-<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-cat">셔틀</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">공연·스포츠</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
 <div class="ref-info"><h3>SBS 가요대전 2024</h3><div class="ref-stat">6,000명 / 150대</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<div class="ref-photo-card" data-cat="mega">
+<div class="ref-photo-card" data-cat="concert">
 <div class="ref-thumb" style="background:#2a3a50">
-<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type">OPERATION</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">공연·스포츠</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
 <div class="ref-info"><h3>부산 세계탁구선수권</h3><div class="ref-stat">200대</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
 <div class="ref-photo-card" data-cat="shuttle">
 <div class="ref-thumb" style="background:#1f2a3a">
-<div class="ref-tags"><span class="ref-tag-cat">셔틀</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">셔틀·관광</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
 <div class="ref-info"><h3>검암 Royal Park City</h3><div class="ref-stat">일 2,000명 / 5년 연속</div><a href="service-shuttle.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<div class="ref-photo-card" data-cat="shuttle solution">
+<div class="ref-photo-card" data-cat="shuttle">
 <div class="ref-thumb" style="background:#2a3040">
-<div class="ref-tags"><span class="ref-tag-cat">셔틀</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">셔틀·관광</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
 <div class="ref-info"><h3>부산 11개 산업단지 통근</h3><div class="ref-stat">월 50,000명 / 46대</div><a href="service-shuttle.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<div class="ref-photo-card" data-cat="solution">
+<div class="ref-photo-card" data-cat="shuttle">
 <div class="ref-thumb" style="background:#3a4a60">
-<div class="ref-tags"><span class="ref-tag-cat">솔루션도입</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">셔틀·관광</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
 <div class="ref-info"><h3>에버랜드-T 플랫폼</h3><div class="ref-stat">10개 지역 / 3.6만명+</div><a href="solution-pms.html#tms" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<div class="ref-photo-card" data-cat="solution">
+<div class="ref-photo-card" data-cat="shuttle">
 <div class="ref-thumb" style="background:#1a2744">
-<div class="ref-tags"><span class="ref-tag-cat">솔루션도입</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">셔틀·관광</span><span class="ref-tag-type type-tech">OP&times;TECH</span></div>
 </div>
 <div class="ref-info"><h3>위시티 멤버십 셔틀</h3><div class="ref-stat">5.9억+ / 36,500명</div><a href="solution-pms.html#rideus" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
-<div class="ref-photo-card" data-cat="mega">
+<div class="ref-photo-card" data-cat="summit">
 <div class="ref-thumb" style="background:#3a4a60">
-<div class="ref-tags"><span class="ref-tag-cat">메가이벤트</span><span class="ref-tag-type">OPERATION</span></div>
+<div class="ref-tags"><span class="ref-tag-cat">국제행사·정상회의</span><span class="ref-tag-type">OPERATION</span></div>
 </div>
 <div class="ref-info"><h3>ADB 연차총회</h3><div class="ref-stat">68개국 / 70대</div><a href="service-event.html" class="ref-link">자세히 보기 &gt;</a></div>
 </div>
 
 </div>
+
+<!-- Pagination -->
+<div class="pagination" id="pagination" style="display:flex;justify-content:center;gap:8px;margin-top:48px"></div>
 </div>
 </section>
 
@@ -392,15 +407,74 @@ img{max-width:100%;display:block}
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function toggleMobSub(btn){btn.classList.toggle('open');const sub=btn.nextElementSibling;sub.classList.toggle('open')}
 document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
-// Tab filter
-function filterCards(cat){
-document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-event.target.classList.add('active');
-document.querySelectorAll('.ref-photo-card').forEach(c=>{
-if(cat==='all'){c.classList.remove('hidden')}
-else{c.classList.toggle('hidden',!c.dataset.cat.includes(cat))}
-});
+// Search + Filter + Pagination
+const ITEMS_PER_PAGE = 6;
+let currentPage = 1;
+let currentFilter = 'all';
+
+function getAllCards() {
+  return Array.from(document.querySelectorAll('#refGrid .ref-photo-card'));
 }
+
+function getFilteredCards() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  return getAllCards().filter(c => {
+    const catMatch = currentFilter === 'all' || c.dataset.cat.includes(currentFilter);
+    const text = c.textContent.toLowerCase();
+    const searchMatch = !searchTerm || text.includes(searchTerm);
+    return catMatch && searchMatch;
+  });
+}
+
+function renderPage() {
+  const filtered = getFilteredCards();
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  if (currentPage > totalPages) currentPage = 1;
+
+  getAllCards().forEach(c => c.classList.add('hidden'));
+
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
+  filtered.slice(start, end).forEach(c => c.classList.remove('hidden'));
+
+  // Handle pinned cards with search/filter
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('#pinnedGrid .ref-photo-card').forEach(c => {
+    const catMatch = currentFilter === 'all' || c.dataset.cat.includes(currentFilter);
+    const text = c.textContent.toLowerCase();
+    const searchMatch = !searchTerm || text.includes(searchTerm);
+    c.style.display = (catMatch && searchMatch) ? '' : 'none';
+  });
+
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  const container = document.getElementById('pagination');
+  if (totalPages <= 1) { container.innerHTML = ''; return; }
+  let html = '';
+  for (let i = 1; i <= totalPages; i++) {
+    html += '<button onclick="goToPage(' + i + ')" style="width:40px;height:40px;border-radius:50%;border:1.5px solid ' + (i===currentPage?'#2563eb':'#e5e5e5') + ';background:' + (i===currentPage?'#2563eb':'#fff') + ';color:' + (i===currentPage?'#fff':'#555') + ';font-weight:600;font-size:.9rem;cursor:pointer;font-family:inherit;transition:all .2s">' + i + '</button>';
+  }
+  container.innerHTML = html;
+}
+
+function goToPage(page) { currentPage = page; renderPage(); }
+
+function filterCards(cat) {
+  currentFilter = cat;
+  currentPage = 1;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderPage();
+}
+
+document.getElementById('searchInput').addEventListener('input', function() {
+  currentPage = 1;
+  renderPage();
+});
+
+renderPage();
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>

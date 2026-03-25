@@ -60,7 +60,7 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .footer-bottom p{font-size:.8rem;color:var(--gray-600)}.footer-bottom-links{display:flex;gap:20px}.footer-bottom-links a{font-size:.8rem;color:var(--gray-600)}.footer-bottom-links a:hover{color:var(--gray-400)}
 .footer-brands{margin-top:20px;padding:20px 0;border-top:1px solid #e5e5e5;text-align:center}.footer-brands a{font-size:.8rem;color:var(--gray-600);margin:0 24px;transition:color .2s}.footer-brands a:hover{color:var(--blue)}
 @media(max-width:1024px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.blog-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links,.nav-cta-btn{display:none}.hamburger{display:flex}.section{padding:60px 0}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.blog-grid{grid-template-columns:1fr}.pinned-card-inner{flex-direction:column}.pinned-card-inner .blog-thumb{min-height:220px}}
 
 /* PAGE */
 .page-hero{padding:140px 0 60px;background:#fff;text-align:center}
@@ -79,14 +79,25 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 .blog-thumb{aspect-ratio:16/10;position:relative;overflow:hidden}
 .blog-thumb-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.85rem}
 .blog-cat{position:absolute;top:14px;left:14px;font-size:.7rem;font-weight:700;color:#fff;padding:5px 14px;border-radius:4px}
-.cat-project{background:#2563eb}
-.cat-insight{background:#0891b2}
-.cat-news{background:#64748b}
-.cat-pr{background:#7c3aed}
+.cat-vip{background:#2563eb}
+.cat-mega{background:#7c3aed}
+.cat-shuttle{background:#0891b2}
+.cat-solution{background:#16a34a}
+.cat-press{background:#64748b}
 .blog-body{padding:24px;flex:1;display:flex;flex-direction:column}
 .blog-body h3{font-size:1.05rem;font-weight:800;margin-bottom:8px;line-height:1.4}
 .blog-body p{font-size:.88rem;color:var(--gray-500);line-height:1.6;margin-bottom:16px;flex:1}
 .blog-date{font-size:.8rem;color:var(--gray-600);display:flex;align-items:center;gap:6px;margin-top:auto}
+/* Pinned Card */
+.pinned-section{margin-bottom:40px}
+.blog-card-pinned{border:1.5px solid #2563eb;border-radius:16px;overflow:hidden;background:#fff;transition:var(--transition);display:block;position:relative}
+.blog-card-pinned:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(37,99,235,.12)}
+.pinned-card-inner{display:flex}
+.pinned-card-inner .blog-thumb{aspect-ratio:auto;width:40%;min-height:260px;flex-shrink:0}
+.pinned-card-inner .blog-body{padding:32px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.pinned-card-inner .blog-body h3{font-size:1.3rem;margin-bottom:10px}
+.pinned-card-inner .blog-body p{font-size:.95rem}
+.pinned-badge{position:absolute;top:16px;right:16px;background:#2563eb;color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:4px;letter-spacing:1px;z-index:2}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="wireframe.css">
@@ -123,21 +134,44 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 <!-- BLOG -->
 <section class="section" style="background:#fff;padding-top:0">
 <div class="container">
+
+<!-- Search Bar -->
+<div class="search-bar fade-up" style="max-width:480px;margin:0 auto 24px;position:relative">
+<input type="text" id="searchInput" placeholder="행사명 · 키워드 검색" style="width:100%;padding:14px 20px 14px 44px;border:1.5px solid #e5e5e5;border-radius:50px;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#2563eb'" onblur="this.style.borderColor='#e5e5e5'">
+<svg style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#999" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-width="2" stroke-linecap="round"/></svg>
+</div>
+
 <!-- Tab Filter -->
 <div class="tab-nav fade-up">
 <button class="tab-btn active" onclick="filterBlog('all')">전체</button>
-<button class="tab-btn" onclick="filterBlog('project')">프로젝트 스토리</button>
-<button class="tab-btn" onclick="filterBlog('insight')">산업 인사이트</button>
-<button class="tab-btn" onclick="filterBlog('news')">뉴스</button>
-<button class="tab-btn" onclick="filterBlog('pr')">PR</button>
+<button class="tab-btn" onclick="filterBlog('vip')">의전수송</button>
+<button class="tab-btn" onclick="filterBlog('mega')">메가이벤트</button>
+<button class="tab-btn" onclick="filterBlog('shuttle')">셔틀 운영</button>
+<button class="tab-btn" onclick="filterBlog('solution')">솔루션 도입</button>
+<button class="tab-btn" onclick="filterBlog('press')">보도자료</button>
+</div>
+
+<!-- Pinned Section -->
+<div class="pinned-section fade-up" id="pinnedSection">
+<a href="#" class="blog-card-pinned" data-cat="press" data-pinned="true" id="brand-renewal">
+<span class="pinned-badge">PINNED</span>
+<div class="pinned-card-inner">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">브랜드 리뉴얼</div><span class="blog-cat cat-press">보도자료</span></div>
+<div class="blog-body">
+<h3>그라운드케이, 'WE MOVE YOU' 브랜드 리뉴얼</h3>
+<p>'이동경험을 디자인합니다' &mdash; 그라운드케이의 새로운 브랜드 아이덴티티를 소개합니다.</p>
+<div class="blog-date"> 2026.03.01</div>
+</div>
+</div>
+</a>
 </div>
 
 <!-- Blog Grid -->
 <div class="blog-grid fade-up" id="blogGrid">
 
 <!-- 1 -->
-<a href="#" class="blog-card" data-cat="project">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">APEC 2025</div><span class="blog-cat cat-project">프로젝트 스토리</span></div>
+<a href="#" class="blog-card" data-cat="mega">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">APEC 2025</div><span class="blog-cat cat-mega">메가이벤트</span></div>
 <div class="blog-body">
 <h3>APEC 2025, 21개국 정상을 모시기까지</h3>
 <p>21개국 정상급 인사의 의전수송을 완벽하게 수행한 APEC 2025 프로젝트의 비하인드 스토리.</p>
@@ -146,8 +180,8 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </a>
 
 <!-- 2 -->
-<a href="#" class="blog-card" data-cat="insight">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">MICE 수송 분석</div><span class="blog-cat cat-insight">산업 인사이트</span></div>
+<a href="#" class="blog-card" data-cat="mega">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">MICE 수송 분석</div><span class="blog-cat cat-mega">메가이벤트</span></div>
 <div class="blog-body">
 <h3>MICE 수송, 왜 전문 파트너가 필요한가</h3>
 <p>대규모 국제행사의 수송 운영에서 전문 파트너의 역할과 선택 기준을 분석합니다.</p>
@@ -156,8 +190,8 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </a>
 
 <!-- 3 -->
-<a href="#" class="blog-card" data-cat="news">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">APEC 파트너 선정</div><span class="blog-cat cat-news">뉴스</span></div>
+<a href="#" class="blog-card" data-cat="press">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">APEC 파트너 선정</div><span class="blog-cat cat-press">보도자료</span></div>
 <div class="blog-body">
 <h3>APEC 2025 공식 수송 파트너 선정</h3>
 <p>그라운드케이가 APEC 2025 경주 정상회의 공식 수송 파트너로 선정되었습니다.</p>
@@ -166,8 +200,8 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </a>
 
 <!-- 4 -->
-<a href="#" class="blog-card" data-cat="project">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">BLACKPINK 수송</div><span class="blog-cat cat-project">프로젝트 스토리</span></div>
+<a href="#" class="blog-card" data-cat="mega">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">BLACKPINK 수송</div><span class="blog-cat cat-mega">메가이벤트</span></div>
 <div class="blog-body">
 <h3>블랙핑크 월드투어, 5,000명을 움직이다</h3>
 <p>K-POP 콘서트 수송의 새로운 기준을 세운 블랙핑크 월드투어 프로젝트 이야기.</p>
@@ -176,8 +210,8 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </a>
 
 <!-- 5 -->
-<a href="#" class="blog-card" data-cat="insight">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">셔틀 위탁 가이드</div><span class="blog-cat cat-insight">산업 인사이트</span></div>
+<a href="#" class="blog-card" data-cat="shuttle">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">셔틀 위탁 가이드</div><span class="blog-cat cat-shuttle">셔틀 운영</span></div>
 <div class="blog-body">
 <h3>아파트 셔틀 위탁, 관리사무소가 알아야 할 모든 것</h3>
 <p>셔틀 위탁 도입을 검토하는 관리사무소를 위한 체크리스트와 운영 가이드.</p>
@@ -186,8 +220,8 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </a>
 
 <!-- 6 -->
-<a href="#" class="blog-card" data-cat="news">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">매출 성장</div><span class="blog-cat cat-news">뉴스</span></div>
+<a href="#" class="blog-card" data-cat="press">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">매출 성장</div><span class="blog-cat cat-press">보도자료</span></div>
 <div class="blog-body">
 <h3>2025년 매출 111.7억, 전년 대비 77% 성장</h3>
 <p>그라운드케이가 2025년 매출 111.7억원을 달성하며 3년 CAGR 48.1%의 고성장을 이어갔습니다.</p>
@@ -196,8 +230,8 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </a>
 
 <!-- 7 -->
-<a href="#" class="blog-card" data-cat="project">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">검암 프루지오</div><span class="blog-cat cat-project">프로젝트 스토리</span></div>
+<a href="#" class="blog-card" data-cat="shuttle">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">검암 프루지오</div><span class="blog-cat cat-shuttle">셔틀 운영</span></div>
 <div class="blog-body">
 <h3>검암 프루지오, 5년 연속 운영의 비결</h3>
 <p>4,805세대 대단지에서 5년간 셔틀을 운영하며 쌓아온 노하우와 입주민 만족의 비결.</p>
@@ -206,8 +240,8 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </a>
 
 <!-- 8 -->
-<a href="#" class="blog-card" data-cat="insight">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">B2B SaaS 트렌드</div><span class="blog-cat cat-insight">산업 인사이트</span></div>
+<a href="#" class="blog-card" data-cat="solution">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#2a3a50">B2B SaaS 트렌드</div><span class="blog-cat cat-solution">솔루션 도입</span></div>
 <div class="blog-body">
 <h3>B2B 모빌리티 SaaS, 어디까지 왔나</h3>
 <p>수송 비즈니스의 디지털 전환 트렌드와 B2B 모빌리티 SaaS의 현재와 미래.</p>
@@ -216,8 +250,8 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </a>
 
 <!-- 9 -->
-<a href="#" class="blog-card" data-cat="news">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">강소기업 선정</div><span class="blog-cat cat-news">뉴스</span></div>
+<a href="#" class="blog-card" data-cat="press">
+<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#3a4a60">강소기업 선정</div><span class="blog-cat cat-press">보도자료</span></div>
 <div class="blog-body">
 <h3>부산 서비스 강소기업 선정</h3>
 <p>그라운드케이가 부산광역시 서비스 강소기업으로 선정되어 지역 경제 기여를 인정받았습니다.</p>
@@ -225,17 +259,12 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 </div>
 </a>
 
-<!-- 10 -->
-<a href="#" class="blog-card" data-cat="pr" id="brand-renewal">
-<div class="blog-thumb"><div class="blog-thumb-bg" style="background:#1a2744">브랜드 리뉴얼</div><span class="blog-cat cat-pr">PR</span></div>
-<div class="blog-body">
-<h3>그라운드케이, 'WE MOVE YOU' 브랜드 리뉴얼</h3>
-<p>'이동경험을 디자인합니다' &mdash; 그라운드케이의 새로운 브랜드 아이덴티티를 소개합니다.</p>
-<div class="blog-date"> 2026.03.01</div>
 </div>
-</a>
 
+<!-- Pagination -->
+<div class="pagination" id="pagination" style="display:flex;justify-content:center;gap:8px;margin-top:48px">
 </div>
+
 </div>
 </section>
 
@@ -255,15 +284,80 @@ a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function toggleMobSub(btn){btn.classList.toggle('open');const sub=btn.nextElementSibling;sub.classList.toggle('open')}
 document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
-// Tab filter
-function filterBlog(cat){
-document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-event.target.classList.add('active');
-document.querySelectorAll('.blog-card').forEach(c=>{
-if(cat==='all'){c.classList.remove('hidden')}
-else{c.classList.toggle('hidden',c.dataset.cat!==cat)}
-});
+
+// Search + Filter + Pagination
+const ITEMS_PER_PAGE = 6;
+let currentPage = 1;
+let currentFilter = 'all';
+
+function getAllCards() {
+  return Array.from(document.querySelectorAll('#blogGrid .blog-card'));
 }
+
+function getFilteredCards() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  return getAllCards().filter(c => {
+    const catMatch = currentFilter === 'all' || c.dataset.cat === currentFilter;
+    const text = c.textContent.toLowerCase();
+    const searchMatch = !searchTerm || text.includes(searchTerm);
+    return catMatch && searchMatch;
+  });
+}
+
+function renderPage() {
+  const filtered = getFilteredCards();
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  if (currentPage > totalPages) currentPage = 1;
+
+  // Hide all cards first
+  getAllCards().forEach(c => c.classList.add('hidden'));
+
+  // Show current page items
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
+  filtered.slice(start, end).forEach(c => c.classList.remove('hidden'));
+
+  // Handle pinned card visibility with search
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  const pinnedCard = document.querySelector('.blog-card-pinned');
+  if (pinnedCard) {
+    const pinnedText = pinnedCard.textContent.toLowerCase();
+    const pinnedCatMatch = currentFilter === 'all' || pinnedCard.dataset.cat === currentFilter;
+    pinnedCard.style.display = (pinnedCatMatch && (!searchTerm || pinnedText.includes(searchTerm))) ? '' : 'none';
+  }
+
+  // Render pagination
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  const container = document.getElementById('pagination');
+  if (totalPages <= 1) { container.innerHTML = ''; return; }
+  let html = '';
+  for (let i = 1; i <= totalPages; i++) {
+    html += '<button onclick="goToPage(' + i + ')" style="width:40px;height:40px;border-radius:50%;border:1.5px solid ' + (i===currentPage?'#2563eb':'#e5e5e5') + ';background:' + (i===currentPage?'#2563eb':'#fff') + ';color:' + (i===currentPage?'#fff':'#555') + ';font-weight:600;font-size:.9rem;cursor:pointer;font-family:inherit;transition:all .2s">' + i + '</button>';
+  }
+  container.innerHTML = html;
+}
+
+function goToPage(page) { currentPage = page; renderPage(); }
+
+function filterBlog(cat) {
+  currentFilter = cat;
+  currentPage = 1;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderPage();
+}
+
+document.getElementById('searchInput').addEventListener('input', function() {
+  currentPage = 1;
+  renderPage();
+});
+
+// Initial render
+renderPage();
+
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
