@@ -4,7 +4,8 @@
       "Bash(gh api repos/jakeon32/groundkIR/contents/site/src/pages/main/Resources.tsx -H \"Accept: application/vnd.github.raw+json\")",
       "Bash(gh api repos/jakeon32/groundkIR/contents/site/src/components/sections/MainBusiness.tsx -H \"Accept: application/vnd.github.raw+json\")",
       "Bash(gh api repos/jakeon32/groundkIR/contents/site/src/components/sections/HomeStrengths.tsx -H \"Accept: application/vnd.github.raw+json\")",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Bash(python -c ':*)"
     ]
   }
 }
